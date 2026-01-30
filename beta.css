@@ -1,0 +1,154 @@
+/* beta.css - V2 with Interactions */
+
+:root {
+  --sakura: #ff4f93;
+  --sakura-light: #fff0f5;
+  --text-dark: #191f28;
+  --text-gray: #8b95a1;
+  --bg-gray: #f5f6f8;
+  --border: #e0e2e7;
+  --font-main: 'Pretendard', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-main); background: var(--bg-gray); color: var(--text-dark); line-height: 1.6; }
+
+/* 1. Login & Base */
+.full-screen-center {
+  width: 100vw; height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background: white;
+}
+.login-card { width: 100%; max-width: 420px; padding: 40px; text-align: center; }
+.logo-dot { display: inline-block; width: 10px; height: 10px; background: var(--sakura); border-radius: 50%; margin-right: 6px; }
+.login-title { font-size: 2.2rem; font-weight: 700; margin: 20px 0; line-height: 1.2; }
+.login-desc { color: var(--text-gray); margin-bottom: 40px; }
+
+.input-group { display: flex; gap: 10px; margin-bottom: 10px; }
+input[type="text"] {
+  flex: 1; padding: 14px; border: 1px solid var(--border); border-radius: 8px;
+  font-family: var(--font-mono); font-size: 1rem; text-align: center; outline: none; transition: 0.2s; text-transform: uppercase;
+}
+input[type="text"]:focus { border-color: var(--sakura); box-shadow: 0 0 0 3px var(--sakura-light); }
+.error-msg { color: #e74c3c; font-size: 0.85rem; height: 20px; }
+
+/* Shake Animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.shake { animation: shake 0.3s; border-color: #e74c3c !important; }
+
+.btn-primary {
+  background: var(--sakura); color: white; border: none; padding: 14px 24px;
+  border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s; text-decoration: none; display: inline-block;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 79, 147, 0.3); }
+
+/* 2. Dashboard */
+.container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+.beta-header { background: white; border-bottom: 1px solid var(--border); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; }
+.user-badge { background: var(--text-dark); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 800; margin-right: 8px; }
+.progress-area { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; }
+.progress-track { width: 120px; height: 8px; background: #eee; border-radius: 10px; overflow: hidden; }
+.progress-bar { height: 100%; background: var(--sakura); width: 0%; transition: width 0.5s ease; }
+
+.welcome-sec { padding: 60px 0 40px; text-align: center; }
+.wc-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; }
+.wc-desc { color: var(--text-gray); font-size: 0.95rem; }
+
+/* 3. Mission Card & Interactions (NEW) */
+.mission-track { padding-bottom: 100px; display: flex; flex-direction: column; gap: 24px; }
+.mission-card {
+  background: white; border-radius: 16px; padding: 30px;
+  border: 1px solid var(--border); position: relative; overflow: hidden; transition: 0.3s;
+}
+.m-status { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 800; color: var(--sakura); margin-bottom: 10px; }
+.mission-card h3 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 700; }
+.mission-card p { color: var(--text-gray); margin-bottom: 24px; font-size: 0.95rem; }
+
+/* Interaction Box */
+.interaction-box {
+  background: #f9fafb; border-radius: 12px; padding: 20px; margin-top: 20px;
+  border: 1px solid #eee;
+}
+.q-label { font-weight: 700; color: #333; margin-bottom: 12px; font-size: 0.95rem; display: block; }
+.choice-group { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+
+/* Choice Buttons */
+.choice-btn {
+  background: white; border: 1px solid var(--border); color: #555; padding: 10px 14px;
+  border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: 0.2s;
+}
+.choice-btn:hover { background: #fafafa; }
+.choice-btn.selected {
+  border-color: var(--sakura); color: var(--sakura); background: var(--sakura-light); font-weight: 700;
+}
+
+/* Text Input Answer */
+.input-answer {
+  width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px;
+  margin-bottom: 16px; font-size: 0.95rem; outline: none;
+}
+.input-answer:focus { border-color: var(--sakura); }
+
+/* Action Area */
+.m-action-area { margin-top: 20px; }
+.btn-outline {
+  display: inline-block; background: white; border: 1px solid var(--border); color: #333;
+  padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600;
+  margin-bottom: 10px;
+}
+.btn-outline:hover { background: #f0f0f0; }
+
+/* Complete Button */
+.btn-check {
+  width: 100%; padding: 14px; border-radius: 8px; border: none;
+  background: #dcdfe4; color: #fff; font-weight: 700; cursor: not-allowed; transition: 0.3s;
+}
+.btn-check.ready { background: #27ae60; cursor: pointer; }
+.btn-check.ready:hover { background: #219150; }
+
+.full-width { width: 100%; text-align: center; }
+
+/* States */
+.mission-card.locked { opacity: 0.5; pointer-events: none; filter: grayscale(100%); }
+.lock-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: #555; backdrop-filter: blur(1px);
+}
+.mission-card.active { border-color: var(--sakura); box-shadow: 0 10px 30px rgba(255, 79, 147, 0.1); }
+.mission-card.completed { background: #fdfdfd; border-color: #27ae60; opacity: 0.8; }
+.mission-card.completed .m-status { color: #27ae60; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); z-index: 1000;
+  display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);
+}
+.modal-card {
+  background: white; padding: 40px; border-radius: 20px; text-align: center;
+  width: 90%; max-width: 360px; animation: popUp 0.4s;
+}
+.modal-icon { font-size: 3rem; margin-bottom: 16px; }
+
+@keyframes popUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+@media (max-width: 600px) {
+  .login-title { font-size: 1.8rem; }
+  .choice-group { flex-direction: column; }
+  .choice-btn { width: 100%; text-align: left; }
+}
+
+/* =========================================
+   [긴급 수정] 잠금 해제 시 오버레이 숨기기
+   ========================================= */
+.mission-card.active .lock-overlay,
+.mission-card.completed .lock-overlay {
+  display: none !important;
+}
