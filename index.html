@@ -1,524 +1,607 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoosyCozy Beta | Project Essential Record</title>
   
-  <title>RoosyCozy | 선생님을 위한 지능형 기록 보호 및 사건 재구성 플랫폼</title>
-  <meta name="description" content="흩어진 상담 기록과 학급 일지를 입체적으로 연결하여 완벽한 타임라인을 만듭니다. 선생님의 기억을 논리적으로 방어하는 RoosyCozy." />
-  
-  <link rel="stylesheet" href="style.css" />
-
+  <link rel="stylesheet" href="beta.css" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <canvas id="flowCanvas"></canvas>
 
-  <nav class="navbar">
-    <div class="container nav-inner">
-      <a href="#" class="logo">
-        <span></span> RoosyCozy
-      </a>
+  <section id="login-screen" class="full-screen-center">
+    <div class="login-card">
+      <div class="logo-area"><span class="logo-dot"></span> RoosyCozy Beta</div>
+      <h1 class="login-title">Project<br>Essential Record</h1>
+      <p class="login-desc">베타 액세스 코드를 입력해 주세요.</p>
       
-      <div class="nav-links pc-only">
-        <a href="#story">Origin</a>
-        <a href="#problem">Why?</a>
-        <a href="#solution">Logic</a>
-        <a href="#download" class="nav-btn">무료 다운로드</a>
-      </div>
+      <div class="input-group">
+        
+        <style>
+          /* [수정] 입력창 다이어트 & 높이 고정 */
+          #accessCode {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;       /* 글자 크기 약간 줄임 */
+            letter-spacing: 6px;     /* 숫자 간격은 여전히 시원하게 */
+    
+            height: 50px !important; /* ★ 핵심: 높이를 50px로 강제 고정 */
+            padding: 0 !important;   /* 위아래 불필요한 살(여백) 뺌 */
+          }
 
-      <button class="menu-btn mob-only" aria-label="메뉴 열기">
-        <span></span><span></span><span></span>
-      </button>
+          /* 안내 문구 스타일 */
+          #accessCode::placeholder {
+            letter-spacing: 0px;     /* 안내 문구는 좁게 */
+            font-size: 0.95rem;      /* 안내 문구 크기 조절 */
+            color: #bbb;
+            font-weight: normal;
+            line-height: 50px;       /* 수직 정렬 맞춤 */
+          }
+
+          /* [추가] 옆에 있는 '입장하기' 버튼도 키 맞추기 */
+          .input-group .btn-primary {
+            height: 50px !important; /* 입력창이랑 똑같은 높이 */
+            padding: 0 24px !important;
+            display: flex;
+            align-items: center;     /* 글자 정가운데로 */
+            justify-content: center;
+          }
+        </style>
+
+        <input 
+          type="text" 
+          id="accessCode" 
+          placeholder="PIN 번호 6자리 (예: 000000)" 
+          maxlength="6" 
+          inputmode="numeric" 
+          autocomplete="off" 
+        />
+
+        <button onclick="attemptLogin()" class="btn-primary">입장하기</button>
+      </div>
+      <p id="login-msg" class="error-msg"></p>
     </div>
-  </nav>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-container">
-        <div class="hero-text reveal">
-          <span class="kicker eng">Intelligent Defense System v3.0</span>
-          <h1 class="hero-title">
-            기록은 파편이지만,<br>
-            <span>진실은 입체적입니다.</span>
-          </h1>
-          <p class="hero-desc">
-            매일 쏟아지는 상담, 민원, 학생 지도 기록들.<br>
-            RoosyCozy는 흩어진 기록들을 스스로 연결하여<br class="pc-only">
-            <strong>가장 강력하고 논리적인 타임라인</strong>으로 재구성합니다.
+  <main id="dashboard" style="display: none;">
+    <header class="beta-header">
+      <div class="container header-inner">
+        <div class="user-info">
+          <span class="user-badge">BETA TESTER</span>
+          <strong id="user-id-display">RC-BETA-XXX</strong>
+        </div>
+        <div class="progress-area">
+          <span>진행률</span>
+          <div class="progress-track"><div class="progress-bar" id="progressBar" style="width: 0%;"></div></div>
+          <span id="progress-text">0%</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="welcome-sec container">
+      <h2 class="wc-title">기록의 본질에 집중하세요.</h2>
+      <p class="wc-desc">반갑습니다, 선생님. 실제 앱 화면을 보며 아래 미션을 순서대로 수행해 주세요.<br><strong>정답을 맞춰야 다음 단계가 열립니다.</strong></p>
+    </section>
+
+    <section class="mission-track container">
+      
+      <div class="mission-card active" id="mission-1">
+        <div class="m-status">STEP 01</div>
+        <div class="m-content">
+          <h3>3초 컷! 가장 '본질적인' 기록법</h3>
+          <p>
+            RoosyCozy는 선생님의 시간을 뺏지 않습니다.<br>
+            아래 3가지 가이드를 따라 <strong>가장 빠른 기록</strong>을 경험해 보세요.
           </p>
-          <div class="btn-group">
-            <a href="#download" class="btn-primary">지금 시작하기</a>
-            <a href="#solution" class="btn-text">작동 원리 보기 ↓</a>
-          </div>
-        </div>
-
-        <div class="hero-visual reveal">
-          <div class="layer-stack">
-            <div class="layer layer-bottom">
-              <span class="layer-tag">LEVEL 01</span>
-              <div class="layer-content">
-                <span>📞 통화 녹음</span>
-                <span>💬 알림장</span>
-                <span>📝 상담 일지</span>
-              </div>
-            </div>
-            <div class="layer layer-mid">
-              <span class="layer-tag">CORE ENGINE</span>
-              <div class="layer-content">
-                <strong>맥락 추적 & 연결</strong>
-                <small class="mono" style="color:var(--sakura)">(Ontology System)</small>
-              </div>
-              <div class="connect-lines"></div>
-            </div>
-            <div class="layer layer-top">
-              <span class="layer-tag">LEVEL 02</span>
-              <div class="layer-content">
-                <strong>완벽한 대응 시나리오</strong>
-                <div class="mini-ui-bar"></div>
-                <div class="mini-ui-bar w-70"></div>
-              </div>
-            </div>
-          </div>
-          <p class="visual-caption">▲ 데이터가 입체적으로 조립되는 과정을 확인하세요.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="story" class="section bg-subtle">
-      <div class="container">
-        <div class="grid-2">
           
-          <div class="reveal">
-            <span class="sec-subtitle">INTELLIGENT DEFENSE SYSTEM</span>
-            <h2 class="sec-title">
-              선생님의 평온한 밤을 위한<br>
-              가장 든든한 기록 방어막.
-            </h2>
-            <p class="sec-desc" style="margin-bottom: 30px;">
-              "학부모 전화벨만 울려도 심장이 내려앉는 기분, 아시나요?<br>
-              이제 불안함은 내려놓으세요.<br>
-              선생님이 오직 아이들에게만 집중하실 수 있도록,<br>
-              <strong>RoosyCozy가 선생님의 모든 기록을 논리적으로 방어합니다.</strong>"
-            </p>
-            
-            <div style="display: inline-flex; align-items: center; gap: 8px; color: var(--text-sub); font-weight: 600; background: #fff; padding: 10px 16px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.05);">
-              🛡️ 선생님을 위한 지능형 사건 재구성 솔루션
-            </div>
-          </div>
-
-          <div class="quote-card reveal">
-            <div class="quote-text serif">
-              "저도 불안장애가 있어 깊이 공감합니다.<br>
-              나중에 일이 터지더라도 <b>저의 무고함을 증명해 줄</b><br>
-              <b>든든한 방어막</b>이 되어줄 것 같아 기대됩니다."
-            </div>
-            <div style="font-weight: 500; color: var(--text-muted); margin-top: 20px; display: flex; align-items: center; gap: 8px;">
-              <span style="background:#E6E6FA; width:24px; height:24px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem;">🟣</span>
-              <span>연XX콩 선생님 (25.01.19)</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="solution" class="section">
-      <div class="container">
-        <div class="split-layout">
-          
-          <div class="split-visual reveal">
-            <div class="logic-diagram">
-              <svg class="svg-connect">
-                <line x1="20%" y1="25%" x2="50%" y2="50%" />
-                <line x1="80%" y1="50%" x2="50%" y2="50%" />
-                <line x1="20%" y1="75%" x2="50%" y2="50%" />
+          <div class="m-action-area">
+            <a href="main.html" target="_blank" class="btn-outline small">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="btn-icon svg-icon" style="width:20px; height:20px; margin-right:6px; vertical-align:middle; fill:#ff4f93;">
+                <path fill-rule="evenodd" d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436h.004l-4.977 4.977a.75.75 0 01-1.06 0l-3.182-3.182a.75.75 0 010-1.061l4.977-4.977zm-4.66 9.638l3.182 3.182-4.977 4.977a.75.75 0 01-1.06 0l-1.591-1.591a.75.75 0 010-1.061l4.446-5.507zm11.488-11.488c-3.015.267-5.93 1.524-8.598 3.756l6.908 6.908c2.232-2.668 3.489-5.583 3.756-8.598-.56.56-1.147 1.107-1.758 1.638a.75.75 0 00.965 1.153c.739-.618 1.446-1.27 2.114-1.95.68-.668 1.332-1.375 1.95-2.114a.75.75 0 00-1.153-.965c-.531.611-1.078 1.198-1.638 1.758z" clip-rule="evenodd" />
               </svg>
+              앱 실행하러 가기 (새창)
+            </a>
+            
+            <div class="guide-box">
+              <p class="guide-label">✅ 따라 해보고 체크해 주세요 (3개)</p>
               
-              <div class="node n1">학생 A 상담</div>
-              <div class="node n2">학부모 전화</div>
-              <div class="node n3">보건실 기록</div>
-              <div class="node n-center">사건 #2024-01</div>
+              <div class="guide-list">
+                <button onclick="checkGuide(1, 1)" id="g1-1" class="guide-item">
+                  <span class="icon">✍️</span>
+                  <div class="text">
+                    <strong>문장으로 쓰지 마세요.</strong>
+                    <span>"복도에서 뜀" 처럼 키워드만 남겨도 충분해요.</span>
+                  </div>
+                  <span class="check-mark">⬜</span>
+                </button>
+
+                <button onclick="checkGuide(1, 2)" id="g1-2" class="guide-item">
+                  <span class="icon">⚡</span>
+                  <div class="text">
+                    <strong>마우스는 쓰지 마세요.</strong>
+                    <span>입력 후 <code>Ctrl + Enter</code>로 1초 만에 저장하세요.</span>
+                  </div>
+                  <span class="check-mark">⬜</span>
+                </button>
+
+                <button onclick="checkGuide(1, 3)" id="g1-3" class="guide-item">
+                  <span class="icon">⏱️</span>
+                  <div class="text">
+                    <strong>미루지 말고 지금 하세요.</strong>
+                    <span>기억이 휘발되기 전, 딱 10초만 투자하세요.</span>
+                  </div>
+                  <span class="check-mark">⬜</span>
+                </button>
+              </div>
+
+              <button onclick="completeMission(1)" id="btn-complete-1" class="btn-check" disabled>3가지를 모두 확인해주세요</button>
             </div>
           </div>
-
-          <div class="split-content reveal">
-            <span class="sec-subtitle">SOLUTION : ONTOLOGY TRACKING</span>
-            <h2 class="sec-title">기록이 스스로<br>맥락을 찾아냅니다.</h2>
-            <p class="sec-desc">
-              RoosyCozy의 <strong>온톨로지(Ontology) 엔진</strong>은 선생님이 입력한 단순한 메모들 사이에서 '누가', '언제', '무엇을', '어떻게' 연결되는지를 분석합니다.
-            </p>
-            
-            <div class="feature-list">
-              <div class="f-item">
-                <strong>자동 타임라인 생성:</strong>
-                <p>특정 학생 이름을 클릭하면, 그 학생과 관련된 1년 치의 상담, 갈등, 학부모 통화가 시간순으로 정렬됩니다.</p>
-              </div>
-              <div class="f-item">
-                <strong>인과관계 추적:</strong>
-                <p>오늘 발생한 사건의 원인이 지난달의 사소한 다툼에 있었음을 시스템이 감지하고 연결해줍니다.</p>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
-    </section>
 
-    <section id="tech-proof" class="section bg-subtle">
-      <div class="container">
-        <div class="text-center reveal" style="margin-bottom: 60px;">
-          <span class="sec-subtitle">WORLD-CLASS AI TECHNOLOGY</span>
-          <h2 class="sec-title">
-            세계 최고 AI 학회(ICLR)가 검증한<br>
-            독보적인 최적화 알고리즘
-          </h2>
-          <p class="sec-desc">
-            RoosyCozy의 핵심 엔진은 <strong>실제 학회에서 입증된 기술</strong>입니다.<br>
-            합성 데이터(Synthetic Data) 기술로 선생님의 기록을 가장 강력한 방어 논리로 재구성합니다.
+      <div class="mission-card locked" id="mission-2">
+        <div class="m-status">STEP 02</div>
+        <div class="m-content">
+          <h3>AI가 찾아낸 '숨은 조언' 활용법</h3>
+          <p>
+            기록이 모이면 AI가 사건의 맥락을 연결합니다.<br>
+            상단 <strong>[AI 사건 증거 수집]</strong> 버튼을 누르고, 아래 3가지를 확인해 보세요.
           </p>
-        </div>
-        
-        <div class="tech-proof-grid reveal">
           
-          <div class="papers-visual-real">
+          <div class="m-action-area">
             
-          <div class="real-paper p-back">
-            <img src="paper_sub.png" alt="Sub Paper" class="paper-img">
-            <div class="blur-cover" style="top: 18%; height: 8%;"></div>
-          </div>
+            <div class="guide-box">
+              <p class="guide-label">✅ AI 분석 결과, 이것만은 꼭 확인하세요 (3개)</p>
+              
+              <div class="guide-list">
+                <button onclick="checkGuide(2, 1)" id="g2-1" class="guide-item">
+                  <span class="icon">👁️</span>
+                  <div class="text">
+                    <strong>타임라인 연결 확인</strong>
+                    <span>흩어져 있던 메모들이 시간 순서대로 정렬되었나요?</span>
+                  </div>
+                  <span class="check-mark">⬜</span>
+                </button>
 
-          <div class="real-paper p-front">
-            <img src="paper_main.png" alt="Main Paper" class="paper-img">
-    
-            <div class="blur-cover" style="top: 22%; height: 9%;"></div>
-    
-            <div class="p-stamp-real">
-              <span>VERIFIED</span>
-              <small>ICLR 2024</small>
-            </div>
-          </div>
+                <button onclick="checkGuide(2, 2)" id="g2-2" class="guide-item">
+                  <span class="icon">🤖</span>
+                  <div class="text">
+                    <strong>AI 조언(Advice) 읽기</strong>
+                    <span>파란색 박스 안의 '후속 조치 계획'을 읽어보셨나요?</span>
+                  </div>
+                  <span class="check-mark">⬜</span>
+                </button>
 
-        </div>
-
-          <div class="tech-desc-box">
-            <div class="tech-point">
-              <div class="tp-icon">🧬</div>
-              <div class="tp-text">
-                <h3>합성 데이터(Synthetic Data) 증강</h3>
-                <p>부족한 초기 기록 데이터를 AI가 스스로 증폭시켜, 빈틈없는 사건 타임라인을 예측하고 구성합니다.</p>
+                <button onclick="checkGuide(2, 3)" id="g2-3" class="guide-item">
+                  <span class="icon">⚠️</span>
+                  <div class="text">
+                    <strong>심각도 배지(Badge) 체크</strong>
+                    <span>'WARN(주의)' 배지가 떴다면, 공식 대응을 준비해야 합니다.</span>
+                  </div>
+                  <span class="check-mark">⬜</span>
+                </button>
               </div>
-            </div>
-            <div class="tech-point">
-              <div class="tp-icon">🎯</div>
-              <div class="tp-text">
-                <h3>최적화 전술 알고리즘</h3>
-                <p>수집된 증거들 사이의 논리적 연결 고리를 찾아내어, 교육청 소명 시 가장 유리한 대응 논리를 도출합니다.</p>
-              </div>
-            </div>
-            <div class="tech-quote">
-              "세계적 권위의 표현 학습 국제 학회(ICLR)에서<br>그 효과와 기술적 신뢰성을 인정받았습니다."
+
+              <button onclick="completeMission(2)" id="btn-complete-2" class="btn-check" disabled>3가지를 모두 확인해주세요</button>
             </div>
           </div>
-
         </div>
+        <div class="lock-overlay">🔒 이전 단계를 완료해 주세요</div>
       </div>
-    </section>
 
-    <section class="section bg-dark">
-      <div class="container">
-        <div class="text-center reveal" style="margin-bottom:60px;">
-          <h2 class="sec-title" style="color:#fff;">입체적 분해 기술의 핵심</h2>
-          <p class="sec-desc" style="opacity:0.7; color: #fff;">
-            복잡한 기술이지만, 사용은 메모장처럼 간편합니다.
+      <div class="mission-card locked" id="mission-3">
+        <div class="m-status">STEP 03</div>
+        <div class="m-content">
+          <h3>내 교직 생명을 지켜줄 'PDF' 검증하기</h3>
+          <p>
+            우측 상단 <strong>[페이퍼]</strong> 버튼을 누르고 <strong>[PDF로 저장]</strong>을 해보세요.<br>
+            교육청에 바로 제출해도 손색없는 이 3가지 포인트를 확인하세요.
           </p>
-        </div>
+          
+          <div class="m-action-area">
+            
+            <div class="guide-box">
+              <p class="guide-label">✅ 완벽한 방어 서류가 갖춰야 할 조건 (3개)</p>
+              
+              <div class="guide-list">
+                <button onclick="checkGuide(3, 1)" id="g3-1" class="guide-item">
+                  <span class="icon">📄</span>
+                  <div class="text">
+                    <strong>공식 양식 준수 확인</strong>
+                    <span>'사실관계·증빙·조치 정리서'라는 제목과 깔끔한 레이아웃을 확인했나요?</span>
+                  </div>
+                  <span class="check-mark">⬜</span>
+                </button>
 
-        <div class="grid-4 reveal">
-          <div class="tech-item">
-            <div class="tech-num">01</div>
-            <h3>Atomizing</h3>
-            <p>기록을 문장 단위의 'Fact'로 잘게 쪼개어 데이터베이스화 합니다.</p>
-          </div>
-          <div class="tech-item">
-            <div class="tech-num">02</div>
-            <h3>Layering</h3>
-            <p>쪼개진 사실 위에 감정, 규정 레이어를 겹쳐 입체적으로 분석합니다.</p>
-          </div>
-          <div class="tech-item">
-            <div class="tech-num">03</div>
-            <h3>Tracing</h3>
-            <p>사건의 시발점(Root Cause)을 역추적하여 빈틈없는 논리를 만듭니다.</p>
-          </div>
-          <div class="tech-item">
-            <div class="tech-num">04</div>
-            <h3>Reporting</h3>
-            <p>교육청 제출용 보고서 양식에 맞춰 자동으로 내용을 채워넣습니다.</p>
+                <button onclick="checkGuide(3, 2)" id="g3-2" class="guide-item">
+                  <span class="icon">⚖️</span>
+                  <div class="text">
+                    <strong>객관적 사실 정리</strong>
+                    <span>감정적인 표현은 빠지고, 육하원칙에 따른 사실만 남았나요?</span>
+                  </div>
+                  <span class="check-mark">⬜</span>
+                </button>
+
+                <button onclick="checkGuide(3, 3)" id="g3-3" class="guide-item">
+                  <span class="icon">🔐</span>
+                  <div class="text">
+                    <strong>무결성 해시(Hash) 확인</strong>
+                    <span>문서 맨 아래, 위변조를 막아주는 암호 코드를 찾으셨나요?</span>
+                  </div>
+                  <span class="check-mark">⬜</span>
+                </button>
+              </div>
+
+              <button onclick="completeMission(3)" id="btn-complete-3" class="btn-check" disabled>3가지를 모두 확인해주세요</button>
+            </div>
           </div>
         </div>
+        <div class="lock-overlay">🔒 이전 단계를 완료해 주세요</div>
       </div>
-    </section>
 
-    <section id="handoff" class="section">
-      <div class="container">
-        <div class="grid-2">
-          <div class="reveal">
-            <span class="sec-subtitle">STANDARD HANDOFF</span>
-            <h2 class="sec-title">
-              인계인수의 언어를<br>바꿉니다.
-            </h2>
-            <p class="sec-desc" style="margin-bottom: 24px;">
-              "선생님, 종이 뭉치 말고 <b>RoosyCozy 파일</b>로 주세요."
-            </p>
-            <p>
-              완벽하게 정리된 기록은 다음 1년의 평화를 보장합니다.
-              클릭 한 번으로 <strong>법률 전문가와 AI에게 동시에</strong> 데이터를 동기화하세요.
-            </p>
-          </div>
-          <div class="reveal">
-            <div class="network-visual-impact">
-              <svg class="connect-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                <path class="path-line" d="M 50 100 L 200 100" />
-                <path class="path-line" d="M 200 100 L 350 50" />
-                <path class="path-line" d="M 200 100 L 350 150" />
+      <div class="mission-card locked" id="mission-4">
+        <div class="m-status">FINAL</div>
+        <div class="m-content">
+          <h3>RoosyCozy 1기 요원 등록</h3>
+          <p>모든 방어 훈련을 마치셨습니다.<br>마지막으로 짧은 의견을 남기고 '베타 테스터' 인증을 완료하세요.</p>
+          <div class="m-action-area">
+            <button onclick="openSurveyModal()" class="btn-primary full-width" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                <path fill-rule="evenodd" d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 017.5 0h.375a1.875 1.875 0 011.875 1.875v16.5a1.875 1.875 0 01-1.875 1.875h-10.5a1.875 1.875 0 01-1.875-1.875V3.375zm11.25 3.75h-2.25a.75.75 0 010-1.5h2.25V3.375h-.375a2.25 2.25 0 00-4.5 0h-.375v2.25a.75.75 0 01-1.5 0v-2.25h-.375a2.25 2.25 0 00-4.5 0h-.375v2.25c0 .414.336.75.75.75h2.25a.75.75 0 010 1.5h-2.25v12.75h10.5V7.125z" clip-rule="evenodd" />
               </svg>
-              
-              <div class="user-node source-node">
-                 <span style="font-size:2rem;">👩🏻‍🏫</span><br>올해의 나
-              </div>
-              
-              <div class="packet p1 mono">RC File</div>
-              <div class="packet p2 mono">RC File</div>
-
-              <div class="target-nodes">
-                <div class="user-node target-node t1">
-                  <span style="font-size:1.8rem;">⚖️</span><br>법률전문가
-                </div>
-                <div class="user-node target-node t2">
-                   <span style="font-size:1.8rem;">🤖</span><br>인공지능(LLM)
-                </div>
-              </div>
-            </div>
-            <div class="text-center mono" style="font-size:0.8rem; color:#aaa; margin-top:20px;">Multi-Channel Encrypted Sync</div>
+              설문 제출하고 인증 완료하기
+            </button>
           </div>
         </div>
+        <div class="lock-overlay">🔒 모든 미션을 완료해 주세요</div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
+    <div id="survey-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-card survey-card">
+        <div class="modal-header">
+          <h3>수고하셨습니다, 선생님! 🎉</h3>
+          <button onclick="closeSurveyModal()" class="btn-close">✕</button>
+        </div>
         
-        <div class="philosophy-wrapper reveal">
-          <div class="philosophy-content">
-            <p class="ph-text serif">
-              "처음에는 혹시나 하는 마음에 불안해서 기록을 시작했습니다.<br>
-              그런데 기록이 정리되니 신기하게도 두려움이 사라지더군요.<br><br>
-              <strong>RoosyCozy는 싸우기 위한 무기가 아닙니다.<br>
-              내일 다시 교실 문을 열고 아이들을 마주할 '용기'입니다.</strong>"
+        <div class="survey-body">
+          <div class="survey-section">
+            <p class="survey-intro">
+              오늘 훈련이 선생님의 막연한 불안감을 조금이라도 덜어드렸기를 바랍니다.
             </p>
-            <div class="ph-author">
-              <span>경기도 7년 차 초등교사의 일기 중</span>
+            <label class="survey-label">Q1. RoosyCozy를 써보시니 마음이 좀 편안해지셨나요?</label>
+            <textarea id="q1-text"></textarea> </div>
+
+          <div class="survey-section">
+            <label class="survey-label">Q2. "이거 하나 때문이라도 쓴다!" 싶은 최고의 기능은?</label>
+            <div class="feature-select-group">
+              <label class="feature-card">
+                <input type="radio" name="q2_feature" value="record" checked>
+                <span class="f-text">⚡ 3초 컷! 초간편 기록 (단축키)</span>
+              </label>
+              <label class="feature-card">
+                <input type="radio" name="q2_feature" value="ai">
+                <span class="f-text">🧠 맥락을 잇는 AI 타임라인</span>
+              </label>
+              <label class="feature-card">
+                <input type="radio" name="q2_feature" value="pdf">
+                <span class="f-text">📄 교육청 제출용 PDF 자동 생성</span>
+              </label>
+              <label class="feature-card">
+                <input type="radio" name="q2_feature" value="guide">
+                <span class="f-text">💬 감정 쏙 뺀 '톤앤매너 가이드'</span>
+              </label>
             </div>
           </div>
-        </div>
 
-      </div>
-    </section>
-
-
-    <section class="section bg-light">
-      <div class="container">
-        <div class="text-center reveal" style="margin-bottom: 60px;">
-          <span class="sec-subtitle">3-STEP WORKFLOW</span>
-          <h2 class="sec-title">복잡한 학폭위 준비,<br>단 3단계로 끝내세요.</h2>
-          <p class="sec-desc" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-            선생님은 그저 '오늘의 일'을 기록하세요. 나머지 골치 아픈 정리와 서류 작업은 RoosyCozy가 알아서 처리합니다.
-          </p>
-        </div>
-
-        <div class="process-steps">
+          <div class="survey-section">
+            <label class="survey-label">Q3. 더 완벽한 방어막을 위해 바라는 점을 알려주세요.</label>
+            <textarea id="q3-text"></textarea>
+          </div>
           
-          <div class="step-card reveal">
-            <div class="step-header">
-              <span class="step-badge">STEP 01</span>
-              <h3>기초 기록 남기기</h3>
-              <p>카톡하듯 편하게, 핵심만 툭툭 던져두세요.</p>
-            </div>
-            <div class="step-img-box">
-              <img src="1단계 기록만들기.png" alt="기초 기록 인터페이스" class="step-img">
-            </div>
-          </div>
-
-          <div class="step-card reveal" style="transition-delay: 0.1s;">
-            <div class="step-header">
-              <span class="step-badge">STEP 02</span>
-              <h3>AI 증거 수집 & 분석</h3>
-              <p>흩어진 기록을 AI가 사건별로 모으고 분석합니다.</p>
-            </div>
-            <div class="step-img-box">
-              <img src="2단계 AI 사건증거수집하기.png" alt="AI 분석 화면" class="step-img">
-            </div>
-          </div>
-
-          <div class="step-card reveal" style="transition-delay: 0.2s;">
-            <div class="step-header">
-              <span class="step-badge">STEP 03</span>
-              <h3>원클릭 문서 생성</h3>
-              <p>법적 효력이 있는 완벽한 PDF 보고서를 출력합니다.</p>
-            </div>
-            <div class="step-img-box">
-              <img src="3단계 기록문서 생성하기.png" alt="문서 생성 결과" class="step-img">
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container small-container">
-        <h2 class="sec-title text-center mb-50 reveal">자주 묻는 질문</h2>
-        
-        <div class="faq-item reveal">
-          <div class="faq-q">Q. ICT를 잘 모르는 컴맹 선생님도 쓸 수 있나요?</div>
-          <div class="faq-a">네, 카카오톡이나 메모장을 쓸 줄 아신다면 충분합니다. 복잡한 분석은 RoosyCozy가 알아서 처리하고, 선생님은 그저 '오늘 있었던 일'을 적기만 하면 됩니다.</div>
-        </div>
-        <div class="faq-item reveal">
-          <div class="faq-q">Q. 학생 개인정보 보안은 안전한가요?</div>
-          <div class="faq-a">금융기관 수준의 암호화 기술이 적용됩니다. 모든 데이터는 선생님의 로컬 기기(PC/태블릿)를 중심으로 저장되며, 민감 정보 자동 마스킹 기능을 제공합니다.</div>
-        </div>
-        <div class="faq-item reveal">
-          <div class="faq-q">Q. 나이스(NEIS)와 연동되나요?</div>
-          <div class="faq-a">보안 정책상 직접 연동은 불가능하지만, 나이스 양식에 딱 맞는 텍스트를 생성해주어 '복사+붙여넣기'만 하면 되도록 돕습니다.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="download" class="cta-dark">
-      <div class="container reveal">
-        <h2 class="cta-title">
-          선생님의 기록을<br>
-          가장 안전한 방패로 만드세요.
-        </h2>
-        <p class="cta-desc">
-          논리적인 사건 재구성, RoosyCozy가 대신하겠습니다.
-        </p>
-        
-        <div class="download-btns" style="justify-content: center;">
-          <button class="btn-white btn-large">
-            <span class="os-icon">🍎</span> macOS 다운로드
-          </button>
-          <button class="btn-outline-white btn-large">
-            <span class="os-icon">🪟</span> Windows 다운로드
+          <button onclick="submitSurvey()" id="btn-submit-survey" class="btn-primary full-width" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top:10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;">
+              <path fill-rule="evenodd" d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 017.5 0h.375a1.875 1.875 0 011.875 1.875v16.5a1.875 1.875 0 01-1.875 1.875h-10.5a1.875 1.875 0 01-1.875-1.875V3.375zm11.25 3.75h-2.25a.75.75 0 010-1.5h2.25V3.375h-.375a2.25 2.25 0 00-4.5 0h-.375v2.25a.75.75 0 01-1.5 0v-2.25h-.375a2.25 2.25 0 00-4.5 0h-.375v2.25c0 .414.336.75.75.75h2.25a.75.75 0 010 1.5h-2.25v12.75h10.5V7.125z" clip-rule="evenodd" />
+            </svg>
+            피드백 제출하고 인증 완료하기
           </button>
         </div>
-        <p class="cta-note">* 현재 베타 기간으로 모든 기능을 무료로 사용하실 수 있습니다.</p>
       </div>
+    </div>
+
+      <div style="text-align: center; margin-top: 50px;">
+        <button onclick="resetProgress()" style="color:#aaa; background:none; border:none; text-decoration:underline; cursor:pointer; font-size:0.8rem;">[테스트용] 진행 상황 초기화</button>
+      </div>
+
     </section>
 
+    <div id="congrats-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-icon">🎉</div>
+        <h2>축하합니다!</h2>
+        <p><strong>Project Essential Record</strong>를 완주하셨습니다.<br>이제 선생님의 기록은 가장 안전하게 보호됩니다.</p>
+        <button onclick="closeModal()" class="btn-primary">닫기</button>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div class="f-info">
-        <div class="logo" style="margin-bottom:10px; font-size:1.1rem;"><span></span> RoosyCozy</div>
-        <p>
-          Logic Driven Defense.<br>
-          문의: support@roosycozy.com
-        </p>
-      </div>
-      <div class="f-links">
-        <a href="#">이용약관</a>
-        <a href="#">개인정보처리방침</a>
-      </div>
-    </div>
-    <div class="container text-center" style="font-size:0.8rem; color:#aaa; padding-bottom:40px;">
-      © 2026 RoosyCozy Inc. All rights reserved.
-    </div>
-  </footer>
-
   <script>
-    // 1. Navigation & Mobile Menu
-    const menuBtn = document.querySelector('.menu-btn');
-    const navbar = document.querySelector('.nav-links'); // Mobile menu container logic needed if separated
-    // For simplicity in this merged version, we focus on the Scroll & Interaction
+    // 1. 유효 코드 및 로컬 스토리지 키 설정
+    const STORAGE_KEY = 'roosy_beta_v3'; // 버전 바뀌었으니 키도 변경 (로그인 풀리게)
+    
+    // [수정됨] 이제 복잡한 생성 로직 대신, 허용할 PIN 번호를 여기에 적으세요.
+    // 나중에 엑셀에서 만든 난수 100개를 여기에 콤마(,)로 구분해서 붙여넣으면 됩니다.
+    const validCodes = [
+        '000000', 
+        '123456', 
+        '111111' 
+    ];
 
-    // 2. Reveal Animation
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    let currentUser = null;
+    let currentStep = 1;
 
-    // 3. Feature Console Switcher
-    function setStep(index) {
-      document.querySelectorAll('.nav-item').forEach((el, i) => {
-        el.classList.toggle('active', i === index);
-      });
-      document.querySelectorAll('.state-view').forEach((el, i) => {
-        el.classList.toggle('active', i === index);
-      });
-    }
-    // Auto rotate demo
-    let autoRotate = setInterval(() => {
-      let active = document.querySelector('.nav-item.active');
-      let currentIdx = 0;
-      document.querySelectorAll('.nav-item').forEach((el, i) => { if(el.classList.contains('active')) currentIdx = i; });
-      setStep((currentIdx + 1) % 3);
-    }, 4000);
-    document.querySelector('.feature-nav').addEventListener('click', () => clearInterval(autoRotate));
-
-
-    // 4. Background Particles (Sakura Flow)
-    const canvas = document.getElementById('flowCanvas');
-    const ctx = canvas.getContext('2d');
-    let w, h, particles = [];
-
-    function resize() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
-
-    class Particle {
-      constructor() { this.reset(); }
-      reset() {
-        this.x = Math.random() * w;
-        this.y = Math.random() * h;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = Math.random() * 0.5 + 0.2;
-        this.color = Math.random() > 0.6 ? '#FF4F93' : '#e0e0e0'; // Sakura Pink & Gray
+    // 페이지 로드 시 저장된 데이터 확인
+    window.onload = function() {
+      const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      // 저장된 유저가 유효한 목록에 있는지 확인
+      if (savedData && validCodes.includes(savedData.user)) {
+        currentUser = savedData.user;
+        loginSuccess(currentUser);
+        restoreProgress(savedData.step);
       }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.y > h) this.y = -10;
-      }
-      draw() {
-        ctx.fillStyle = this.color;
-        ctx.globalAlpha = 0.6;
-        ctx.beginPath();
-        // Square shape for "Tech" feel, rounded for "Sakura" -> Let's do Circle
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
+    };
+
+    function attemptLogin() {
+      const input = document.getElementById('accessCode');
+      // 공백 제거만 하고 대문자 변환(toUpperCase)은 뺐습니다 (숫자니까요)
+      const code = input.value.trim(); 
+      
+      if (validCodes.includes(code)) {
+        currentUser = code;
+        currentStep = 1;
+        saveData();
+        loginSuccess(code);
+      } else {
+        const msg = document.getElementById('login-msg');
+        msg.innerText = "유효하지 않은 PIN 번호입니다.";
+        input.classList.add('shake');
+        setTimeout(() => input.classList.remove('shake'), 500);
       }
     }
 
-    for(let i=0; i<50; i++) particles.push(new Particle());
-    function animate() {
-      ctx.clearRect(0, 0, w, h);
-      particles.forEach(p => { p.update(); p.draw(); });
-      requestAnimationFrame(animate);
+    // 페이지 로드 시 저장된 데이터 확인
+    window.onload = function() {
+      const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if (savedData && validCodes.includes(savedData.user)) {
+        currentUser = savedData.user;
+        loginSuccess(currentUser);
+        restoreProgress(savedData.step);
+      }
+    };
+
+    function attemptLogin() {
+      const input = document.getElementById('accessCode');
+      const code = input.value.trim().toUpperCase();
+      if (validCodes.includes(code)) {
+        currentUser = code;
+        currentStep = 1;
+        saveData();
+        loginSuccess(code);
+      } else {
+        const msg = document.getElementById('login-msg');
+        msg.innerText = "유효하지 않은 코드입니다.";
+        input.classList.add('shake');
+        setTimeout(() => input.classList.remove('shake'), 500);
+      }
     }
-    animate();
+
+    function loginSuccess(userId) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      document.getElementById('user-id-display').innerText = userId;
+    }
+
+    function saveData() {
+      if(!currentUser) return;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        user: currentUser,
+        step: currentStep
+      }));
+    }
+
+    function restoreProgress(step) {
+      currentStep = step;
+      for (let i = 1; i < step; i++) markAsDoneUI(i);
+      if (step <= 4) activateStepUI(step);
+      updateProgressBar(step);
+      if (step > 4) {
+        markAsDoneUI(4);
+        updateProgressBar(5);
+      }
+    }
+
+    // ★ 정답 체크 로직 (핵심) ★
+    function selectOption(step, value) {
+      // 1. 선택 스타일 적용
+      const group = document.getElementById(`q${step}-options`);
+      const btns = group.querySelectorAll('.choice-btn');
+      btns.forEach(btn => btn.classList.remove('selected'));
+      event.target.classList.add('selected');
+
+      const btnComplete = document.getElementById(`btn-complete-${step}`);
+
+      // 2. 정답 여부 확인
+      let isCorrect = false;
+      if (step === 1 && value === 'shortcut') isCorrect = true; // Ctrl+Enter
+      if (step === 2 && value === 'warn') isCorrect = true;     // WARN 배지
+      if (step === 3 && value === 'hash') isCorrect = true;     // 무결성 해시
+
+      // 3. 버튼 상태 변경
+      if (isCorrect) {
+        btnComplete.disabled = false;
+        btnComplete.innerText = "✅ 정답입니다! (다음 단계로)";
+        btnComplete.classList.add('ready');
+      } else {
+        btnComplete.disabled = true;
+        btnComplete.innerText = "다시 확인해 보세요 (오답)";
+        btnComplete.classList.remove('ready');
+      }
+    }
+
+    // [NEW] 가이드 체크 로직 (3개 다 체크해야 완료)
+    const guideStatus = {
+      1: { 1: false, 2: false, 3: false }, // step 1의 항목 3개
+      // step 2, 3도 나중에 이런 식으로 확장 가능
+      2: { 1: false, 2: false, 3: false },
+
+      3: { 1: false, 2: false, 3: false }
+    };
+
+    function checkGuide(step, itemIndex) {
+      // 1. 상태 업데이트
+      guideStatus[step][itemIndex] = !guideStatus[step][itemIndex]; // 토글(켰다 껐다)
+      const isChecked = guideStatus[step][itemIndex];
+
+      // 2. UI 업데이트 (스타일 및 체크표시)
+      const btn = document.getElementById(`g${step}-${itemIndex}`);
+      const checkMark = btn.querySelector('.check-mark');
+      
+      if (isChecked) {
+        btn.classList.add('checked');
+        checkMark.innerText = "✅";
+      } else {
+        btn.classList.remove('checked');
+        checkMark.innerText = "⬜";
+      }
+
+      // 3. 전체 완료 여부 확인
+      const allChecked = Object.values(guideStatus[step]).every(val => val === true);
+      const completeBtn = document.getElementById(`btn-complete-${step}`);
+
+      if (allChecked) {
+        completeBtn.disabled = false;
+        completeBtn.innerText = "✅ 3가지 모두 확인했습니다 (다음 단계)";
+        completeBtn.classList.add('ready');
+      } else {
+        completeBtn.disabled = true;
+        completeBtn.innerText = "3가지를 모두 확인해주세요";
+        completeBtn.classList.remove('ready');
+      }
+    }
+
+    function completeMission(step) {
+      markAsDoneUI(step);
+      const nextStep = step + 1;
+      currentStep = nextStep;
+      saveData();
+
+      if (nextStep <= 4) {
+        activateStepUI(nextStep);
+        updateProgressBar(nextStep);
+        setTimeout(() => {
+            document.getElementById(`mission-${nextStep}`).scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      } else {
+        updateProgressBar(5); // 100%
+        showCongrats();
+      }
+    }
+
+    function activateStepUI(step) {
+      const card = document.getElementById(`mission-${step}`);
+      if(card) { card.classList.remove('locked'); card.classList.add('active'); }
+    }
+
+    function markAsDoneUI(step) {
+      const card = document.getElementById(`mission-${step}`);
+      if(card) {
+        card.classList.remove('active', 'locked');
+        card.classList.add('completed');
+        const btns = card.querySelectorAll('button, a');
+        btns.forEach(el => {
+            el.disabled = true;
+            if(el.tagName === 'BUTTON' && el.classList.contains('btn-check')) {
+                el.innerText = "미션 클리어";
+            }
+        });
+      }
+    }
+
+    function updateProgressBar(step) {
+      let percent = 0;
+      if (step > 1) percent = ((step - 1) / 4) * 100;
+      if (step > 4) percent = 100;
+      document.getElementById('progressBar').style.width = `${percent}%`;
+      document.getElementById('progress-text').innerText = `${Math.round(percent)}%`;
+    }
+
+    function showCongrats() {
+      setTimeout(() => { document.getElementById('congrats-modal').style.display = 'flex'; }, 500);
+    }
+    function closeModal() { document.getElementById('congrats-modal').style.display = 'none'; }
+    function resetProgress() {
+      localStorage.removeItem(STORAGE_KEY);
+      alert("초기화되었습니다.");
+      location.reload();
+    }
+
+    document.getElementById('accessCode').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') attemptLogin();
+    });
+    /* =========================================
+       [NEW] 구글 시트로 설문 전송하기
+       ========================================= */
+    // ★ 여기에 아까 복사한 '웹 앱 URL'을 붙여넣으세요! (따옴표 안에)
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgDDADz5V_PEeVBSpw0gsGbNNIJp_h21rQuR_M6kKYRhn8wSYICadneZOFLhz001WV3A/exec"; 
+
+    function openSurveyModal() {
+      document.getElementById('survey-modal').style.display = 'flex';
+    }
+    function closeSurveyModal() {
+      document.getElementById('survey-modal').style.display = 'none';
+    }
+
+    function submitSurvey() {
+      const btn = document.getElementById('btn-submit-survey');
+      
+      // 입력값 가져오기
+      const q1_val = document.getElementById('q1-text').value; 
+      // 라디오 버튼 선택값 가져오기 (체크 안 됐을 때 에러 방지용 안전장치 추가)
+      const q2_input = document.querySelector('input[name="q2_feature"]:checked');
+      const q2_val = q2_input ? q2_input.value : "선택안함";
+      const q3_val = document.getElementById('q3-text').value;
+
+      // 로딩 표시
+      btn.disabled = true;
+      btn.innerText = "전송 중...";
+
+      // 구글 시트로 전송 (정석 데이터 구조)
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user: currentUser || "Unknown",
+          q1: q1_val,  // 안심여부
+          q2: q2_val,  // 최애기능 (record, ai, pdf 중 하나)
+          q3: q3_val   // 개선점
+        })
+      })
+      .then(() => {
+        alert("소중한 의견 감사합니다! 베타 테스터 인증이 완료되었습니다.");
+        closeSurveyModal();
+        completeMission(4);
+      })
+      .catch(err => {
+        console.error('Error:', err);
+        alert("오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+        btn.disabled = false;
+        btn.innerText = "다시 제출하기";
+      });
+    }
   </script>
+
 </body>
 </html>

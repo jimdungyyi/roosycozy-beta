@@ -152,3 +152,87 @@ input[type="text"]:focus { border-color: var(--sakura); box-shadow: 0 0 0 3px va
 .mission-card.completed .lock-overlay {
   display: none !important;
 }
+
+/* =========================================
+   [NEW] 가이드 체크리스트 스타일
+   ========================================= */
+.guide-box {
+  background: #f9fafb; border-radius: 12px; padding: 20px; margin-top: 20px;
+  border: 1px solid #eee;
+}
+.guide-label { font-weight: 700; color: #333; margin-bottom: 12px; font-size: 0.95rem; }
+
+.guide-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+.guide-item {
+  display: flex; align-items: center; width: 100%; text-align: left;
+  background: white; border: 1px solid var(--border); padding: 15px;
+  border-radius: 10px; cursor: pointer; transition: 0.2s;
+  color: var(--text-dark);
+}
+.guide-item:hover { border-color: var(--sakura); transform: translateY(-2px); }
+
+.guide-item .icon { font-size: 1.5rem; margin-right: 15px; }
+.guide-item .text { flex: 1; display: flex; flex-direction: column; }
+.guide-item .text strong { font-size: 0.95rem; margin-bottom: 4px; }
+.guide-item .text span { font-size: 0.85rem; color: #888; }
+.guide-item .text code { 
+  background: #eee; padding: 2px 6px; border-radius: 4px; 
+  font-family: var(--font-mono); font-weight: bold; font-size: 0.8rem;
+}
+
+.guide-item .check-mark { font-size: 1.2rem; margin-left: 10px; }
+
+/* 체크되었을 때 스타일 */
+.guide-item.checked {
+  background: var(--sakura-light); border-color: var(--sakura);
+}
+.guide-item.checked .check-mark { content: "✅"; } 
+/* 자바스크립트로 내부 텍스트를 바꿀 거지만 색상도 변경 */
+/* 설문조사 모달 스타일 */
+.survey-card { text-align: left; max-width: 400px; width: 90%; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.modal-header h3 { margin: 0; font-size: 1.2rem; }
+.btn-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999; }
+
+.survey-label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.9rem; color: #333; }
+.rating-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.rating-group label { cursor: pointer; font-size: 0.95rem; }
+
+textarea {
+  width: 100%; height: 100px; padding: 12px; border: 1px solid var(--border);
+  border-radius: 8px; resize: none; margin-bottom: 20px; font-family: var(--font-main);
+}
+textarea:focus { border-color: var(--sakura); outline: none; }
+
+/* SVG 아이콘 스타일 */
+.svg-icon {
+  width: 24px; height: 24px;
+  margin-right: 8px;
+  fill: white; /* 아이콘을 흰색으로 */
+}
+/* 설문조사 스타일 업그레이드 */
+.survey-intro { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.5; }
+.survey-section { margin-bottom: 24px; }
+.feature-select-group { display: flex; flex-direction: column; gap: 8px; }
+
+/* 객관식 카드 스타일 */
+.feature-card {
+  display: flex; align-items: center;
+  padding: 12px 16px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s;
+}
+.feature-card:hover { background: #f9f9f9; border-color: #ccc; }
+.feature-card input { margin-right: 12px; accent-color: #ff4f93; transform: scale(1.2); }
+.feature-card .f-text { font-size: 0.95rem; color: #333; font-weight: 500; }
+
+/* 선택되었을 때 강조 */
+.feature-card:has(input:checked) {
+  border-color: #ff4f93;
+  background: #fff0f6;
+  color: #ff4f93;
+}
