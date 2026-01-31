@@ -131,9 +131,40 @@ input[type="text"]:focus { border-color: var(--sakura); box-shadow: 0 0 0 3px va
   background: rgba(0,0,0,0.5); z-index: 1000;
   display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);
 }
-.modal-card {
-  background: white; padding: 40px; border-radius: 20px; text-align: center;
-  width: 90%; max-width: 360px; animation: popUp 0.4s;
+/* [수정] 모달창 크기 및 스크롤 문제 해결 */
+.modal-card.survey-card {
+  width: 90%;            /* 모바일에서 꽉 차게 */
+  max-width: 500px;      /* 너무 커지지 않게 제한 */
+  
+  /* ★ 핵심 1: 화면 높이의 85%까지만 커져라 (나머지는 여백) */
+  max-height: 85vh;      
+  
+  /* ★ 핵심 2: 헤더와 내용을 분리해서 관리 */
+  display: flex;
+  flex-direction: column; 
+  padding: 0;            /* 패딩은 내부에서 따로 줌 */
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* 헤더는 위에 딱 고정 (스크롤 안 됨) */
+.modal-header {
+  flex-shrink: 0;        /* 찌그러지지 않음 */
+  padding: 20px 20px 10px; /* 위쪽 여백 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0; /* 헤더 구분선 (선택사항) */
+}
+
+/* 내용 부분만 스크롤 생기게 (넘치면 드르륵) */
+.survey-body {
+  flex-grow: 1;
+  overflow-y: auto;      /* ★ 핵심 3: 내용이 길면 여기서만 스크롤! */
+  padding: 10px 20px 20px; /* 아래쪽 여백 */
+  
+  /* 모바일 터치 스크롤 부드럽게 */
+  -webkit-overflow-scrolling: touch; 
 }
 .modal-icon { font-size: 3rem; margin-bottom: 16px; }
 
