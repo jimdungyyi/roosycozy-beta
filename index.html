@@ -230,7 +230,7 @@
           text-align: center; 
           padding: 20px 40px 60px 40px; 
           width: 95vw; 
-          max-width: 900px; /* ★요청하신 대로 900px 통일 */
+          max-width: 900px; 
           margin: 0 auto;
           margin-bottom: 50px;
           position: relative; 
@@ -244,8 +244,7 @@
         </h3>
         
         <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            <strong>빨간 원</strong>으로 표시된 부분을 보시면<br>
-            자료가 정상적으로 생성(가져오기)된 것을 보실 수 있습니다.
+            <strong>빨간 원</strong>으로 표시된 부분을 보시면 자료가 정상적으로 생성된 것을 보실 수 있습니다.
         </p>
 
         <div style="
@@ -258,18 +257,6 @@
         ">
             <img src="step2_result.png" alt="결과 화면" style="width: 100%; display: block;">
             
-            <div style="
-                position: absolute;
-                top: 27%;    /* 위에서부터의 위치 */
-                right: 17%;  /* 오른쪽에서부터의 위치 */
-                width: 80px;
-                height: 40px;
-                border: 4px solid #ff0000;
-                border-radius: 50px;
-                box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-                pointer-events: none;
-            "></div>
-
             <div style="background: #f9f9f9; padding: 15px; font-size: 1rem; color: #555; border-top: 1px solid #eee;">
                 ✨ 샘플 데이터가 성공적으로 입력되었습니다.
             </div>
@@ -289,74 +276,102 @@
                 </div>
             </div>
 
-            <button id="btn-finish-step2" disabled onclick="completeMission(2)" style="
-                margin-top: 20px;
-                padding: 16px 50px; 
-                background: #ccc; 
-                color: #fff; 
-                border: none; 
-                border-radius: 50px; 
-                font-size: 1.1rem; 
-                cursor: not-allowed; 
-                transition: 0.3s; 
-                font-weight: 700;
-                width: 100%;
-                display: none; 
+            <div id="step2-btn-group" style="
+                display: none; /* 처음엔 숨겨둠 (체크하면 나옴) */
+                gap: 10px; 
+                justify-content: center; 
+                margin-top: 30px;
             ">
-                STEP 02 미션 완료하기 🎉
-            </button>
-        </div>
+                <button onclick="goBackToStep1()" style="
+                    padding: 16px 30px; 
+                    background: #fff; 
+                    color: #888; 
+                    border: 1px solid #ddd; 
+                    border-radius: 50px; 
+                    font-size: 1.1rem; 
+                    cursor: pointer; 
+                    font-weight: 600;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                ">
+                    ← 이전
+                </button>
 
-      </div>
-
-      <div class="mission-card locked" id="mission-3">
-        <div class="m-status">STEP 03</div>
-        <div class="m-content">
-          <h3>내 교직 생명을 지켜줄 'PDF' 검증하기</h3>
-          <p>우측 상단 <strong>[페이퍼]</strong> 버튼을 누르고 <strong>[PDF로 저장]</strong>을 해보세요.<br>교육청에 바로 제출해도 손색없는 이 3가지 포인트를 확인하세요.</p>
-          
-          <div class="m-action-area">
-            <div class="guide-box">
-              <p class="guide-label">✅ 완벽한 방어 서류가 갖춰야 할 조건 (3개)</p>
-              <div class="guide-list">
-                <button onclick="checkGuide(3, 1)" id="g3-1" class="guide-item">
-                  <span class="icon">📄</span>
-                  <div class="text"><strong>공식 양식 준수 확인</strong><span>'사실관계·증빙·조치 정리서'라는 제목과 깔끔한 레이아웃을 확인했나요?</span></div>
-                  <span class="check-mark">⬜</span>
+                <button onclick="goToStep3()" style="
+                    padding: 16px 50px; 
+                    background: #222; 
+                    color: #fff; 
+                    border: none; 
+                    border-radius: 50px; 
+                    font-size: 1.1rem; 
+                    cursor: pointer; 
+                    font-weight: 700;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                ">
+                    다음 단계로 이동 →
                 </button>
-                <button onclick="checkGuide(3, 2)" id="g3-2" class="guide-item">
-                  <span class="icon">⚖️</span>
-                  <div class="text"><strong>객관적 사실 정리</strong><span>감정적인 표현은 빠지고, 육하원칙에 따른 사실만 남았나요?</span></div>
-                  <span class="check-mark">⬜</span>
-                </button>
-                <button onclick="checkGuide(3, 3)" id="g3-3" class="guide-item">
-                  <span class="icon">🔐</span>
-                  <div class="text"><strong>무결성 해시(Hash) 확인</strong><span>문서 맨 아래, 위변조를 막아주는 암호 코드를 찾으셨나요?</span></div>
-                  <span class="check-mark">⬜</span>
-                </button>
-              </div>
-              <button onclick="completeMission(3)" id="btn-complete-3" class="btn-check" disabled>3가지를 모두 확인해주세요</button>
             </div>
-          </div>
         </div>
-        <div class="lock-overlay">🔒 이전 단계를 완료해 주세요</div>
+
       </div>
 
-      <div class="mission-card locked" id="mission-4">
-        <div class="m-status">FINAL</div>
-        <div class="m-content">
-          <h3>RoosyCozy 1기 요원 등록</h3>
-          <p>모든 방어 훈련을 마치셨습니다.<br>마지막으로 짧은 의견을 남기고 '베타 테스터' 인증을 완료하세요.</p>
-          <div class="m-action-area">
-            <button onclick="openSurveyModal()" class="btn-primary full-width" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
-                <path fill-rule="evenodd" d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 017.5 0h.375a1.875 1.875 0 011.875 1.875v16.5a1.875 1.875 0 01-1.875 1.875h-10.5a1.875 1.875 0 01-1.875-1.875V3.375zm11.25 3.75h-2.25a.75.75 0 010-1.5h2.25V3.375h-.375a2.25 2.25 0 00-4.5 0h-.375v2.25a.75.75 0 01-1.5 0v-2.25h-.375a2.25 2.25 0 00-4.5 0h-.375v2.25c0 .414.336.75.75.75h2.25a.75.75 0 010 1.5h-2.25v12.75h10.5V7.125z" clip-rule="evenodd" />
-              </svg>
-              설문 제출하고 인증 완료하기
-            </button>
-          </div>
+      <div id="step3-card" class="mission-card" style="
+          display: none; /* 평소엔 숨김 */
+          text-align: center; 
+          padding: 40px 30px; 
+          width: 95vw; 
+          max-width: 900px; 
+          margin: 0 auto;
+          position: relative; 
+          left: 50%; 
+          transform: translateX(-50%);
+      ">
+        <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 03</div>
+        <h2 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">내 교직 생명을 지켜줄 'PDF' 검증</h2>
+        
+        <p style="color: #666; margin-bottom: 40px; font-size: 1.1rem;">
+            우측 상단 <strong>[페이퍼 아이콘]</strong>을 눌러 PDF를 저장해 보세요.<br>
+            교육청에 바로 제출해도 손색없는 <strong>3가지 포인트</strong>를 확인해야 합니다.
+        </p>
+
+        <div style="
+            margin-bottom: 40px; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            border: 1px solid #eee; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+            height: 400px; 
+            background: #f4f4f4; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            color: #aaa;
+        ">
+            (여기에 STEP 03 관련 이미지를 넣으세요)
         </div>
-        <div class="lock-overlay">🔒 모든 미션을 완료해 주세요</div>
+
+        <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+            <div id="mission-box-3" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; margin-bottom: 20px;" onclick="toggleMission3()">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <span style="font-size: 1.8rem;">📑</span>
+                    <div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">PDF 변환을 완료하셨나요?</div>
+                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">공식 문서 양식으로 잘 나오는지 확인해 주세요.</div>
+                    </div>
+                </div>
+                <div id="custom-check-3" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                    <span id="check-icon-3" style="font-size: 1rem; color: #fff; display: none;">✔</span>
+                </div>
+            </div>
+            
+            <button id="btn-next-step3" disabled onclick="alert('다음 단계 준비중')" style="width: 100%; padding: 16px; background: #ccc; color: #fff; font-size: 1.1rem; font-weight: 700; border: none; border-radius: 50px; cursor: not-allowed; transition: 0.3s;">
+                STEP 03 완료 및 다음으로 →
+            </button>
+        </div>
+
+        <button onclick="goBackToStep2()" style="margin-top: 30px; padding: 10px 20px; background: #fff; color: #aaa; border: none; text-decoration: underline; cursor: pointer;">
+            ← 이전 단계(STEP 02)로 돌아가기
+        </button>
+
       </div>
 
       <div style="text-align: center; margin-top: 50px;">
@@ -633,7 +648,8 @@
         }
     }
 
-    // [STEP 2] Part 3 체크박스 클릭 -> 완료 버튼 활성화
+    // [STEP 2] Part 3 체크박스 클릭 -> 완료 버튼 활성화 (이걸 추가해야 작동합니다!)
+    // [STEP 2] Part 3 체크박스 클릭 -> 버튼 그룹 보이기
     let isPart3Checked = false;
 
     function togglePart3() {
@@ -642,35 +658,36 @@
         const missionBox = document.getElementById('mission-box-2-3');
         const customCheck = document.getElementById('custom-check-2-3');
         const checkIcon = document.getElementById('check-icon-2-3');
-        const finishBtn = document.getElementById('btn-finish-step2');
+        const btnGroup = document.getElementById('step2-btn-group'); // 버튼 그룹 가져오기
 
         if (isPart3Checked) {
-            // ✅ 체크됨
+            // ✅ 체크됨 (스타일 변경)
             missionBox.style.border = "2px solid #ff4f93";
             missionBox.style.background = "#fff0f6";
+            
             customCheck.style.background = "#ff4f93";
             customCheck.style.borderColor = "#ff4f93";
+            
             checkIcon.style.display = "block";
             
-            // 완료 버튼 등장
-            finishBtn.style.display = 'block';
-            setTimeout(() => {
-                finishBtn.disabled = false;
-                finishBtn.style.background = "#222";
-                finishBtn.style.cursor = "pointer";
-                finishBtn.style.boxShadow = "0 5px 15px rgba(0,0,0,0.2)";
-            }, 100);
+            // 버튼 그룹 보여주기 (Flex로 설정해야 가로 정렬됨)
+            btnGroup.style.display = 'flex';
+            
+            // 살짝 아래로 스크롤해서 버튼 보여주기
+            btnGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
         } else {
-            // ⬜ 체크 해제
+            // ⬜ 체크 해제 (원상복구)
             missionBox.style.border = "1px solid #e0e0e0";
             missionBox.style.background = "#fff";
+            
             customCheck.style.background = "#eee";
             customCheck.style.borderColor = "#ddd";
+            
             checkIcon.style.display = "none";
             
-            // 버튼 숨김
-            finishBtn.style.display = 'none';
+            // 버튼 그룹 숨기기
+            btnGroup.style.display = 'none';
         }
     }
 
@@ -842,6 +859,67 @@
             nextBtn.style.background = "#ccc"; // 회색
             nextBtn.style.cursor = "not-allowed";
             nextBtn.style.boxShadow = "none";
+        }
+    }
+    // [페이지 전환] STEP 2 -> STEP 3
+    function goToStep3() {
+        // 1. STEP 2의 모든 섹션 숨기기
+        document.getElementById('mission-2-part1').style.display = 'none';
+        document.getElementById('mission-2-part2').style.display = 'none';
+        document.getElementById('mission-2-part3').style.display = 'none';
+
+        // 2. STEP 3 화면 보여주기
+        document.getElementById('step3-card').style.display = 'block';
+
+        // 3. 화면 맨 위로 이동 & 진행률 업데이트
+        window.scrollTo(0, 0);
+        document.getElementById('progressBar').style.width = '50%';
+        document.getElementById('progress-text').innerText = '50%';
+    }
+
+    // [페이지 전환] STEP 3 -> STEP 2 (되돌아가기)
+    function goBackToStep2() {
+        // STEP 3 숨기기
+        document.getElementById('step3-card').style.display = 'none';
+
+        // STEP 2의 마지막 부분(Part 3)만 다시 보여주기
+        document.getElementById('mission-2-part3').style.display = 'block';
+        
+        // 스크롤 및 진행률 복구
+        window.scrollTo(0, 0);
+        document.getElementById('progressBar').style.width = '25%';
+        document.getElementById('progress-text').innerText = '25%';
+    }
+
+    // [STEP 3] 체크박스 기능
+    let isStep3Checked = false;
+    function toggleMission3() {
+        isStep3Checked = !isStep3Checked;
+        const box = document.getElementById('mission-box-3');
+        const check = document.getElementById('custom-check-3');
+        const icon = document.getElementById('check-icon-3');
+        const btn = document.getElementById('btn-next-step3');
+
+        if (isStep3Checked) {
+            box.style.border = "2px solid #ff4f93";
+            box.style.background = "#fff0f6";
+            check.style.background = "#ff4f93";
+            check.style.borderColor = "#ff4f93";
+            icon.style.display = "block";
+            btn.disabled = false;
+            btn.style.background = "#222";
+            btn.style.cursor = "pointer";
+            btn.style.boxShadow = "0 5px 15px rgba(0,0,0,0.2)";
+        } else {
+            box.style.border = "1px solid #e0e0e0";
+            box.style.background = "#fff";
+            check.style.background = "#eee";
+            check.style.borderColor = "#ddd";
+            icon.style.display = "none";
+            btn.disabled = true;
+            btn.style.background = "#ccc";
+            btn.style.cursor = "not-allowed";
+            btn.style.boxShadow = "none";
         }
     }
   </script>
