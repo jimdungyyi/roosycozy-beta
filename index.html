@@ -8,6 +8,37 @@
   <link rel="stylesheet" href="beta.css" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 로그인 입력창 스타일 */
+    #accessCode {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 6px;
+      height: 50px !important;
+      padding: 0 !important;
+    }
+    #accessCode::placeholder {
+      letter-spacing: 0px;
+      font-size: 0.95rem;
+      color: #bbb;
+      font-weight: normal;
+      line-height: 50px;
+    }
+    .input-group .btn-primary {
+      height: 50px !important;
+      padding: 0 24px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* STEP 1 미션 박스 스타일 */
+    #mission-box:hover {
+        background: #fafafa;
+    }
+  </style>
 </head>
 <body>
 
@@ -18,38 +49,6 @@
       <p class="login-desc">베타 액세스 코드를 입력해 주세요.</p>
       
       <div class="input-group">
-        
-        <style>
-          /* [수정] 입력창 다이어트 & 높이 고정 */
-          #accessCode {
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.1rem;       /* 글자 크기 약간 줄임 */
-            letter-spacing: 6px;     /* 숫자 간격은 여전히 시원하게 */
-    
-            height: 50px !important; /* ★ 핵심: 높이를 50px로 강제 고정 */
-            padding: 0 !important;   /* 위아래 불필요한 살(여백) 뺌 */
-          }
-
-          /* 안내 문구 스타일 */
-          #accessCode::placeholder {
-            letter-spacing: 0px;     /* 안내 문구는 좁게 */
-            font-size: 0.95rem;      /* 안내 문구 크기 조절 */
-            color: #bbb;
-            font-weight: normal;
-            line-height: 50px;       /* 수직 정렬 맞춤 */
-          }
-
-          /* [추가] 옆에 있는 '입장하기' 버튼도 키 맞추기 */
-          .input-group .btn-primary {
-            height: 50px !important; /* 입력창이랑 똑같은 높이 */
-            padding: 0 24px !important;
-            display: flex;
-            align-items: center;     /* 글자 정가운데로 */
-            justify-content: center;
-          }
-        </style>
-
         <input 
           type="text" 
           id="accessCode" 
@@ -58,7 +57,6 @@
           inputmode="numeric" 
           autocomplete="off" 
         />
-
         <button onclick="attemptLogin()" class="btn-primary">입장하기</button>
       </div>
       <p id="login-msg" class="error-msg"></p>
@@ -66,6 +64,7 @@
   </section>
 
   <main id="dashboard" style="display: none;">
+    
     <header class="beta-header">
       <div class="container header-inner">
         <div class="user-info">
@@ -80,161 +79,110 @@
       </div>
     </header>
 
-    <section class="welcome-sec container">
+    <section id="intro-text" class="welcome-sec container">
       <h2 class="wc-title">기록의 본질에 집중하세요.</h2>
       <p class="wc-desc">반갑습니다, 선생님. 실제 앱 화면을 보며 아래 미션을 순서대로 수행해 주세요.<br><strong>정답을 맞춰야 다음 단계가 열립니다.</strong></p>
     </section>
 
     <section class="mission-track container">
       
-      <div class="mission-card active" id="mission-1">
-        <div class="m-status">STEP 01</div>
-        <div class="m-content">
-          <h3>3초 컷! 가장 '본질적인' 기록법</h3>
-          <p>
-            RoosyCozy는 선생님의 시간을 뺏지 않습니다.<br>
-            아래 3가지 가이드를 따라 <strong>가장 빠른 기록</strong>을 경험해 보세요.
-          </p>
-          
-          <div class="m-action-area">
-            <a href="main.html" target="_blank" class="btn-outline small">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="btn-icon svg-icon" style="width:20px; height:20px; margin-right:6px; vertical-align:middle; fill:#ff4f93;">
-                <path fill-rule="evenodd" d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436h.004l-4.977 4.977a.75.75 0 01-1.06 0l-3.182-3.182a.75.75 0 010-1.061l4.977-4.977zm-4.66 9.638l3.182 3.182-4.977 4.977a.75.75 0 01-1.06 0l-1.591-1.591a.75.75 0 010-1.061l4.446-5.507zm11.488-11.488c-3.015.267-5.93 1.524-8.598 3.756l6.908 6.908c2.232-2.668 3.489-5.583 3.756-8.598-.56.56-1.147 1.107-1.758 1.638a.75.75 0 00.965 1.153c.739-.618 1.446-1.27 2.114-1.95.68-.668 1.332-1.375 1.95-2.114a.75.75 0 00-1.153-.965c-.531.611-1.078 1.198-1.638 1.758z" clip-rule="evenodd" />
-              </svg>
-              앱 실행하러 가기 (새창)
-            </a>
+      <div id="step1-card" class="mission-card active" style="text-align: center; padding: 40px 30px;"> <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 01</div>
+        <h2 style="font-size: 1.8rem; margin-bottom: 15px; color: #222; font-weight: 700;">가장 '본질적인' 기록법</h2>
+        <p style="color: #666; margin-bottom: 30px; font-size: 1rem;">RoosyCozy는 선생님의 시간을 뺏지 않습니다.<br>지금 바로 설치해서 가벼움을 경험해 보세요.</p>
+
+        <a href="RoosyCozy_Beta_Installer.zip" download class="download-btn" style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 20px 0; background: #ff4f93; color: #fff; font-size: 1.2rem; font-weight: 700; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 20px rgba(255, 79, 147, 0.3); transition: transform 0.2s; margin-bottom: 25px;">
+            📥 RoosyCozy 베타 다운로드
+        </a>
+
+        <div id="mission-box" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #f9f9f9; border: 1px solid #eee; cursor: pointer; transition: all 0.3s; text-align: left; margin-bottom: 25px;" onclick="toggleMission()">
             
-            <div class="guide-box">
-              <p class="guide-label">✅ 따라 해보고 체크해 주세요 (3개)</p>
-              
-              <div class="guide-list">
-                <button onclick="checkGuide(1, 1)" id="g1-1" class="guide-item">
-                  <span class="icon">✍️</span>
-                  <div class="text">
-                    <strong>문장으로 쓰지 마세요.</strong>
-                    <span>"복도에서 뜀" 처럼 키워드만 남겨도 충분해요.</span>
-                  </div>
-                  <span class="check-mark">⬜</span>
-                </button>
-
-                <button onclick="checkGuide(1, 2)" id="g1-2" class="guide-item">
-                  <span class="icon">⚡</span>
-                  <div class="text">
-                    <strong>마우스는 쓰지 마세요.</strong>
-                    <span>입력 후 <code>Ctrl + Enter</code>로 1초 만에 저장하세요.</span>
-                  </div>
-                  <span class="check-mark">⬜</span>
-                </button>
-
-                <button onclick="checkGuide(1, 3)" id="g1-3" class="guide-item">
-                  <span class="icon">⏱️</span>
-                  <div class="text">
-                    <strong>미루지 말고 지금 하세요.</strong>
-                    <span>기억이 휘발되기 전, 딱 10초만 투자하세요.</span>
-                  </div>
-                  <span class="check-mark">⬜</span>
-                </button>
-              </div>
-
-              <button onclick="completeMission(1)" id="btn-complete-1" class="btn-check" disabled>3가지를 모두 확인해주세요</button>
+            <div style="display: flex; align-items: center; gap: 20px;"> <span style="font-size: 1.8rem;">🚀</span>
+                <div>
+                    <div style="font-size: 1.1rem; font-weight: 600; color: #333;">다운로드 후 실행하셨나요?</div>
+                    <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">설치가 완료되면 이 박스를 클릭해 주세요.</div>
+                </div>
             </div>
-          </div>
+
+            <div id="custom-check" style="width: 24px; height: 24px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                <span id="check-icon" style="font-size: 0.9rem; color: #fff; display: none;">✔</span>
+            </div>
         </div>
+
+        <button id="btn-next-step1" disabled style="width: 100%; padding: 16px; background: #ccc; color: #fff; font-size: 1.1rem; font-weight: 700; border: none; border-radius: 50px; cursor: not-allowed; transition: 0.3s;" onclick="goToStep2()">
+            다음 미션으로 이동 →
+        </button>
+
       </div>
 
-      <div class="mission-card locked" id="mission-2">
-        <div class="m-status">STEP 02</div>
-        <div class="m-content">
-          <h3>AI가 찾아낸 '숨은 조언' 활용법</h3>
-          <p>
-            기록이 모이면 AI가 사건의 맥락을 연결합니다.<br>
-            상단 <strong>[AI 사건 증거 수집]</strong> 버튼을 누르고, 아래 3가지를 확인해 보세요.
-          </p>
-          
-          <div class="m-action-area">
-            
-            <div class="guide-box">
-              <p class="guide-label">✅ AI 분석 결과, 이것만은 꼭 확인하세요 (3개)</p>
-              
-              <div class="guide-list">
-                <button onclick="checkGuide(2, 1)" id="g2-1" class="guide-item">
-                  <span class="icon">👁️</span>
-                  <div class="text">
-                    <strong>타임라인 연결 확인</strong>
-                    <span>흩어져 있던 메모들이 시간 순서대로 정렬되었나요?</span>
-                  </div>
-                  <span class="check-mark">⬜</span>
-                </button>
-
-                <button onclick="checkGuide(2, 2)" id="g2-2" class="guide-item">
-                  <span class="icon">🤖</span>
-                  <div class="text">
-                    <strong>AI 조언(Advice) 읽기</strong>
-                    <span>파란색 박스 안의 '후속 조치 계획'을 읽어보셨나요?</span>
-                  </div>
-                  <span class="check-mark">⬜</span>
-                </button>
-
-                <button onclick="checkGuide(2, 3)" id="g2-3" class="guide-item">
-                  <span class="icon">⚠️</span>
-                  <div class="text">
-                    <strong>심각도 배지(Badge) 체크</strong>
-                    <span>'WARN(주의)' 배지가 떴다면, 공식 대응을 준비해야 합니다.</span>
-                  </div>
-                  <span class="check-mark">⬜</span>
-                </button>
-              </div>
-
-              <button onclick="completeMission(2)" id="btn-complete-2" class="btn-check" disabled>3가지를 모두 확인해주세요</button>
+      <div id="mission-2" class="mission-card" style="display: none; text-align: center; padding: 50px 30px; max-width: 600px; margin: 0 auto;">
+        
+        <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 02</div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #222; font-weight: 700;">AI 분석을 위한 '데이터' 준비</h3>
+        <p style="color: #666; margin-bottom: 30px; font-size: 1rem;">
+            빈 화면에서는 AI가 작동하지 않습니다.<br>
+            먼저 <strong>가상의 사건 데이터</strong>를 채워 넣어 볼까요?
+        </p>
+        
+        <div style="margin-bottom: 25px; border-radius: 16px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <img src="step2_sample.png" alt="샘플 데이터 로드 버튼 위치" style="width: 100%; display: block;">
+            <div style="background: #f9f9f9; padding: 12px; font-size: 0.9rem; color: #555; border-top: 1px solid #eee;">
+                👆 우측 상단 <strong>[초록색 펜 아이콘]</strong>을 찾아 클릭하세요.
             </div>
-          </div>
         </div>
-        <div class="lock-overlay">🔒 이전 단계를 완료해 주세요</div>
+          
+        <div id="mission-box-2" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left; margin-bottom: 30px;" onclick="toggleMission2()">
+            
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <span style="font-size: 1.8rem;">💾</span>
+                <div>
+                    <div style="font-size: 1.05rem; font-weight: 600; color: #333;">샘플 데이터를 불러오셨나요?</div>
+                    <div style="font-size: 0.85rem; color: #888; margin-top: 4px;">클릭해서 데이터가 채워졌다면 체크해주세요.</div>
+                </div>
+            </div>
+
+            <div id="custom-check-2" style="width: 24px; height: 24px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                <span id="check-icon-2" style="font-size: 0.9rem; color: #fff; display: none;">✔</span>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; justify-content: center;">
+            <button onclick="goBackToStep1()" style="padding: 15px 25px; background: #fff; color: #888; border: 1px solid #ddd; border-radius: 50px; font-size: 1rem; cursor: pointer; font-weight: 600;">
+                ← 이전
+            </button>
+
+            <button id="btn-next-step2" disabled onclick="alert('다음 단계로 넘어갑니다! (3페이지 작업 예정)')" style="padding: 15px 40px; background: #ccc; color: #fff; border: none; border-radius: 50px; font-size: 1rem; cursor: not-allowed; transition: 0.3s; font-weight: 700;">
+                다음 미션으로 이동 →
+            </button>
+        </div>
+
       </div>
 
       <div class="mission-card locked" id="mission-3">
         <div class="m-status">STEP 03</div>
         <div class="m-content">
           <h3>내 교직 생명을 지켜줄 'PDF' 검증하기</h3>
-          <p>
-            우측 상단 <strong>[페이퍼]</strong> 버튼을 누르고 <strong>[PDF로 저장]</strong>을 해보세요.<br>
-            교육청에 바로 제출해도 손색없는 이 3가지 포인트를 확인하세요.
-          </p>
+          <p>우측 상단 <strong>[페이퍼]</strong> 버튼을 누르고 <strong>[PDF로 저장]</strong>을 해보세요.<br>교육청에 바로 제출해도 손색없는 이 3가지 포인트를 확인하세요.</p>
           
           <div class="m-action-area">
-            
             <div class="guide-box">
               <p class="guide-label">✅ 완벽한 방어 서류가 갖춰야 할 조건 (3개)</p>
-              
               <div class="guide-list">
                 <button onclick="checkGuide(3, 1)" id="g3-1" class="guide-item">
                   <span class="icon">📄</span>
-                  <div class="text">
-                    <strong>공식 양식 준수 확인</strong>
-                    <span>'사실관계·증빙·조치 정리서'라는 제목과 깔끔한 레이아웃을 확인했나요?</span>
-                  </div>
+                  <div class="text"><strong>공식 양식 준수 확인</strong><span>'사실관계·증빙·조치 정리서'라는 제목과 깔끔한 레이아웃을 확인했나요?</span></div>
                   <span class="check-mark">⬜</span>
                 </button>
-
                 <button onclick="checkGuide(3, 2)" id="g3-2" class="guide-item">
                   <span class="icon">⚖️</span>
-                  <div class="text">
-                    <strong>객관적 사실 정리</strong>
-                    <span>감정적인 표현은 빠지고, 육하원칙에 따른 사실만 남았나요?</span>
-                  </div>
+                  <div class="text"><strong>객관적 사실 정리</strong><span>감정적인 표현은 빠지고, 육하원칙에 따른 사실만 남았나요?</span></div>
                   <span class="check-mark">⬜</span>
                 </button>
-
                 <button onclick="checkGuide(3, 3)" id="g3-3" class="guide-item">
                   <span class="icon">🔐</span>
-                  <div class="text">
-                    <strong>무결성 해시(Hash) 확인</strong>
-                    <span>문서 맨 아래, 위변조를 막아주는 암호 코드를 찾으셨나요?</span>
-                  </div>
+                  <div class="text"><strong>무결성 해시(Hash) 확인</strong><span>문서 맨 아래, 위변조를 막아주는 암호 코드를 찾으셨나요?</span></div>
                   <span class="check-mark">⬜</span>
                 </button>
               </div>
-
               <button onclick="completeMission(3)" id="btn-complete-3" class="btn-check" disabled>3가지를 모두 확인해주세요</button>
             </div>
           </div>
@@ -259,63 +207,43 @@
         <div class="lock-overlay">🔒 모든 미션을 완료해 주세요</div>
       </div>
 
+      <div style="text-align: center; margin-top: 50px;">
+        <button onclick="resetProgress()" style="color:#aaa; background:none; border:none; text-decoration:underline; cursor:pointer; font-size:0.8rem;">[테스트용] 진행 상황 초기화</button>
+      </div>
+
+    </section>
+
     <div id="survey-modal" class="modal-overlay" style="display: none;">
       <div class="modal-card survey-card">
         <div class="modal-header">
           <h3>수고하셨습니다, 선생님! 🎉</h3>
           <button onclick="closeSurveyModal()" class="btn-close">✕</button>
         </div>
-        
         <div class="survey-body">
           <div class="survey-section">
-            <p class="survey-intro">
-              오늘 훈련이 선생님의 막연한 불안감을 조금이라도 덜어드렸기를 바랍니다.
-            </p>
+            <p class="survey-intro">오늘 훈련이 선생님의 막연한 불안감을 조금이라도 덜어드렸기를 바랍니다.</p>
             <label class="survey-label">Q1. RoosyCozy를 써보시니 마음이 좀 편안해지셨나요?</label>
-            <textarea id="q1-text"></textarea> </div>
-
+            <textarea id="q1-text"></textarea> 
+          </div>
           <div class="survey-section">
             <label class="survey-label">Q2. "이거 하나 때문이라도 쓴다!" 싶은 최고의 기능은?</label>
             <div class="feature-select-group">
-              <label class="feature-card">
-                <input type="radio" name="q2_feature" value="record" checked>
-                <span class="f-text">⚡ 3초 컷! 초간편 기록 (단축키)</span>
-              </label>
-              <label class="feature-card">
-                <input type="radio" name="q2_feature" value="ai">
-                <span class="f-text">🧠 맥락을 잇는 AI 타임라인</span>
-              </label>
-              <label class="feature-card">
-                <input type="radio" name="q2_feature" value="pdf">
-                <span class="f-text">📄 교육청 제출용 PDF 자동 생성</span>
-              </label>
-              <label class="feature-card">
-                <input type="radio" name="q2_feature" value="guide">
-                <span class="f-text">💬 감정 쏙 뺀 '톤앤매너 가이드'</span>
-              </label>
+              <label class="feature-card"><input type="radio" name="q2_feature" value="record" checked><span class="f-text">⚡ 3초 컷! 초간편 기록</span></label>
+              <label class="feature-card"><input type="radio" name="q2_feature" value="ai"><span class="f-text">🧠 맥락을 잇는 AI 타임라인</span></label>
+              <label class="feature-card"><input type="radio" name="q2_feature" value="pdf"><span class="f-text">📄 교육청 제출용 PDF 자동 생성</span></label>
+              <label class="feature-card"><input type="radio" name="q2_feature" value="guide"><span class="f-text">💬 감정 쏙 뺀 '톤앤매너 가이드'</span></label>
             </div>
           </div>
-
           <div class="survey-section">
             <label class="survey-label">Q3. 더 완벽한 방어막을 위해 바라는 점을 알려주세요.</label>
             <textarea id="q3-text"></textarea>
           </div>
-          
           <button onclick="submitSurvey()" id="btn-submit-survey" class="btn-primary full-width" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top:10px;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;">
-              <path fill-rule="evenodd" d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 017.5 0h.375a1.875 1.875 0 011.875 1.875v16.5a1.875 1.875 0 01-1.875 1.875h-10.5a1.875 1.875 0 01-1.875-1.875V3.375zm11.25 3.75h-2.25a.75.75 0 010-1.5h2.25V3.375h-.375a2.25 2.25 0 00-4.5 0h-.375v2.25a.75.75 0 01-1.5 0v-2.25h-.375a2.25 2.25 0 00-4.5 0h-.375v2.25c0 .414.336.75.75.75h2.25a.75.75 0 010 1.5h-2.25v12.75h10.5V7.125z" clip-rule="evenodd" />
-            </svg>
             피드백 제출하고 인증 완료하기
           </button>
         </div>
       </div>
     </div>
-
-      <div style="text-align: center; margin-top: 50px;">
-        <button onclick="resetProgress()" style="color:#aaa; background:none; border:none; text-decoration:underline; cursor:pointer; font-size:0.8rem;">[테스트용] 진행 상황 초기화</button>
-      </div>
-
-    </section>
 
     <div id="congrats-modal" class="modal-overlay" style="display: none;">
       <div class="modal-card">
@@ -328,24 +256,17 @@
   </main>
 
   <script>
-    // 1. 유효 코드 및 로컬 스토리지 키 설정
-    const STORAGE_KEY = 'roosy_beta_v3'; // 버전 바뀌었으니 키도 변경 (로그인 풀리게)
-    
-    // [수정됨] 이제 복잡한 생성 로직 대신, 허용할 PIN 번호를 여기에 적으세요.
-    // 나중에 엑셀에서 만든 난수 100개를 여기에 콤마(,)로 구분해서 붙여넣으면 됩니다.
-    const validCodes = [
-        '000000', 
-        '123456', 
-        '111111' 
-    ];
+    // === 1. 설정 및 변수 ===
+    const STORAGE_KEY = 'roosy_beta_v3';
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgDDADz5V_PEeVBSpw0gsGbNNIJp_h21rQuR_M6kKYRhn8wSYICadneZOFLhz001WV3A/exec"; 
+    const validCodes = ['000000', '123456', '111111']; // 유효 PIN 번호
 
     let currentUser = null;
     let currentStep = 1;
 
-    // 페이지 로드 시 저장된 데이터 확인
+    // === 2. 초기 로드 및 로그인 ===
     window.onload = function() {
       const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      // 저장된 유저가 유효한 목록에 있는지 확인
       if (savedData && validCodes.includes(savedData.user)) {
         currentUser = savedData.user;
         loginSuccess(currentUser);
@@ -355,8 +276,7 @@
 
     function attemptLogin() {
       const input = document.getElementById('accessCode');
-      // 공백 제거만 하고 대문자 변환(toUpperCase)은 뺐습니다 (숫자니까요)
-      const code = input.value.trim(); 
+      const code = input.value.trim();
       
       if (validCodes.includes(code)) {
         currentUser = code;
@@ -371,38 +291,17 @@
       }
     }
 
-    // 페이지 로드 시 저장된 데이터 확인
-    window.onload = function() {
-      const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (savedData && validCodes.includes(savedData.user)) {
-        currentUser = savedData.user;
-        loginSuccess(currentUser);
-        restoreProgress(savedData.step);
-      }
-    };
-
-    function attemptLogin() {
-      const input = document.getElementById('accessCode');
-      const code = input.value.trim().toUpperCase();
-      if (validCodes.includes(code)) {
-        currentUser = code;
-        currentStep = 1;
-        saveData();
-        loginSuccess(code);
-      } else {
-        const msg = document.getElementById('login-msg');
-        msg.innerText = "유효하지 않은 코드입니다.";
-        input.classList.add('shake');
-        setTimeout(() => input.classList.remove('shake'), 500);
-      }
-    }
-
     function loginSuccess(userId) {
       document.getElementById('login-screen').style.display = 'none';
       document.getElementById('dashboard').style.display = 'block';
       document.getElementById('user-id-display').innerText = userId;
     }
 
+    document.getElementById('accessCode').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') attemptLogin();
+    });
+
+    // === 3. 데이터 저장 및 진행률 관리 ===
     function saveData() {
       if(!currentUser) return;
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
@@ -413,61 +312,118 @@
 
     function restoreProgress(step) {
       currentStep = step;
+      // 이전 단계들 완료 처리
       for (let i = 1; i < step; i++) markAsDoneUI(i);
-      if (step <= 4) activateStepUI(step);
+      
+      // 현재 단계 활성화 (STEP 1은 toggleMission 때문에 별도 처리 필요 없음)
+      if (step <= 4) {
+          activateStepUI(step);
+          if (step === 1) {
+              // STEP 1으로 돌아온 경우 체크박스 상태 확인 필요하면 여기서 처리
+          }
+      }
+      
       updateProgressBar(step);
+      
       if (step > 4) {
         markAsDoneUI(4);
         updateProgressBar(5);
+        // 완료 모달은 이미 봤을 테니 복원 시에는 띄우지 않음
       }
     }
 
-    // ★ 정답 체크 로직 (핵심) ★
-    function selectOption(step, value) {
-      // 1. 선택 스타일 적용
-      const group = document.getElementById(`q${step}-options`);
-      const btns = group.querySelectorAll('.choice-btn');
-      btns.forEach(btn => btn.classList.remove('selected'));
-      event.target.classList.add('selected');
-
-      const btnComplete = document.getElementById(`btn-complete-${step}`);
-
-      // 2. 정답 여부 확인
-      let isCorrect = false;
-      if (step === 1 && value === 'shortcut') isCorrect = true; // Ctrl+Enter
-      if (step === 2 && value === 'warn') isCorrect = true;     // WARN 배지
-      if (step === 3 && value === 'hash') isCorrect = true;     // 무결성 해시
-
-      // 3. 버튼 상태 변경
-      if (isCorrect) {
-        btnComplete.disabled = false;
-        btnComplete.innerText = "✅ 정답입니다! (다음 단계로)";
-        btnComplete.classList.add('ready');
-      } else {
-        btnComplete.disabled = true;
-        btnComplete.innerText = "다시 확인해 보세요 (오답)";
-        btnComplete.classList.remove('ready');
-      }
+    function updateProgressBar(step) {
+      let percent = 0;
+      if (step > 1) percent = ((step - 1) / 4) * 100;
+      if (step > 4) percent = 100;
+      document.getElementById('progressBar').style.width = `${percent}%`;
+      document.getElementById('progress-text').innerText = `${Math.round(percent)}%`;
     }
 
-    // [NEW] 가이드 체크 로직 (3개 다 체크해야 완료)
+    // === 4. 단계별 동작 로직 ===
+
+    // [STEP 1] 체크박스 디자인 & 동작
+    let isStep1Checked = false;
+    function toggleMission() {
+        if(currentStep > 1) return; // 이미 완료된 단계면 수정 불가
+
+        isStep1Checked = !isStep1Checked;
+        const missionBox = document.getElementById('mission-box');
+        const customCheck = document.getElementById('custom-check');
+        const checkIcon = document.getElementById('check-icon');
+        const nextBtn = document.getElementById('btn-next-step1');
+
+        if (isStep1Checked) {
+            missionBox.style.border = "2px solid #ff4f93";
+            missionBox.style.background = "#fff0f6";
+            customCheck.style.background = "#ff4f93";
+            checkIcon.style.display = "block";
+            nextBtn.disabled = false;
+            nextBtn.style.background = "#222";
+            nextBtn.style.cursor = "pointer";
+            nextBtn.style.boxShadow = "0 5px 15px rgba(0,0,0,0.2)";
+        } else {
+            missionBox.style.border = "1px solid #e0e0e0";
+            missionBox.style.background = "#fff";
+            customCheck.style.background = "#eee";
+            checkIcon.style.display = "none";
+            nextBtn.disabled = true;
+            nextBtn.style.background = "#ccc";
+            nextBtn.style.cursor = "not-allowed";
+            nextBtn.style.boxShadow = "none";
+        }
+    }
+
+    function goToStep2() {
+        // 1. 현재 단계(STEP 01) 숨기기
+        document.getElementById('step1-card').style.display = 'none';
+
+        // 2. 상단 안내 문구(Welcome Text) 숨기기 (✨ 추가된 기능)
+        document.getElementById('intro-text').style.display = 'none';
+
+        // 3. 다음 단계(STEP 02) 보여주기
+        const step2 = document.getElementById('mission-2');
+        step2.style.display = 'block';
+
+        // 4. 화면 맨 위로 올리기
+        window.scrollTo(0, 0);
+
+        // 5. 진행률 업데이트 (25%)
+        document.getElementById('progressBar').style.width = '25%';
+        document.getElementById('progress-text').innerText = '25%';
+    }
+
+    function goBackToStep1() {
+        // 1. 현재 단계(STEP 02) 숨기기
+        document.getElementById('mission-2').style.display = 'none';
+
+        // 2. 상단 안내 문구 다시 보여주기 (✨ 추가된 기능)
+        document.getElementById('intro-text').style.display = 'block';
+
+        // 3. 이전 단계(STEP 01) 보여주기
+        document.getElementById('step1-card').style.display = 'block';
+
+        // 4. 화면 맨 위로
+        window.scrollTo(0, 0);
+
+        // 5. 진행률 원상복구 (0%)
+        document.getElementById('progressBar').style.width = '0%';
+        document.getElementById('progress-text').innerText = '0%';
+    }
+
+    // [STEP 2 & 3] 가이드 체크 로직
     const guideStatus = {
-      1: { 1: false, 2: false, 3: false }, // step 1의 항목 3개
-      // step 2, 3도 나중에 이런 식으로 확장 가능
       2: { 1: false, 2: false, 3: false },
-
       3: { 1: false, 2: false, 3: false }
     };
 
     function checkGuide(step, itemIndex) {
-      // 1. 상태 업데이트
-      guideStatus[step][itemIndex] = !guideStatus[step][itemIndex]; // 토글(켰다 껐다)
+      guideStatus[step][itemIndex] = !guideStatus[step][itemIndex]; // 토글
       const isChecked = guideStatus[step][itemIndex];
 
-      // 2. UI 업데이트 (스타일 및 체크표시)
+      // UI 업데이트
       const btn = document.getElementById(`g${step}-${itemIndex}`);
       const checkMark = btn.querySelector('.check-mark');
-      
       if (isChecked) {
         btn.classList.add('checked');
         checkMark.innerText = "✅";
@@ -476,7 +432,7 @@
         checkMark.innerText = "⬜";
       }
 
-      // 3. 전체 완료 여부 확인
+      // 전체 완료 확인
       const allChecked = Object.values(guideStatus[step]).every(val => val === true);
       const completeBtn = document.getElementById(`btn-complete-${step}`);
 
@@ -491,6 +447,7 @@
       }
     }
 
+    // [공통] 미션 완료 처리
     function completeMission(step) {
       markAsDoneUI(step);
       const nextStep = step + 1;
@@ -504,7 +461,7 @@
             document.getElementById(`mission-${nextStep}`).scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 300);
       } else {
-        updateProgressBar(5); // 100%
+        updateProgressBar(5);
         showCongrats();
       }
     }
@@ -519,74 +476,45 @@
       if(card) {
         card.classList.remove('active', 'locked');
         card.classList.add('completed');
+        
+        // 버튼 비활성화 처리
         const btns = card.querySelectorAll('button, a');
         btns.forEach(el => {
-            el.disabled = true;
-            if(el.tagName === 'BUTTON' && el.classList.contains('btn-check')) {
-                el.innerText = "미션 클리어";
+            // 다운로드 버튼은 계속 눌러도 되니 제외, 완료 버튼만 비활성
+            if(el.id.includes('btn-next') || el.id.includes('btn-complete')) {
+                 el.disabled = true;
+                 if(el.tagName === 'BUTTON') el.innerText = "미션 클리어";
             }
+            // 미션 박스 클릭 이벤트 제거 (STEP 1)
+            if(el.id === 'mission-box') el.onclick = null;
         });
       }
     }
 
-    function updateProgressBar(step) {
-      let percent = 0;
-      if (step > 1) percent = ((step - 1) / 4) * 100;
-      if (step > 4) percent = 100;
-      document.getElementById('progressBar').style.width = `${percent}%`;
-      document.getElementById('progress-text').innerText = `${Math.round(percent)}%`;
-    }
-
-    function showCongrats() {
-      setTimeout(() => { document.getElementById('congrats-modal').style.display = 'flex'; }, 500);
-    }
+    // === 5. 설문조사 및 모달 ===
+    function openSurveyModal() { document.getElementById('survey-modal').style.display = 'flex'; }
+    function closeSurveyModal() { document.getElementById('survey-modal').style.display = 'none'; }
     function closeModal() { document.getElementById('congrats-modal').style.display = 'none'; }
-    function resetProgress() {
-      localStorage.removeItem(STORAGE_KEY);
-      alert("초기화되었습니다.");
-      location.reload();
-    }
-
-    document.getElementById('accessCode').addEventListener('keypress', function (e) {
-      if (e.key === 'Enter') attemptLogin();
-    });
-    /* =========================================
-       [NEW] 구글 시트로 설문 전송하기
-       ========================================= */
-    // ★ 여기에 아까 복사한 '웹 앱 URL'을 붙여넣으세요! (따옴표 안에)
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgDDADz5V_PEeVBSpw0gsGbNNIJp_h21rQuR_M6kKYRhn8wSYICadneZOFLhz001WV3A/exec"; 
-
-    function openSurveyModal() {
-      document.getElementById('survey-modal').style.display = 'flex';
-    }
-    function closeSurveyModal() {
-      document.getElementById('survey-modal').style.display = 'none';
-    }
 
     function submitSurvey() {
       const btn = document.getElementById('btn-submit-survey');
-      
-      // 입력값 가져오기
       const q1_val = document.getElementById('q1-text').value; 
-      // 라디오 버튼 선택값 가져오기 (체크 안 됐을 때 에러 방지용 안전장치 추가)
       const q2_input = document.querySelector('input[name="q2_feature"]:checked');
       const q2_val = q2_input ? q2_input.value : "선택안함";
       const q3_val = document.getElementById('q3-text').value;
 
-      // 로딩 표시
       btn.disabled = true;
       btn.innerText = "전송 중...";
 
-      // 구글 시트로 전송 (정석 데이터 구조)
       fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           user: currentUser || "Unknown",
-          q1: q1_val,  // 안심여부
-          q2: q2_val,  // 최애기능 (record, ai, pdf 중 하나)
-          q3: q3_val   // 개선점
+          q1: q1_val,
+          q2: q2_val,
+          q3: q3_val
         })
       })
       .then(() => {
@@ -600,6 +528,12 @@
         btn.disabled = false;
         btn.innerText = "다시 제출하기";
       });
+    }
+
+    function resetProgress() {
+      localStorage.removeItem(STORAGE_KEY);
+      alert("진행 상황이 초기화되었습니다. 새로고침합니다.");
+      location.reload();
     }
   </script>
 
