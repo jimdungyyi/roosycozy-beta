@@ -114,44 +114,196 @@
 
       </div>
 
-      <div id="mission-2" class="mission-card" style="display: none; text-align: center; padding: 50px 30px; max-width: 600px; margin: 0 auto;">
+      <div id="mission-2-part1" class="mission-card" style="
+          display: none; 
+          text-align: center; 
+          padding: 20px 40px 60px 40px; 
+          width: 95vw; 
+          max-width: 900px; 
+          margin: 0 auto;
+          margin-bottom: 30px; /* 다음 섹션과의 간격 */
+          position: relative; 
+          left: 50%; 
+          transform: translateX(-50%);
+      ">
         
         <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 02</div>
-        <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #222; font-weight: 700;">AI 분석을 위한 '데이터' 준비</h3>
-        <p style="color: #666; margin-bottom: 30px; font-size: 1rem;">
+        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">AI 분석을 위한 '데이터' 준비</h3>
+        
+        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
             빈 화면에서는 AI가 작동하지 않습니다.<br>
             먼저 <strong>가상의 사건 데이터</strong>를 채워 넣어 볼까요?
         </p>
         
-        <div style="margin-bottom: 25px; border-radius: 16px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-            <img src="step2_sample.png" alt="샘플 데이터 로드 버튼 위치" style="width: 100%; display: block;">
-            <div style="background: #f9f9f9; padding: 12px; font-size: 0.9rem; color: #555; border-top: 1px solid #eee;">
+        <div style="
+            margin-bottom: 40px; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            border: 1px solid #eee; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+            position: relative; 
+        ">
+            <img src="step2_sample.png" alt="샘플 데이터 로드" style="width: 100%; display: block;">
+            <div style="background: #f9f9f9; padding: 15px; font-size: 1rem; color: #555; border-top: 1px solid #eee;">
                 👆 우측 상단 <strong>[초록색 펜 아이콘]</strong>을 찾아 클릭하세요.
             </div>
         </div>
           
-        <div id="mission-box-2" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left; margin-bottom: 30px;" onclick="toggleMission2()">
+        <div style="max-width: 600px; margin: 0 auto;">
             
-            <div style="display: flex; align-items: center; gap: 16px;">
-                <span style="font-size: 1.8rem;">💾</span>
-                <div>
-                    <div style="font-size: 1.05rem; font-weight: 600; color: #333;">샘플 데이터를 불러오셨나요?</div>
-                    <div style="font-size: 0.85rem; color: #888; margin-top: 4px;">클릭해서 데이터가 채워졌다면 체크해주세요.</div>
+            <div id="mission-box-2-1" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="togglePart1()">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <span style="font-size: 1.8rem;">💾</span>
+                    <div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">샘플 데이터를 불러오셨나요?</div>
+                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭해서 다음 단계(타임라인)를 확인하세요.</div>
+                    </div>
+                </div>
+                <div id="custom-check-2-1" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                    <span id="check-icon-2-1" style="font-size: 1rem; color: #fff; display: none;">✔</span>
                 </div>
             </div>
 
-            <div id="custom-check-2" style="width: 24px; height: 24px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                <span id="check-icon-2" style="font-size: 0.9rem; color: #fff; display: none;">✔</span>
+            <button onclick="goBackToStep1()" style="margin-top: 20px; padding: 10px 20px; background: #fff; color: #aaa; border: none; text-decoration: underline; cursor: pointer;">
+                ← 처음으로 돌아가기
+            </button>
+        </div>
+
+      </div>
+
+      <div id="mission-2-part2" class="mission-card" style="
+          display: none; 
+          text-align: center; 
+          padding: 20px 40px 60px 40px; 
+          width: 95vw; 
+          max-width: 900px; 
+          margin: 0 auto;
+          margin-bottom: 30px;
+          position: relative; 
+          left: 50%; 
+          transform: translateX(-50%);
+          border-top: 1px solid #eee; /* 위 섹션과 구분선 */
+      ">
+        
+        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">
+            데이터 불러오기 '확인'
+        </h3>
+        
+        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
+            화면에 팝업창이 떴나요?<br>
+            기존 데이터를 덮어쓰고 새로운 샘플을 가져옵니다.
+        </p>
+
+        <div style="
+            margin-bottom: 40px; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            border: 1px solid #eee; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+            position: relative; 
+        ">
+            <img src="step2_confirm.png" alt="확인 팝업창" style="width: 100%; display: block;">
+            
+            <div style="background: #f9f9f9; padding: 15px; font-size: 1rem; color: #555; border-top: 1px solid #eee;">
+                👆 파란색 <strong>[확인]</strong> 버튼을 눌러주세요.
             </div>
         </div>
 
-        <div style="display: flex; gap: 10px; justify-content: center;">
-            <button onclick="goBackToStep1()" style="padding: 15px 25px; background: #fff; color: #888; border: 1px solid #ddd; border-radius: 50px; font-size: 1rem; cursor: pointer; font-weight: 600;">
-                ← 이전
-            </button>
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div id="mission-box-2-2" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="togglePart2()">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <span style="font-size: 1.8rem;">🆗</span>
+                    <div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">확인 버튼을 누르셨나요?</div>
+                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 데이터가 로드됩니다.</div>
+                    </div>
+                </div>
+                <div id="custom-check-2-2" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                    <span id="check-icon-2-2" style="font-size: 1rem; color: #fff; display: none;">✔</span>
+                </div>
+            </div>
+        </div>
+      </div>
 
-            <button id="btn-next-step2" disabled onclick="alert('다음 단계로 넘어갑니다! (3페이지 작업 예정)')" style="padding: 15px 40px; background: #ccc; color: #fff; border: none; border-radius: 50px; font-size: 1rem; cursor: not-allowed; transition: 0.3s; font-weight: 700;">
-                다음 미션으로 이동 →
+      <div id="mission-2-part3" class="mission-card" style="
+          display: none; 
+          text-align: center; 
+          padding: 20px 40px 60px 40px; 
+          width: 95vw; 
+          max-width: 900px; /* ★요청하신 대로 900px 통일 */
+          margin: 0 auto;
+          margin-bottom: 50px;
+          position: relative; 
+          left: 50%; 
+          transform: translateX(-50%);
+          border-top: 1px solid #eee;
+      ">
+        
+        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">
+            자료 가져오기 완료!
+        </h3>
+        
+        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
+            <strong>빨간 원</strong>으로 표시된 부분을 보시면<br>
+            자료가 정상적으로 생성(가져오기)된 것을 보실 수 있습니다.
+        </p>
+
+        <div style="
+            margin-bottom: 40px; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            border: 1px solid #eee; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+            position: relative; 
+        ">
+            <img src="step2_result.png" alt="결과 화면" style="width: 100%; display: block;">
+            
+            <div style="
+                position: absolute;
+                top: 27%;    /* 위에서부터의 위치 */
+                right: 17%;  /* 오른쪽에서부터의 위치 */
+                width: 80px;
+                height: 40px;
+                border: 4px solid #ff0000;
+                border-radius: 50px;
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+                pointer-events: none;
+            "></div>
+
+            <div style="background: #f9f9f9; padding: 15px; font-size: 1rem; color: #555; border-top: 1px solid #eee;">
+                ✨ 샘플 데이터가 성공적으로 입력되었습니다.
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div id="mission-box-2-3" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="togglePart3()">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <span style="font-size: 1.8rem;">👀</span>
+                    <div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">자료가 생성된 걸 확인하셨나요?</div>
+                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">확인했다면 체크하여 STEP 02를 완료하세요.</div>
+                    </div>
+                </div>
+                <div id="custom-check-2-3" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                    <span id="check-icon-2-3" style="font-size: 1rem; color: #fff; display: none;">✔</span>
+                </div>
+            </div>
+
+            <button id="btn-finish-step2" disabled onclick="completeMission(2)" style="
+                margin-top: 20px;
+                padding: 16px 50px; 
+                background: #ccc; 
+                color: #fff; 
+                border: none; 
+                border-radius: 50px; 
+                font-size: 1.1rem; 
+                cursor: not-allowed; 
+                transition: 0.3s; 
+                font-weight: 700;
+                width: 100%;
+                display: none; 
+            ">
+                STEP 02 미션 완료하기 🎉
             </button>
         </div>
 
@@ -374,41 +526,152 @@
         }
     }
 
+    // [페이지 전환] STEP 1 -> STEP 2 (Part 1)
     function goToStep2() {
-        // 1. 현재 단계(STEP 01) 숨기기
         document.getElementById('step1-card').style.display = 'none';
-
-        // 2. 상단 안내 문구(Welcome Text) 숨기기 (✨ 추가된 기능)
         document.getElementById('intro-text').style.display = 'none';
 
-        // 3. 다음 단계(STEP 02) 보여주기
-        const step2 = document.getElementById('mission-2');
-        step2.style.display = 'block';
+        // Part 1만 보여주기
+        const part1 = document.getElementById('mission-2-part1');
+        part1.style.display = 'block';
+        
+        // Part 2는 숨기기 (초기화)
+        document.getElementById('mission-2-part2').style.display = 'none';
 
-        // 4. 화면 맨 위로 올리기
         window.scrollTo(0, 0);
-
-        // 5. 진행률 업데이트 (25%)
         document.getElementById('progressBar').style.width = '25%';
         document.getElementById('progress-text').innerText = '25%';
     }
 
+    // [페이지 전환] STEP 2 -> STEP 1
     function goBackToStep1() {
-        // 1. 현재 단계(STEP 02) 숨기기
-        document.getElementById('mission-2').style.display = 'none';
+        document.getElementById('mission-2-part1').style.display = 'none';
+        document.getElementById('mission-2-part2').style.display = 'none'; // Part 2도 숨김
 
-        // 2. 상단 안내 문구 다시 보여주기 (✨ 추가된 기능)
         document.getElementById('intro-text').style.display = 'block';
-
-        // 3. 이전 단계(STEP 01) 보여주기
         document.getElementById('step1-card').style.display = 'block';
 
-        // 4. 화면 맨 위로
         window.scrollTo(0, 0);
-
-        // 5. 진행률 원상복구 (0%)
         document.getElementById('progressBar').style.width = '0%';
         document.getElementById('progress-text').innerText = '0%';
+    }
+
+    // [STEP 2] Part 1 체크박스 클릭 -> Part 2 열기
+    let isPart1Checked = false;
+
+    function togglePart1() {
+        isPart1Checked = !isPart1Checked;
+        
+        const missionBox = document.getElementById('mission-box-2-1');
+        const customCheck = document.getElementById('custom-check-2-1');
+        const checkIcon = document.getElementById('check-icon-2-1');
+        const part2 = document.getElementById('mission-2-part2');
+
+        if (isPart1Checked) {
+            // ✅ 체크됨 스타일
+            missionBox.style.border = "2px solid #ff4f93";
+            missionBox.style.background = "#fff0f6";
+            customCheck.style.background = "#ff4f93";
+            customCheck.style.borderColor = "#ff4f93";
+            checkIcon.style.display = "block";
+            
+            // 다음 섹션 열기
+            part2.style.display = 'block';
+            
+            // ★수정됨★: 'center' -> 'nearest' (가장 가까운 곳으로 살짝만 이동)
+            // 이렇게 하면 화면이 확 튀지 않고, 현재 보고 있는 위치를 최대한 유지합니다.
+            // 위쪽 제목이 잘려 나가는 현상이 사라질 겁니다.
+            part2.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        } else {
+            // ⬜ 체크 해제
+            missionBox.style.border = "1px solid #e0e0e0";
+            missionBox.style.background = "#fff";
+            customCheck.style.background = "#eee";
+            customCheck.style.borderColor = "#ddd";
+            checkIcon.style.display = "none";
+            
+            part2.style.display = 'none';
+        }
+    }
+
+    // [STEP 2] Part 2 체크박스 클릭 -> Part 3 열기
+    let isPart2Checked = false;
+
+    function togglePart2() {
+        isPart2Checked = !isPart2Checked;
+        
+        const missionBox = document.getElementById('mission-box-2-2');
+        const customCheck = document.getElementById('custom-check-2-2');
+        const checkIcon = document.getElementById('check-icon-2-2');
+        const part3 = document.getElementById('mission-2-part3');
+
+        if (isPart2Checked) {
+            // ✅ 체크됨 스타일
+            missionBox.style.border = "2px solid #ff4f93";
+            missionBox.style.background = "#fff0f6";
+            customCheck.style.background = "#ff4f93";
+            customCheck.style.borderColor = "#ff4f93";
+            checkIcon.style.display = "block";
+            
+            // 다음 섹션 열기
+            part3.style.display = 'block';
+            
+            // ★수정됨★: 'center' -> 'nearest'
+            // 화면이 튀지 않고, 방금 누른 체크박스 바로 밑에 새 내용이 얌전히 붙습니다.
+            part3.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        } else {
+            // ⬜ 체크 해제
+            missionBox.style.border = "1px solid #e0e0e0";
+            missionBox.style.background = "#fff";
+            customCheck.style.background = "#eee";
+            customCheck.style.borderColor = "#ddd";
+            checkIcon.style.display = "none";
+            
+            part3.style.display = 'none';
+        }
+    }
+
+    // [STEP 2] Part 3 체크박스 클릭 -> 완료 버튼 활성화
+    let isPart3Checked = false;
+
+    function togglePart3() {
+        isPart3Checked = !isPart3Checked;
+        
+        const missionBox = document.getElementById('mission-box-2-3');
+        const customCheck = document.getElementById('custom-check-2-3');
+        const checkIcon = document.getElementById('check-icon-2-3');
+        const finishBtn = document.getElementById('btn-finish-step2');
+
+        if (isPart3Checked) {
+            // ✅ 체크됨
+            missionBox.style.border = "2px solid #ff4f93";
+            missionBox.style.background = "#fff0f6";
+            customCheck.style.background = "#ff4f93";
+            customCheck.style.borderColor = "#ff4f93";
+            checkIcon.style.display = "block";
+            
+            // 완료 버튼 등장
+            finishBtn.style.display = 'block';
+            setTimeout(() => {
+                finishBtn.disabled = false;
+                finishBtn.style.background = "#222";
+                finishBtn.style.cursor = "pointer";
+                finishBtn.style.boxShadow = "0 5px 15px rgba(0,0,0,0.2)";
+            }, 100);
+
+        } else {
+            // ⬜ 체크 해제
+            missionBox.style.border = "1px solid #e0e0e0";
+            missionBox.style.background = "#fff";
+            customCheck.style.background = "#eee";
+            customCheck.style.borderColor = "#ddd";
+            checkIcon.style.display = "none";
+            
+            // 버튼 숨김
+            finishBtn.style.display = 'none';
+        }
     }
 
     // [STEP 2 & 3] 가이드 체크 로직
@@ -534,6 +797,52 @@
       localStorage.removeItem(STORAGE_KEY);
       alert("진행 상황이 초기화되었습니다. 새로고침합니다.");
       location.reload();
+    }
+    // [STEP 2] 전용 체크박스 기능 (이걸 추가해야 클릭이 됩니다!)
+    let isStep2Checked = false;
+
+    function toggleMission2() {
+        // 1. 상태 뒤집기 (체크 안됨 <-> 체크 됨)
+        isStep2Checked = !isStep2Checked;
+        
+        // 2. HTML 요소들 가져오기 (ID 뒤에 '-2'가 붙어있음)
+        const missionBox = document.getElementById('mission-box-2');
+        const customCheck = document.getElementById('custom-check-2');
+        const checkIcon = document.getElementById('check-icon-2');
+        const nextBtn = document.getElementById('btn-next-step2');
+
+        // 3. 화면 스타일 변경
+        if (isStep2Checked) {
+            // ✅ 체크 되었을 때 (핑크색 활성화)
+            missionBox.style.border = "2px solid #ff4f93";
+            missionBox.style.background = "#fff0f6";
+            
+            customCheck.style.background = "#ff4f93";
+            customCheck.style.borderColor = "#ff4f93";
+            
+            checkIcon.style.display = "block"; // 체크표시 보이기
+            
+            // 다음 버튼 켜기
+            nextBtn.disabled = false;
+            nextBtn.style.background = "#222"; // 진한 색
+            nextBtn.style.cursor = "pointer";
+            nextBtn.style.boxShadow = "0 5px 15px rgba(0,0,0,0.2)";
+        } else {
+            // ⬜ 체크 해제 되었을 때 (원상복구)
+            missionBox.style.border = "1px solid #e0e0e0";
+            missionBox.style.background = "#fff";
+            
+            customCheck.style.background = "#eee";
+            customCheck.style.borderColor = "#ddd";
+            
+            checkIcon.style.display = "none"; // 체크표시 숨기기
+            
+            // 다음 버튼 끄기
+            nextBtn.disabled = true;
+            nextBtn.style.background = "#ccc"; // 회색
+            nextBtn.style.cursor = "not-allowed";
+            nextBtn.style.boxShadow = "none";
+        }
     }
   </script>
 
