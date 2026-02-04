@@ -86,23 +86,41 @@
 
     <section class="mission-track container">
       
-      <div id="step1-card" class="mission-card active" style="text-align: center; padding: 40px 30px;"> <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 01</div>
+      <div id="step1-card" class="mission-card active" style="text-align: center; padding: 40px 30px;">
+        <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 01</div>
         <h2 style="font-size: 1.8rem; margin-bottom: 15px; color: #222; font-weight: 700;">가장 '본질적인' 기록법</h2>
-        <p style="color: #666; margin-bottom: 30px; font-size: 1rem;">RoosyCozy는 선생님의 시간을 뺏지 않습니다.<br>지금 바로 설치해서 가벼움을 경험해 보세요.</p>
+        <p style="color: #666; margin-bottom: 30px; font-size: 1rem;">
+            RoosyCozy는 선생님의 시간을 뺏지 않습니다.<br>
+            지금 바로 설치해서 가벼움을 경험해 보세요.
+        </p>
 
-        <a href="RoosyCozy_Beta_Installer.zip" download class="download-btn" style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 20px 0; background: #ff4f93; color: #fff; font-size: 1.2rem; font-weight: 700; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 20px rgba(255, 79, 147, 0.3); transition: transform 0.2s; margin-bottom: 25px;">
-            📥 RoosyCozy 베타 다운로드
+        <a href="roosycozy-portable-exe.zip" download style="text-decoration: none; display: block; margin-bottom: 25px;">
+            <button style="
+                width: 100%;
+                padding: 20px;
+                background: #ff4f93;
+                color: #fff;
+                border: none;
+                border-radius: 12px;
+                font-size: 1.2rem;
+                font-weight: 700;
+                cursor: pointer;
+                box-shadow: 0 8px 20px rgba(255, 79, 147, 0.3);
+                transition: transform 0.2s;
+                display: flex; align-items: center; justify-content: center; gap: 10px;
+            " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                📥 RoosyCozy 베타 다운로드
+            </button>
         </a>
 
         <div id="mission-box" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #f9f9f9; border: 1px solid #eee; cursor: pointer; transition: all 0.3s; text-align: left; margin-bottom: 25px;" onclick="toggleMission()">
-            
-            <div style="display: flex; align-items: center; gap: 20px;"> <span style="font-size: 1.8rem;">🚀</span>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <span style="font-size: 1.8rem;">🚀</span>
                 <div>
                     <div style="font-size: 1.1rem; font-weight: 600; color: #333;">다운로드 후 실행하셨나요?</div>
                     <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">설치가 완료되면 이 박스를 클릭해 주세요.</div>
                 </div>
             </div>
-
             <div id="custom-check" style="width: 24px; height: 24px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
                 <span id="check-icon" style="font-size: 0.9rem; color: #fff; display: none;">✔</span>
             </div>
@@ -111,7 +129,6 @@
         <button id="btn-next-step1" disabled style="width: 100%; padding: 16px; background: #ccc; color: #fff; font-size: 1.1rem; font-weight: 700; border: none; border-radius: 50px; cursor: not-allowed; transition: 0.3s;" onclick="goToStep2()">
             다음 미션으로 이동 →
         </button>
-
       </div>
 
       <div id="mission-2-part1" class="mission-card" style="
@@ -1421,6 +1438,16 @@
             location.reload();
         });
     }
+    // ================= [10. 초기화 기능 (누락된 부분 추가)] =================
+    
+    function resetProgress() {
+      if(confirm("정말 모든 진행 상황을 초기화하시겠습니까? (처음으로 돌아갑니다)")) {
+          localStorage.removeItem(STORAGE_KEY); // 저장된 데이터 삭제
+          alert("초기화되었습니다.");
+          location.reload(); // 새로고침
+      }
+    }
+
 </script>
 <div id="survey-modal" style="
       display: none; /* 평소엔 숨김 */
