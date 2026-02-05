@@ -86,39 +86,74 @@
 
     <section class="mission-track container">
       
-      <div id="step1-card" class="mission-card active" style="text-align: center; padding: 40px 30px;">
-        <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 01</div>
-        <h2 style="font-size: 1.8rem; margin-bottom: 15px; color: #222; font-weight: 700;">가장 '본질적인' 기록법</h2>
-        <p style="color: #666; margin-bottom: 30px; font-size: 1rem;">
-            RoosyCozy는 선생님의 시간을 뺏지 않습니다.<br>
-            지금 바로 설치해서 가벼움을 경험해 보세요.
+      <di<div id="step1-card" class="mission-card active" style="text-align: left; padding: 40px 30px;">
+        <div style="text-align: center; color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 01</div>
+        <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 10px; color: #222; font-weight: 700;">실행까지 가는 길</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px; font-size: 1rem;">
+            이탈 없이 한 번에 성공해 봅시다.<br>
+            아래 순서대로 진행해 주세요.
         </p>
 
-        <a href="roosycozy-portable-exe.zip" download style="text-decoration: none; display: block; margin-bottom: 25px;">
+        <a href="roosycozy-portable-exe.zip" download style="text-decoration: none; display: block; margin-bottom: 30px;">
             <button style="
-                width: 100%;
-                padding: 20px;
-                background: #ff4f93;
-                color: #fff;
-                border: none;
-                border-radius: 12px;
-                font-size: 1.2rem;
-                font-weight: 700;
-                cursor: pointer;
-                box-shadow: 0 8px 20px rgba(255, 79, 147, 0.3);
-                transition: transform 0.2s;
-                display: flex; align-items: center; justify-content: center; gap: 10px;
+                width: 100%; padding: 20px; background: #ff4f93; color: #fff;
+                border: none; border-radius: 12px; font-size: 1.2rem; font-weight: 700;
+                cursor: pointer; box-shadow: 0 8px 20px rgba(255, 79, 147, 0.3);
+                transition: transform 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px;
             " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                 📥 RoosyCozy 베타 다운로드
             </button>
         </a>
 
-        <div id="mission-box" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #f9f9f9; border: 1px solid #eee; cursor: pointer; transition: all 0.3s; text-align: left; margin-bottom: 25px;" onclick="toggleMission()">
+        <div style="margin-bottom: 30px; border-left: 3px solid #eee; padding-left: 20px;">
+            <div style="margin-bottom: 20px;">
+                <h4 style="margin: 0 0 5px 0; color: #333;">1️⃣ 파일 확인</h4>
+                <p style="margin: 0; font-size: 0.95rem; color: #666;">다운받은 파일명과 용량을 확인해주세요.<br>(파일명: <code>roosycozy.exe</code> 또는 <code>.zip</code>)</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h4 style="margin: 0 0 5px 0; color: #333;">2️⃣ 압축 풀고 실행</h4>
+                <p style="margin: 0; font-size: 0.95rem; color: #666;">반드시 압축을 풀고 실행하세요.<br>Mac 유저는 응용프로그램 폴더로 옮겨도 좋습니다.</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h4 style="margin: 0 0 5px 0; color: #333;">3️⃣ 경고창 무시 (중요!)</h4>
+                <p style="margin: 0; font-size: 0.95rem; color: #666;">'서명되지 않은 앱' 경고는 베타 버전에선 정상입니다.<br><b>[추가 정보] → [실행]</b>을 눌러주세요.</p>
+            </div>
+            <div>
+                <h4 style="margin: 0 0 5px 0; color: #333;">4️⃣ 살짝 기다리기</h4>
+                <p style="margin: 0; font-size: 0.95rem; color: #666;">첫 실행은 10~30초 정도 걸립니다.<br>멈춘 것 같아도 조금만 기다려주세요.</p>
+            </div>
+        </div>
+
+        <div style="background: #f5f5f5; border-radius: 12px; padding: 20px; margin-bottom: 30px;">
+            <h4 style="margin: 0 0 15px 0; font-size: 1rem; color: #555;">🛟 혹시 실행이 막히나요?</h4>
+            
+            <div style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px;">
+                
+                <div style="flex: 0 0 auto; width: 45%; min-width: 200px; text-align: center;">
+                    <img src="warning_win.png" alt="Windows 보안 경고" style="width: 100%; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="font-size: 0.85rem; color: #333; font-weight: 700;">Windows</div>
+                    <div style="font-size: 0.8rem; color: #666;">추가 정보 → 실행</div>
+                </div>
+
+                <div style="flex: 0 0 auto; width: 45%; min-width: 200px; text-align: center;">
+                    <img src="warning_mac.png" alt="Mac 보안 경고" style="width: 100%; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="font-size: 0.85rem; color: #333; font-weight: 700;">Mac</div>
+                    <div style="font-size: 0.8rem; color: #666;">우클릭 → 열기</div>
+                </div>
+
+            </div>
+
+            <p style="font-size: 0.85rem; color: #888; margin-top: 10px; border-top: 1px solid #ddd; padding-top: 10px; text-align: center;">
+                * 사용하시는 운영체제에 맞는 방법을 확인해 주세요.
+            </p>
+        </div>
+
+        <div id="mission-box" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #eee; cursor: pointer; transition: all 0.3s; margin-bottom: 25px;" onclick="toggleMission()">
             <div style="display: flex; align-items: center; gap: 20px;">
-                <span style="font-size: 1.8rem;">🚀</span>
+                <span style="font-size: 1.8rem;">🖥️</span>
                 <div>
-                    <div style="font-size: 1.1rem; font-weight: 600; color: #333;">다운로드 후 실행하셨나요?</div>
-                    <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">설치가 완료되면 이 박스를 클릭해 주세요.</div>
+                    <div style="font-size: 1.1rem; font-weight: 600; color: #333;">앱 메인 화면이 떴나요?</div>
+                    <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">화면이 보이면 여기를 클릭해 주세요.</div>
                 </div>
             </div>
             <div id="custom-check" style="width: 24px; height: 24px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
@@ -581,390 +616,6 @@
                 <button onclick="goBackToStep3()" style="padding: 16px 30px; background: #fff; color: #888; border: 1px solid #ddd; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 600;">
                     ← 이전
                 </button>
-                <button onclick="goToStep5()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                    다음 단계로 이동 →
-                </button>
-            </div>
-        </div>
-      </div>
-
-      <div id="mission-5-part1" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px; 
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-      ">
-        <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 05</div>
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 05: 첫 번째 미션</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 05의 첫 번째 과정입니다.<br>
-            아래 내용을 확인하고 체크해 주세요.
-        </p>
-        
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_sample.png" alt="STEP 05-1 이미지" style="width: 100%; display: block;">
-        </div>
-          
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-5-1" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep5Part1()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">1️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">STEP 05-1 확인 완료</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 다음 내용(Part 2)이 열립니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-5-1" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-5-1" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-            
-            <button onclick="goBackToStep4()" style="margin-top: 20px; padding: 10px 20px; background: #fff; color: #aaa; border: none; text-decoration: underline; cursor: pointer;">
-                ← 이전 단계(STEP 04)로 돌아가기
-            </button>
-        </div>
-      </div>
-
-      <div id="mission-5-part2" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 05: 두 번째 미션</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 05의 두 번째 과정입니다.
-        </p>
-
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_confirm.png" alt="STEP 05-2 이미지" style="width: 100%; display: block;">
-        </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-5-2" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep5Part2()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">2️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">STEP 05-2 확인 완료</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 다음 내용(Part 3)이 열립니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-5-2" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-5-2" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div id="mission-5-part3" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 50px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 05: 결과 확인</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 05의 마지막 단계입니다.
-        </p>
-
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_result.png" alt="STEP 05-3 이미지" style="width: 100%; display: block;">
-        </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-5-3" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep5Part3()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">3️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">모든 내용을 확인하셨나요?</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">체크하여 STEP 05를 완료하세요.</div>
-                    </div>
-                </div>
-                <div id="custom-check-5-3" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-5-3" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-
-            <div id="step5-btn-group" style="display: none; gap: 10px; justify-content: center; margin-top: 30px;">
-                <button onclick="goBackToStep4()" style="padding: 16px 30px; background: #fff; color: #888; border: 1px solid #ddd; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 600;">
-                    ← 이전
-                </button>
-                <button onclick="goToStep6()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                    다음 단계로 이동 →
-                </button>
-            </div>
-        </div>
-      </div>
-
-      <div id="mission-6-part1" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px; 
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-      ">
-        <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 06</div>
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 06: 첫 번째 미션</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 06의 첫 번째 과정입니다.<br>
-            아래 내용을 확인하고 체크해 주세요.
-        </p>
-        
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_sample.png" alt="STEP 06-1 이미지" style="width: 100%; display: block;">
-        </div>
-          
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-6-1" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep6Part1()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">1️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">STEP 06-1 확인 완료</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 다음 내용(Part 2)이 열립니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-6-1" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-6-1" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-            
-            <button onclick="goBackToStep5()" style="margin-top: 20px; padding: 10px 20px; background: #fff; color: #aaa; border: none; text-decoration: underline; cursor: pointer;">
-                ← 이전 단계(STEP 05)로 돌아가기
-            </button>
-        </div>
-      </div>
-
-      <div id="mission-6-part2" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 06: 두 번째 미션</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 06의 두 번째 과정입니다.
-        </p>
-
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_confirm.png" alt="STEP 06-2 이미지" style="width: 100%; display: block;">
-        </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-6-2" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep6Part2()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">2️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">STEP 06-2 확인 완료</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 다음 내용(Part 3)이 열립니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-6-2" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-6-2" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div id="mission-6-part3" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 50px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 06: 결과 확인</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 06의 마지막 단계입니다.
-        </p>
-
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_result.png" alt="STEP 06-3 이미지" style="width: 100%; display: block;">
-        </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-6-3" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep6Part3()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">3️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">모든 내용을 확인하셨나요?</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">체크하여 STEP 06을 완료하세요.</div>
-                    </div>
-                </div>
-                <div id="custom-check-6-3" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-6-3" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-
-            <div id="step6-btn-group" style="display: none; gap: 10px; justify-content: center; margin-top: 30px;">
-                <button onclick="goBackToStep5()" style="padding: 16px 30px; background: #fff; color: #888; border: 1px solid #ddd; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 600;">
-                    ← 이전
-                </button>
-                <button onclick="goToStep7()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                    다음 단계로 이동 →
-                </button>
-            </div>
-        </div>
-      </div>
-
-      <div id="mission-7-part1" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px; 
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-      ">
-        <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 07</div>
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 07: 첫 번째 미션</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 07의 첫 번째 과정입니다.<br>
-            아래 내용을 확인하고 체크해 주세요.
-        </p>
-        
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_sample.png" alt="STEP 07-1 이미지" style="width: 100%; display: block;">
-        </div>
-          
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-7-1" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep7Part1()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">1️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">STEP 07-1 확인 완료</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 다음 내용(Part 2)이 열립니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-7-1" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-7-1" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-            
-            <button onclick="goBackToStep6()" style="margin-top: 20px; padding: 10px 20px; background: #fff; color: #aaa; border: none; text-decoration: underline; cursor: pointer;">
-                ← 이전 단계(STEP 06)로 돌아가기
-            </button>
-        </div>
-      </div>
-
-      <div id="mission-7-part2" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 07: 두 번째 미션</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 07의 두 번째 과정입니다.
-        </p>
-
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_confirm.png" alt="STEP 07-2 이미지" style="width: 100%; display: block;">
-        </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-7-2" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep7Part2()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">2️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">STEP 07-2 확인 완료</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 다음 내용(Part 3)이 열립니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-7-2" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-7-2" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div id="mission-7-part3" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 50px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 07: 결과 확인</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 07의 마지막 단계입니다.
-        </p>
-
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_result.png" alt="STEP 07-3 이미지" style="width: 100%; display: block;">
-        </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-7-3" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep7Part3()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">3️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">모든 내용을 확인하셨나요?</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">체크하여 STEP 07을 완료하세요.</div>
-                    </div>
-                </div>
-                <div id="custom-check-7-3" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-7-3" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-
-            <div id="step7-btn-group" style="display: none; gap: 10px; justify-content: center; margin-top: 30px;">
-                <button onclick="goBackToStep6()" style="padding: 16px 30px; background: #fff; color: #888; border: 1px solid #ddd; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 600;">
-                    ← 이전
-                </button>
                 <button onclick="goToFinal()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
                     모든 미션 완료! 🎉
                 </button>
@@ -1119,68 +770,6 @@
         updateProgressBar(30);
     }
 
-    // STEP 4 -> 5
-    function goToStep5() {
-        document.getElementById('mission-4-part1').style.display = 'none';
-        document.getElementById('mission-4-part2').style.display = 'none';
-        document.getElementById('mission-4-part3').style.display = 'none';
-        document.getElementById('mission-5-part1').style.display = 'block';
-        window.scrollTo(0, 0);
-        updateProgressBar(60);
-    }
-    function goBackToStep4() {
-        document.getElementById('mission-5-part1').style.display = 'none';
-        document.getElementById('mission-4-part3').style.display = 'block';
-        window.scrollTo(0, 0);
-        updateProgressBar(45);
-    }
-
-    // STEP 5 -> 6
-    function goToStep6() {
-        document.getElementById('mission-5-part1').style.display = 'none';
-        document.getElementById('mission-5-part2').style.display = 'none';
-        document.getElementById('mission-5-part3').style.display = 'none';
-        document.getElementById('mission-6-part1').style.display = 'block';
-        window.scrollTo(0, 0);
-        updateProgressBar(75);
-    }
-    function goBackToStep5() {
-        document.getElementById('mission-6-part1').style.display = 'none';
-        document.getElementById('mission-5-part3').style.display = 'block';
-        window.scrollTo(0, 0);
-        updateProgressBar(60);
-    }
-
-    // STEP 6 -> 7
-    function goToStep7() {
-        document.getElementById('mission-6-part1').style.display = 'none';
-        document.getElementById('mission-6-part2').style.display = 'none';
-        document.getElementById('mission-6-part3').style.display = 'none';
-        document.getElementById('mission-7-part1').style.display = 'block';
-        window.scrollTo(0, 0);
-        updateProgressBar(90);
-    }
-    function goBackToStep6() {
-        document.getElementById('mission-7-part1').style.display = 'none';
-        document.getElementById('mission-6-part3').style.display = 'block';
-        window.scrollTo(0, 0);
-        updateProgressBar(75);
-    }
-
-    // FINAL
-    function goToFinal() {
-        document.getElementById('mission-7-part1').style.display = 'none';
-        document.getElementById('mission-7-part2').style.display = 'none';
-        document.getElementById('mission-7-part3').style.display = 'none';
-        
-        updateProgressBar(100);
-        alert("🎉 모든 미션 완료! 축하합니다.");
-    }
-
-
-    // ================= [3. 체크박스 기능 (핵심!)] =================
-    // 여기서 체크박스를 누르면 다음 섹션이 열립니다.
-
     // [STEP 1]
     let isStep1Checked = false;
     function toggleMission() {
@@ -1279,85 +868,6 @@
         else { next.style.display = 'none'; }
     }
 
-    // [STEP 5]
-    let s5p1 = false;
-    function toggleStep5Part1() {
-        s5p1 = !s5p1;
-        setCheckUI('mission-box-5-1', 'custom-check-5-1', 'check-icon-5-1', s5p1);
-        const next = document.getElementById('mission-5-part2');
-        if(s5p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
-        else { next.style.display = 'none'; }
-    }
-    let s5p2 = false;
-    function toggleStep5Part2() {
-        s5p2 = !s5p2;
-        setCheckUI('mission-box-5-2', 'custom-check-5-2', 'check-icon-5-2', s5p2);
-        const next = document.getElementById('mission-5-part3');
-        if(s5p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
-        else { next.style.display = 'none'; }
-    }
-    let s5p3 = false;
-    function toggleStep5Part3() {
-        s5p3 = !s5p3;
-        setCheckUI('mission-box-5-3', 'custom-check-5-3', 'check-icon-5-3', s5p3);
-        const next = document.getElementById('step5-btn-group');
-        if(s5p3) { next.style.display = 'flex'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
-    }
-
-    // [STEP 6]
-    let s6p1 = false;
-    function toggleStep6Part1() {
-        s6p1 = !s6p1;
-        setCheckUI('mission-box-6-1', 'custom-check-6-1', 'check-icon-6-1', s6p1);
-        const next = document.getElementById('mission-6-part2');
-        if(s6p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
-        else { next.style.display = 'none'; }
-    }
-    let s6p2 = false;
-    function toggleStep6Part2() {
-        s6p2 = !s6p2;
-        setCheckUI('mission-box-6-2', 'custom-check-6-2', 'check-icon-6-2', s6p2);
-        const next = document.getElementById('mission-6-part3');
-        if(s6p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
-        else { next.style.display = 'none'; }
-    }
-    let s6p3 = false;
-    function toggleStep6Part3() {
-        s6p3 = !s6p3;
-        setCheckUI('mission-box-6-3', 'custom-check-6-3', 'check-icon-6-3', s6p3);
-        const next = document.getElementById('step6-btn-group');
-        if(s6p3) { next.style.display = 'flex'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
-    }
-
-    // [STEP 7]
-    let s7p1 = false;
-    function toggleStep7Part1() {
-        s7p1 = !s7p1;
-        setCheckUI('mission-box-7-1', 'custom-check-7-1', 'check-icon-7-1', s7p1);
-        const next = document.getElementById('mission-7-part2');
-        if(s7p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
-        else { next.style.display = 'none'; }
-    }
-    let s7p2 = false;
-    function toggleStep7Part2() {
-        s7p2 = !s7p2;
-        setCheckUI('mission-box-7-2', 'custom-check-7-2', 'check-icon-7-2', s7p2);
-        const next = document.getElementById('mission-7-part3');
-        if(s7p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
-        else { next.style.display = 'none'; }
-    }
-    let s7p3 = false;
-    function toggleStep7Part3() {
-        s7p3 = !s7p3;
-        setCheckUI('mission-box-7-3', 'custom-check-7-3', 'check-icon-7-3', s7p3);
-        const next = document.getElementById('step7-btn-group');
-        if(s7p3) { next.style.display = 'flex'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
-    }
-
-
     // [Helper] 체크박스 디자인 변경 함수
     function setCheckUI(boxId, checkId, iconId, isChecked) {
         const box = document.getElementById(boxId);
@@ -1381,19 +891,30 @@
     // ================= [FINAL] 최종 완료 및 설문조사 =================
 
     // 1. STEP 7에서 버튼 누르면 실행되는 함수 (수정됨)
+    // ================= [최종 완료 기능] =================
+
+    // STEP 6에서 [완료] 버튼을 누르면 실행됨 (STEP 7은 삭제했으므로 STEP 6을 숨김)
+    // ================= [최종 완료 기능 업데이트] =================
+
+// ================= [최종 완료 기능 업데이트] =================
+
+    // (맨 아래에 있는 함수 확인)
     function goToFinal() {
-        // STEP 7 화면 숨기기
-        document.getElementById('mission-7-part1').style.display = 'none';
-        document.getElementById('mission-7-part2').style.display = 'none';
-        document.getElementById('mission-7-part3').style.display = 'none';
+        // STEP 4를 숨기는 코드가 있어야 합니다.
+        const p1 = document.getElementById('mission-4-part1');
+        const p2 = document.getElementById('mission-4-part2');
+        const p3 = document.getElementById('mission-4-part3');
         
-        // 진행률 100% 채우기
+        if(p1) p1.style.display = 'none';
+        if(p2) p2.style.display = 'none';
+        if(p3) p3.style.display = 'none';
+        
         updateProgressBar(100);
-
-        // ★ 경고창 대신 '모달창' 띄우기!
-        document.getElementById('survey-modal').style.display = 'flex';
+        
+        // 모달 띄우기
+        const modal = document.getElementById('survey-modal');
+        if(modal) modal.style.display = 'flex';
     }
-
     // 2. 모달창 닫기 함수
     function closeSurveyModal() {
         document.getElementById('survey-modal').style.display = 'none';
