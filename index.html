@@ -172,460 +172,164 @@
         </button>
       </div>
 
-      <div id="mission-2-part1" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px; /* 다음 섹션과의 간격 */
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-      ">
-        
+      <div id="set1-part1" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto;">
         <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 02</div>
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">AI 분석을 위한 '데이터' 준비</h3>
-        
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            빈 화면에서는 AI가 작동하지 않습니다.<br>
-            먼저 <strong>가상의 사건 데이터</strong>를 채워 넣어 볼까요?
-        </p>
-        
-        <div style="
-            margin-bottom: 40px; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            border: 1px solid #eee; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
-            position: relative; 
-        ">
-            <img src="step2_sample.png" alt="샘플 데이터 로드" style="width: 100%; display: block;">
-            <div style="background: #f9f9f9; padding: 15px; font-size: 1rem; color: #555; border-top: 1px solid #eee;">
-                👆 우측 상단 <strong>[초록색 펜 아이콘]</strong>을 찾아 클릭하세요.
-            </div>
-        </div>
-          
-        <div style="max-width: 600px; margin: 0 auto;">
-            
-            <div id="mission-box-2-1" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="togglePart1()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">💾</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">샘플 데이터를 불러오셨나요?</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭해서 다음 단계(타임라인)를 확인하세요.</div>
-                    </div>
-                </div>
-                <div id="custom-check-2-1" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-2-1" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
+        <h2 style="font-size: 1.8rem; margin-bottom: 10px; color: #222; font-weight: 700;">샘플로 한 바퀴 둘러보기</h2>
+        <p style="color: #666; margin-bottom: 30px;">빈 화면은 막막하니까요. 샘플 데이터로 기능을 체험해 봅시다.</p>
 
-            <button onclick="goBackToStep1()" style="margin-top: 20px; padding: 10px 20px; background: #fff; color: #aaa; border: none; text-decoration: underline; cursor: pointer;">
-                ← 처음으로 돌아가기
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">1. 샘플 데이터 불러오기</h3>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="샘플불러오기1.png" alt="샘플 버튼 위치" style="width: 100%; display: block;">
+        </div>
+        
+        <div class="guide-item" id="box-1-1" onclick="toggleSet1Part1()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👆 '샘플 불러오기' 버튼을 눌렀나요?</span>
+            <span id="check-1-1" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set1-part2" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">2. 덮어쓰기 확인</h3>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="샘플불러오기2.png" alt="확인 팝업" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-1-2" onclick="toggleSet1Part2()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">🆗 파란색 '확인' 버튼을 눌렀나요?</span>
+            <span id="check-1-2" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set1-part3" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">3. 데이터 생성 완료</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">데이터 개수가 <strong>55개</strong>로 바뀌었는지 확인하세요.</p>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="샘플불러오기3.png" alt="결과 확인" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-1-3" onclick="toggleSet1Part3()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👀 55개로 바뀐 것을 확인했나요?</span>
+            <span id="check-1-3" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+
+      <div id="set1-part4" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; background: #f9f9f9;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: #222; font-weight: 700;">이제 기록을 확인해 볼까요?</h2>
+        
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">4. 메모 목록 열기</h3>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="메모확인하기1.png" alt="목록 버튼" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-1-4" onclick="toggleSet1Part4()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">📂 '메모 목록' 버튼을 눌렀나요?</span>
+            <span id="check-1-4" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set1-part5" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee; background: #f9f9f9;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">5. 첫 번째 기록 자세히 보기</h3>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="메모확인하기2.png" alt="자세히 버튼" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-1-5" onclick="toggleSet1Part5()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">🔍 '자세히' 버튼을 눌렀나요?</span>
+            <span id="check-1-5" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set1-part6" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee; background: #f9f9f9;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">6. 상세 내용 확인</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">누가, 언제, 어디서가 자동으로 정리된 화면입니다.</p>
+        
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="메모확인하기3.png" alt="상세 화면" style="width: 100%; display: block;">
+        </div>
+        
+        <div class="guide-item" id="box-1-6" onclick="toggleSet1Part6()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👀 내용을 확인했나요?</span>
+            <span id="check-1-6" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+
+        <div id="set1-part6-btn" style="display: none; gap: 10px; justify-content: center; margin-top: 30px;">
+            
+            <button onclick="goToStep3()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                다음 미션으로 이동 →
             </button>
-        </div>
 
+        </div>
       </div>
 
-      <div id="mission-2-part2" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee; /* 위 섹션과 구분선 */
-      ">
-        
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">
-            데이터 불러오기 '확인'
-        </h3>
-        
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            화면에 팝업창이 떴나요?<br>
-            기존 데이터를 덮어쓰고 새로운 샘플을 가져옵니다.
+      <div id="step3-card" class="mission-card" style="display: none; text-align: left; padding: 40px 30px; max-width: 600px; margin: 0 auto;">
+        <div style="text-align: center; color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 03</div>
+        <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 10px; color: #222; font-weight: 700;">이제 직접 남겨봅시다</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 1rem;">
+            샘플은 충분히 둘러보셨나요?<br>
+            이제 3초 만에 기록이 끝나는 경험을 해보세요.
         </p>
 
-        <div style="
-            margin-bottom: 40px; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            border: 1px solid #eee; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
-            position: relative; 
-        ">
-            <img src="step2_confirm.png" alt="확인 팝업창" style="width: 100%; display: block;">
-            
-            <div style="background: #f9f9f9; padding: 15px; font-size: 1rem; color: #555; border-top: 1px solid #eee;">
-                👆 파란색 <strong>[확인]</strong> 버튼을 눌러주세요.
-            </div>
+        <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #eee;">
+            <h4 style="margin: 0 0 15px 0; color: #333; font-size: 1.1rem;">🎯 이번 단계 목표</h4>
+            <ul style="margin: 0; padding-left: 20px; line-height: 1.8; color: #555;">
+                <li>새로운 메모 입력창 열기</li>
+                <li>간단한 내용 입력하고 저장하기</li>
+                <li>저장된 내 기록 확인하기</li>
+            </ul>
         </div>
 
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-2-2" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="togglePart2()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">🆗</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">확인 버튼을 누르셨나요?</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 데이터가 로드됩니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-2-2" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-2-2" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-        </div>
+        <button onclick="startStep3()" style="
+            width: 100%; padding: 20px; background: #ff4f93; color: #fff;
+            border: none; border-radius: 12px; font-size: 1.2rem; font-weight: 700;
+            cursor: pointer; box-shadow: 0 8px 20px rgba(255, 79, 147, 0.3);
+            transition: transform 0.2s;
+        " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            🚀 기록 시작하기
+        </button>
       </div>
 
-      <div id="mission-2-part3" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 50px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">
-            자료 가져오기 완료!
-        </h3>
-        
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            <strong>빨간 원</strong>으로 표시된 부분을 보시면 자료가 정상적으로 생성된 것을 보실 수 있습니다.
-        </p>
-
-        <div style="
-            margin-bottom: 40px; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            border: 1px solid #eee; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
-            position: relative; 
-        ">
-            <img src="step2_result.png" alt="결과 화면" style="width: 100%; display: block;">
-            
-            <div style="background: #f9f9f9; padding: 15px; font-size: 1rem; color: #555; border-top: 1px solid #eee;">
-                ✨ 샘플 데이터가 성공적으로 입력되었습니다.
-            </div>
-        </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-2-3" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="togglePart3()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">👀</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">자료가 생성된 걸 확인하셨나요?</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">확인했다면 체크하여 STEP 02를 완료하세요.</div>
-                    </div>
-                </div>
-                <div id="custom-check-2-3" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-2-3" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-
-            <div id="step2-btn-group" style="
-                display: none; /* 처음엔 숨겨둠 (체크하면 나옴) */
-                gap: 10px; 
-                justify-content: center; 
-                margin-top: 30px;
-            ">
-                <button onclick="goBackToStep1()" style="
-                    padding: 16px 30px; 
-                    background: #fff; 
-                    color: #888; 
-                    border: 1px solid #ddd; 
-                    border-radius: 50px; 
-                    font-size: 1.1rem; 
-                    cursor: pointer; 
-                    font-weight: 600;
-                    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-                ">
-                    ← 이전
-                </button>
-
-                <button onclick="goToStep3()" style="
-                    padding: 16px 50px; 
-                    background: #222; 
-                    color: #fff; 
-                    border: none; 
-                    border-radius: 50px; 
-                    font-size: 1.1rem; 
-                    cursor: pointer; 
-                    font-weight: 700;
-                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                ">
-                    다음 단계로 이동 →
-                </button>
-            </div>
-        </div>
-
-      </div>
-
-      <div id="mission-3-part1" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px; 
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-      ">
+      <div id="set2-part1" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto;">
         <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 03</div>
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 03: 첫 번째 미션</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 03의 첫 번째 과정입니다.<br>
-            이미지를 보고 아래 내용을 따라 해주세요.
+        <h2 style="font-size: 1.8rem; margin-bottom: 10px; color: #222; font-weight: 700;">가장 먼저 '시간' 정하기</h2>
+        <p style="color: #666; margin-bottom: 30px;">
+            메모의 핵심은 '언제' 일어난 일인지 기록하는 것입니다.<br>
+            입력창 우측의 <strong>달력 아이콘</strong>을 찾아주세요.
         </p>
+
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">1. 시간 설정창 열기</h3>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="직접메모하기1-0.png" alt="달력 아이콘" style="width: 100%; display: block;">
+        </div>
         
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_sample.png" alt="1번 미션 사진" style="width: 100%; display: block;">
-        </div>
-          
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-3-1" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep3Part1()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">1️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">첫 번째 미션을 수행했나요?</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 다음 내용(Part 2)이 열립니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-3-1" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-3-1" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-            <button onclick="goBackToStep2()" style="margin-top: 20px; padding: 10px 20px; background: #fff; color: #aaa; border: none; text-decoration: underline; cursor: pointer;">
-                ← 이전 단계(STEP 02)로 돌아가기
-            </button>
+        <div class="guide-item" id="box-2-1" onclick="toggleSet2Part1()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👆 아이콘을 클릭하셨나요?</span>
+            <span id="check-2-1" style="color: #ddd; font-size: 1.2rem;">✔</span>
         </div>
       </div>
 
-      <div id="mission-3-part2" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 03: 두 번째 미션</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 03의 두 번째 과정입니다.<br>
-            화면을 확인하고 체크해주세요.
+      <div id="set2-part2" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">2. 과거 날짜로 이동하기</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
+            지난 일을 기록할 땐 달력을 한참 넘겨야 할까요?<br>
+            아닙니다. <strong>년/월 글씨</strong>를 누르면 한 번에 이동합니다.
         </p>
-
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_confirm.png" alt="2번 미션 사진" style="width: 100%; display: block;">
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="직접메모하기1-1.png" alt="연월 변경" style="width: 100%; display: block;">
         </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-3-2" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep3Part2()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">2️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">두 번째 미션을 확인했나요?</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 다음 내용(Part 3)이 열립니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-3-2" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-3-2" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
+        <div class="guide-item" id="box-2-2" onclick="toggleSet2Part2()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👆 해당 부분을 클릭해 보셨나요?</span>
+            <span id="check-2-2" style="color: #ddd; font-size: 1.2rem;">✔</span>
         </div>
       </div>
 
-      <div id="mission-3-part3" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 50px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 03: 결과 확인</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 03의 마지막 단계입니다.<br>
-            결과를 확인하고 다음 단계로 이동하세요.
+      <div id="set2-part3" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">3. 날짜와 시간 확정</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
+            원하는 날짜를 누르고, 오전/오후 시간도 조정해 보세요.
         </p>
-
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_result.png" alt="3번 결과 사진" style="width: 100%; display: block;">
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="직접메모하기1-2.png" alt="날짜 선택" style="width: 100%; display: block;">
         </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-3-3" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep3Part3()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">3️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">모든 내용을 확인하셨나요?</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">체크하여 STEP 03을 완료하세요.</div>
-                    </div>
-                </div>
-                <div id="custom-check-3-3" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-3-3" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-
-            <div id="step3-btn-group" style="display: none; gap: 10px; justify-content: center; margin-top: 30px;">
-                <button onclick="goBackToStep2()" style="padding: 16px 30px; background: #fff; color: #888; border: 1px solid #ddd; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 600;">
-                    ← 이전
-                </button>
-                <button onclick="goToStep4()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                    다음 단계로 이동 →
-                </button>
-            </div>
-        </div>
-      </div>
-
-      <div id="mission-4-part1" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px; 
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-      ">
-        <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 04</div>
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 04: 첫 번째 미션</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 04의 첫 번째 과정입니다.<br>
-            아래 내용을 확인하고 체크해 주세요.
-        </p>
-        
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_sample.png" alt="STEP 04-1 이미지" style="width: 100%; display: block;">
-        </div>
-          
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-4-1" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep4Part1()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">1️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">STEP 04-1 확인 완료</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 다음 내용(Part 2)이 열립니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-4-1" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-4-1" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-            
-            <button onclick="goBackToStep3()" style="margin-top: 20px; padding: 10px 20px; background: #fff; color: #aaa; border: none; text-decoration: underline; cursor: pointer;">
-                ← 이전 단계(STEP 03)로 돌아가기
-            </button>
-        </div>
-      </div>
-
-      <div id="mission-4-part2" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 30px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 04: 두 번째 미션</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 04의 두 번째 과정입니다.
-        </p>
-
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_confirm.png" alt="STEP 04-2 이미지" style="width: 100%; display: block;">
-        </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-4-2" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep4Part2()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">2️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">STEP 04-2 확인 완료</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">클릭하면 다음 내용(Part 3)이 열립니다.</div>
-                    </div>
-                </div>
-                <div id="custom-check-4-2" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-4-2" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div id="mission-4-part3" class="mission-card" style="
-          display: none; 
-          text-align: center; 
-          padding: 20px 40px 60px 40px; 
-          width: 95vw; 
-          max-width: 900px; 
-          margin: 0 auto;
-          margin-bottom: 50px;
-          position: relative; 
-          left: 50%; 
-          transform: translateX(-50%);
-          border-top: 1px solid #eee;
-      ">
-        <h3 style="font-size: 2rem; margin-bottom: 15px; color: #222; font-weight: 700;">STEP 04: 결과 확인</h3>
-        <p style="color: #666; margin-bottom: 20px; font-size: 1.1rem;">
-            STEP 04의 마지막 단계입니다.
-        </p>
-
-        <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-            <img src="step2_result.png" alt="STEP 04-3 이미지" style="width: 100%; display: block;">
-        </div>
-
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div id="mission-box-4-3" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="toggleStep4Part3()">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <span style="font-size: 1.8rem;">3️⃣</span>
-                    <div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #333;">모든 내용을 확인하셨나요?</div>
-                        <div style="font-size: 0.9rem; color: #888; margin-top: 4px;">체크하여 STEP 04를 완료하세요.</div>
-                    </div>
-                </div>
-                <div id="custom-check-4-3" style="width: 28px; height: 28px; border-radius: 6px; background: #eee; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
-                    <span id="check-icon-4-3" style="font-size: 1rem; color: #fff; display: none;">✔</span>
-                </div>
-            </div>
-
-            <div id="step4-btn-group" style="display: none; gap: 10px; justify-content: center; margin-top: 30px;">
-                <button onclick="goBackToStep3()" style="padding: 16px 30px; background: #fff; color: #888; border: 1px solid #ddd; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 600;">
-                    ← 이전
-                </button>
-                <button onclick="goToFinal()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                    모든 미션 완료! 🎉
-                </button>
-            </div>
+        <div class="guide-item" id="box-2-3" onclick="toggleSet2Part3()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👌 설정을 완료하셨나요?</span>
+            <span id="check-2-3" style="color: #ddd; font-size: 1.2rem;">✔</span>
         </div>
       </div>
 
@@ -728,53 +432,44 @@
 
     // ================= [2. 페이지 전환 (버튼용)] =================
     
-    // STEP 1 -> 2
+    // ================= [2. 페이지 전환 (버튼용) - 수정됨] =================
+    
+    // STEP 1 -> 2 (수정: ID를 set1-part1으로 변경)
     function goToStep2() {
+        // 1. 이전 화면 숨기기
         document.getElementById('step1-card').style.display = 'none';
         document.getElementById('intro-text').style.display = 'none';
-        document.getElementById('mission-2-part1').style.display = 'block';
-        window.scrollTo(0, 0);
+        
+        // 2. 다음 화면(Set 1의 첫 번째 파트) 보여주기
+        const nextStep = document.getElementById('set1-part1');
+        if (nextStep) {
+            nextStep.style.display = 'block';
+            window.scrollTo(0, 0); // 스크롤 맨 위로
+        } else {
+            console.error("오류: set1-part1을 찾을 수 없습니다.");
+        }
+        
         updateProgressBar(15);
     }
+
+    // STEP 2 -> 1 (수정: ID를 set1-part1으로 변경)
     function goBackToStep1() {
-        document.getElementById('mission-2-part1').style.display = 'none';
+        // 1. 현재 화면(Set 1의 파트들) 숨기기
+        // (혹시 열려있을지 모르는 모든 파트를 안전하게 숨깁니다)
+        const parts = ['set1-part1', 'set1-part2', 'set1-part3', 'set1-part4', 'set1-part5', 'set1-part6'];
+        parts.forEach(id => {
+            const el = document.getElementById(id);
+            if(el) el.style.display = 'none';
+        });
+
+        // 2. 이전 화면(Step 1) 보여주기
         document.getElementById('intro-text').style.display = 'block';
         document.getElementById('step1-card').style.display = 'block';
+        
         window.scrollTo(0, 0);
         updateProgressBar(0);
     }
 
-    // STEP 2 -> 3
-    function goToStep3() {
-        document.getElementById('mission-2-part1').style.display = 'none';
-        document.getElementById('mission-2-part2').style.display = 'none';
-        document.getElementById('mission-2-part3').style.display = 'none';
-        document.getElementById('mission-3-part1').style.display = 'block';
-        window.scrollTo(0, 0);
-        updateProgressBar(30);
-    }
-    function goBackToStep2() {
-        document.getElementById('mission-3-part1').style.display = 'none';
-        document.getElementById('mission-2-part3').style.display = 'block';
-        window.scrollTo(0, 0);
-        updateProgressBar(15);
-    }
-
-    // STEP 3 -> 4
-    function goToStep4() {
-        document.getElementById('mission-3-part1').style.display = 'none';
-        document.getElementById('mission-3-part2').style.display = 'none';
-        document.getElementById('mission-3-part3').style.display = 'none';
-        document.getElementById('mission-4-part1').style.display = 'block';
-        window.scrollTo(0, 0);
-        updateProgressBar(45);
-    }
-    function goBackToStep3() {
-        document.getElementById('mission-4-part1').style.display = 'none';
-        document.getElementById('mission-3-part3').style.display = 'block';
-        window.scrollTo(0, 0);
-        updateProgressBar(30);
-    }
 
     // [STEP 1]
     let isStep1Checked = false;
@@ -796,56 +491,152 @@
         }
     }
 
-    // [STEP 2]
-    let isPart1Checked = false;
-    function togglePart1() {
-        isPart1Checked = !isPart1Checked;
-        setCheckUI('mission-box-2-1', 'custom-check-2-1', 'check-icon-2-1', isPart1Checked);
-        const next = document.getElementById('mission-2-part2');
-        if(isPart1Checked) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
-        else { next.style.display = 'none'; }
+    // ================= [Set 1 통합 스크립트 (STEP 2)] =================
+
+    // 체크박스 UI 켜고 끄는 도우미 함수 (이건 그대로 두셔도 됩니다)
+    function toggleCheckUI(boxId, checkId, isChecked) {
+        const box = document.getElementById(boxId);
+        const check = document.getElementById(checkId);
+        if (isChecked) {
+            box.style.border = "2px solid #ff4f93";
+            box.style.background = "#fff0f6";
+            check.style.color = "#ff4f93";
+        } else {
+            box.style.border = "1px solid #ddd";
+            box.style.background = "#fff";
+            check.style.color = "#ddd";
+        }
     }
-    let isPart2Checked = false;
-    function togglePart2() {
-        isPart2Checked = !isPart2Checked;
-        setCheckUI('mission-box-2-2', 'custom-check-2-2', 'check-icon-2-2', isPart2Checked);
-        const next = document.getElementById('mission-2-part3');
-        if(isPart2Checked) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
-        else { next.style.display = 'none'; }
-    }
-    let isPart3Checked = false;
-    function togglePart3() {
-        isPart3Checked = !isPart3Checked;
-        setCheckUI('mission-box-2-3', 'custom-check-2-3', 'check-icon-2-3', isPart3Checked);
-        const next = document.getElementById('step2-btn-group');
-        if(isPart3Checked) { next.style.display = 'flex'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
+
+    // [섹션 1] 샘플 불러오기
+    let s1p1 = false;
+    function toggleSet1Part1() {
+        s1p1 = !s1p1;
+        toggleCheckUI('box-1-1', 'check-1-1', s1p1);
+        const next = document.getElementById('set1-part2');
+        if(s1p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
         else { next.style.display = 'none'; }
     }
 
-    // [STEP 3]
-    let s3p1 = false;
-    function toggleStep3Part1() {
-        s3p1 = !s3p1;
-        setCheckUI('mission-box-3-1', 'custom-check-3-1', 'check-icon-3-1', s3p1);
-        const next = document.getElementById('mission-3-part2');
-        if(s3p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
+    let s1p2 = false;
+    function toggleSet1Part2() {
+        s1p2 = !s1p2;
+        toggleCheckUI('box-1-2', 'check-1-2', s1p2);
+        const next = document.getElementById('set1-part3');
+        if(s1p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
         else { next.style.display = 'none'; }
     }
-    let s3p2 = false;
-    function toggleStep3Part2() {
-        s3p2 = !s3p2;
-        setCheckUI('mission-box-3-2', 'custom-check-3-2', 'check-icon-3-2', s3p2);
-        const next = document.getElementById('mission-3-part3');
-        if(s3p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
+
+    let s1p3 = false;
+    function toggleSet1Part3() {
+        s1p3 = !s1p3;
+        toggleCheckUI('box-1-3', 'check-1-3', s1p3);
+        // ★ 여기서 [섹션 2]인 Part 4가 열립니다! (원 페이지 흐름)
+        const next = document.getElementById('set1-part4');
+        if(s1p3) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'start'}); } 
         else { next.style.display = 'none'; }
     }
-    let s3p3 = false;
-    function toggleStep3Part3() {
-        s3p3 = !s3p3;
-        setCheckUI('mission-box-3-3', 'custom-check-3-3', 'check-icon-3-3', s3p3);
-        const next = document.getElementById('step3-btn-group');
-        if(s3p3) { next.style.display = 'flex'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
+
+    // [섹션 2] 메모 확인하기
+    let s1p4 = false;
+    function toggleSet1Part4() {
+        s1p4 = !s1p4;
+        toggleCheckUI('box-1-4', 'check-1-4', s1p4);
+        const next = document.getElementById('set1-part5');
+        if(s1p4) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
         else { next.style.display = 'none'; }
+    }
+
+    let s1p5 = false;
+    function toggleSet1Part5() {
+        s1p5 = !s1p5;
+        toggleCheckUI('box-1-5', 'check-1-5', s1p5);
+        const next = document.getElementById('set1-part6');
+        if(s1p5) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
+        else { next.style.display = 'none'; }
+    }
+
+    let s1p6 = false;
+    function toggleSet1Part6() {
+        s1p6 = !s1p6;
+        toggleCheckUI('box-1-6', 'check-1-6', s1p6);
+        
+        // ★ 버튼 그룹 보이기/숨기기 기능 추가됨
+        const btn = document.getElementById('set1-part6-btn');
+        if(s1p6) { 
+            btn.style.display = 'flex'; 
+            btn.scrollIntoView({behavior:'smooth', block:'center'});
+        } else { 
+            btn.style.display = 'none'; 
+        }
+    }
+
+    // [STEP 2] -> [STEP 3] 이동 함수
+    // (STEP 02 마지막 화면의 버튼 onclick="goToStep3()" 로 연결해주세요!)
+    function goToStep3() {
+        // 1. STEP 02의 모든 화면 숨기기
+        const set1Parts = ['set1-part1', 'set1-part2', 'set1-part3', 'set1-part4', 'set1-part5', 'set1-part6'];
+        set1Parts.forEach(id => {
+            const el = document.getElementById(id);
+            if(el) el.style.display = 'none';
+        });
+
+        // 2. STEP 03 대문 열기
+        const step3 = document.getElementById('step3-card');
+        if(step3) {
+            step3.style.display = 'block';
+            window.scrollTo(0, 0); // 스크롤 맨 위로
+            updateProgressBar(45); // 진행률 업데이트 (예: 45%)
+        }
+    }
+
+// [STEP 3] 시작 함수 (대문에서 '기록 시작하기' 누르면 실행)
+    function startStep3() {
+        // 1. 대문(Step 3 Intro) 숨기기
+        document.getElementById('step3-card').style.display = 'none';
+        
+        // 2. 시간 설정 첫 번째 단계(Set 2 Part 1) 보여주기
+        const part1 = document.getElementById('set2-part1');
+        if(part1) {
+            part1.style.display = 'block';
+            window.scrollTo(0, 0); 
+        }
+    }
+
+    // ================= [Set 2: 직접 메모하기 스크립트] =================
+
+    // 1. 달력 아이콘 체크 -> 다음(연/월 변경) 열기
+    let s2p1 = false;
+    function toggleSet2Part1() {
+        s2p1 = !s2p1;
+        toggleCheckUI('box-2-1', 'check-2-1', s2p1);
+        
+        const next = document.getElementById('set2-part2');
+        if(s2p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
+        else { next.style.display = 'none'; }
+    }
+
+    // 2. 연/월 변경 체크 -> 다음(날짜 선택) 열기
+    let s2p2 = false;
+    function toggleSet2Part2() {
+        s2p2 = !s2p2;
+        toggleCheckUI('box-2-2', 'check-2-2', s2p2);
+        
+        const next = document.getElementById('set2-part3');
+        if(s2p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
+        else { next.style.display = 'none'; }
+    }
+
+    // 3. 날짜 선택 체크 -> (다음 단계인 '내용 입력하기'로 이어질 예정)
+    let s2p3 = false;
+    function toggleSet2Part3() {
+        s2p3 = !s2p3;
+        toggleCheckUI('box-2-3', 'check-2-3', s2p3);
+        
+        if(s2p3) {
+            // 여기에 다음 단계(내용 입력)가 연결됩니다.
+            // alert("시간 설정 완료! 이제 내용을 입력할 차례입니다."); 
+        }
     }
 
     // [STEP 4]
