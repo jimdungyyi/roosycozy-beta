@@ -46,20 +46,13 @@
     <div class="login-card">
       <div class="logo-area"><span class="logo-dot"></span> RoosyCozy Beta</div>
       <h1 class="login-title">Project<br>Essential Record</h1>
-      <p class="login-desc">베타 액세스 코드를 입력해 주세요.</p>
+      <p class="login-desc">선생님의 기록을 가장 안전하게 지키는 방법.<br>지금 바로 체험해 보세요.</p>
       
-      <div class="input-group">
-        <input 
-          type="text" 
-          id="accessCode" 
-          placeholder="PIN 번호 6자리 (예: 000000)" 
-          maxlength="6" 
-          inputmode="numeric" 
-          autocomplete="off" 
-        />
-        <button onclick="attemptLogin()" class="btn-primary">입장하기</button>
+      <div class="input-group" style="justify-content: center;">
+        <button onclick="startApp()" class="btn-primary" style="width: 100%; font-size: 1.1rem;">
+            체험 시작하기 →
+        </button>
       </div>
-      <p id="login-msg" class="error-msg"></p>
     </div>
   </section>
 
@@ -285,100 +278,6 @@
         </button>
       </div>
 
-      <div id="set2-part1" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto;">
-        <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 03</div>
-        <h2 style="font-size: 1.8rem; margin-bottom: 10px; color: #222; font-weight: 700;">가장 먼저 '시간' 정하기</h2>
-        <p style="color: #666; margin-bottom: 30px;">
-            메모의 핵심은 '언제' 일어난 일인지 기록하는 것입니다.<br>
-            입력창 우측의 <strong>달력 아이콘</strong>을 찾아주세요.
-        </p>
-
-        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">1. 시간 설정창 열기</h3>
-        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
-            <img src="직접메모하기1-0.png" alt="달력 아이콘" style="width: 100%; display: block;">
-        </div>
-        
-        <div class="guide-item" id="box-2-1" onclick="toggleSet2Part1()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
-            <span style="font-weight: 600; color: #333;">👆 아이콘을 클릭하셨나요?</span>
-            <span id="check-2-1" style="color: #ddd; font-size: 1.2rem;">✔</span>
-        </div>
-      </div>
-
-      <div id="set2-part2" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
-        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">2. 과거 날짜로 이동하기</h3>
-        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
-            지난 일을 기록할 땐 달력을 한참 넘겨야 할까요?<br>
-            아닙니다. <strong>년/월 글씨</strong>를 누르면 한 번에 이동합니다.
-        </p>
-        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
-            <img src="직접메모하기1-1.png" alt="연월 변경" style="width: 100%; display: block;">
-        </div>
-        <div class="guide-item" id="box-2-2" onclick="toggleSet2Part2()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
-            <span style="font-weight: 600; color: #333;">👆 해당 부분을 클릭해 보셨나요?</span>
-            <span id="check-2-2" style="color: #ddd; font-size: 1.2rem;">✔</span>
-        </div>
-      </div>
-
-      <div id="set2-part3" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
-        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">3. 날짜와 시간 확정</h3>
-        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
-            원하는 날짜를 누르고, 오전/오후 시간도 조정해 보세요.
-        </p>
-        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
-            <img src="직접메모하기1-2.png" alt="날짜 선택" style="width: 100%; display: block;">
-        </div>
-        <div class="guide-item" id="box-2-3" onclick="toggleSet2Part3()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
-            <span style="font-weight: 600; color: #333;">👌 설정을 완료하셨나요?</span>
-            <span id="check-2-3" style="color: #ddd; font-size: 1.2rem;">✔</span>
-        </div>
-      </div>
-
-      <div id="set2-part4" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
-        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">4. 누구에 대한 기록인가요?</h3>
-        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
-            사건의 주인공을 정하는 <strong>주체 유형/이름</strong> 칸입니다.<br>
-            <span style="color:#ff4f93; font-weight:700;">※ 관련자가 여러 명이라도, 우선 대표 1명을 선택해야 합니다.</span><br>
-            (나머지 인원은 나중에 '관련자 추가'로 넣을 수 있어요)
-        </p>
-        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
-            <img src="직접메모하기2-1.png" alt="주체 영역 표시" style="width: 100%; display: block;">
-        </div>
-        <div class="guide-item" id="box-2-4" onclick="toggleSet2Part4()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
-            <span style="font-weight: 600; color: #333;">👆 위치를 확인하셨나요?</span>
-            <span id="check-2-4" style="color: #ddd; font-size: 1.2rem;">✔</span>
-        </div>
-      </div>
-
-      <div id="set2-part5" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
-        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">5. 유형 선택 (학생, 학부모 등)</h3>
-        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
-            왼쪽 드롭다운을 눌러 대상을 지정합니다.<br>
-            학생뿐만 아니라 학부모, 동료 교사, 관리자도 가능합니다.
-        </p>
-        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
-            <img src="직접메모하기2-2.png" alt="유형 선택" style="width: 100%; display: block;">
-        </div>
-        <div class="guide-item" id="box-2-5" onclick="toggleSet2Part5()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
-            <span style="font-weight: 600; color: #333;">👆 유형을 선택해 보셨나요?</span>
-            <span id="check-2-5" style="color: #ddd; font-size: 1.2rem;">✔</span>
-        </div>
-      </div>
-
-      <div id="set2-part6" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
-        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">6. 구체적인 이름(번호) 선택</h3>
-        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
-            오른쪽 칸에서 구체적으로 누구인지 정합니다.<br>
-            보통 학번이나 이름이 표시됩니다.
-        </p>
-        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
-            <img src="직접메모하기2-3.png" alt="이름 선택" style="width: 100%; display: block;">
-        </div>
-        <div class="guide-item" id="box-2-6" onclick="toggleSet2Part6()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
-            <span style="font-weight: 600; color: #333;">👌 대상 지정을 완료했나요?</span>
-            <span id="check-2-6" style="color: #ddd; font-size: 1.2rem;">✔</span>
-        </div>
-      </div>
-
       <div style="text-align: center; margin-top: 50px;">
         <button onclick="resetProgress()" style="color:#aaa; background:none; border:none; text-decoration:underline; cursor:pointer; font-size:0.8rem;">[테스트용] 진행 상황 초기화</button>
       </div>
@@ -428,45 +327,31 @@
   </main>
 
   <script>
-    // ================= [1. 기본 설정] =================
+    // ================= [1. 기본 설정 (로그인 삭제됨)] =================
     const STORAGE_KEY = 'roosy_final_v1';
-    const validCodes = ['000000', '123456', '111111'];
-    let currentUser = null;
+    let currentUser = "BETA-TESTER"; // 기본 닉네임
     let currentStep = 1;
 
     // 초기 로드
     window.onload = function() {
+      // 기존 저장된 데이터가 있는지 확인 (선택 사항)
       const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (savedData && validCodes.includes(savedData.user)) {
-        currentUser = savedData.user;
-        loginSuccess(currentUser);
-        // 저장된 단계로 복구하는 로직은 복잡해질 수 있어 생략 (항상 1단계 or 저장된 단계부터 시작)
-        // restoreProgress(savedData.step); 
+      if (savedData) {
+        // 이전에 하던 게 있으면 불러올 수도 있음 (지금은 기능만 유지)
       }
     };
 
-    // 로그인 기능
-    function attemptLogin() {
-      const input = document.getElementById('accessCode');
-      const code = input.value.trim();
-      if (validCodes.includes(code)) {
-        currentUser = code;
-        saveData();
-        loginSuccess(code);
-      } else {
-        const msg = document.getElementById('login-msg');
-        msg.innerText = "유효하지 않은 PIN 번호입니다.";
-      }
-    }
-
-    function loginSuccess(userId) {
+    // [변경] 로그인 과정 없이 바로 시작
+    function startApp() {
       document.getElementById('login-screen').style.display = 'none';
       document.getElementById('dashboard').style.display = 'block';
-      document.getElementById('user-id-display').innerText = userId;
+      document.getElementById('user-id-display').innerText = currentUser;
+      
+      // 시작하자마자 데이터 저장 (방문 기록)
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ user: currentUser, step: 1 }));
     }
 
     function saveData() {
-      if(!currentUser) return;
       localStorage.setItem(STORAGE_KEY, JSON.stringify({ user: currentUser, step: currentStep }));
     }
 
@@ -650,75 +535,6 @@
     }
 
     // ================= [Set 2: 직접 메모하기 스크립트] =================
-
-    // 1. 달력 아이콘 체크 -> 다음(연/월 변경) 열기
-    let s2p1 = false;
-    function toggleSet2Part1() {
-        s2p1 = !s2p1;
-        toggleCheckUI('box-2-1', 'check-2-1', s2p1);
-        
-        const next = document.getElementById('set2-part2');
-        if(s2p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
-    }
-
-    // 2. 연/월 변경 체크 -> 다음(날짜 선택) 열기
-    let s2p2 = false;
-    function toggleSet2Part2() {
-        s2p2 = !s2p2;
-        toggleCheckUI('box-2-2', 'check-2-2', s2p2);
-        
-        const next = document.getElementById('set2-part3');
-        if(s2p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
-    }
-
-    // [수정] 3. 날짜 선택 체크 -> 다음 단계(주체 영역 확인) 열기
-    let s2p3 = false;
-    function toggleSet2Part3() {
-        s2p3 = !s2p3;
-        toggleCheckUI('box-2-3', 'check-2-3', s2p3);
-        
-        // ★ 여기서 '주체 정하기' 첫 번째 단계(Part 4)로 연결됩니다.
-        const next = document.getElementById('set2-part4');
-        if(s2p3) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
-    }
-
-    // ================= [Set 2 Part 2: 주체 정하기 스크립트] =================
-
-    // 4. 주체 영역 확인 -> 유형 선택 열기
-    let s2p4 = false;
-    function toggleSet2Part4() {
-        s2p4 = !s2p4;
-        toggleCheckUI('box-2-4', 'check-2-4', s2p4);
-        
-        const next = document.getElementById('set2-part5');
-        if(s2p4) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
-    }
-
-    // 5. 유형 선택 -> 이름 선택 열기
-    let s2p5 = false;
-    function toggleSet2Part5() {
-        s2p5 = !s2p5;
-        toggleCheckUI('box-2-5', 'check-2-5', s2p5);
-        
-        const next = document.getElementById('set2-part6');
-        if(s2p5) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
-    }
-
-    // 6. 이름 선택 -> (다음 단계인 '내용 입력'으로 이어질 예정)
-    let s2p6 = false;
-    function toggleSet2Part6() {
-        s2p6 = !s2p6;
-        toggleCheckUI('box-2-6', 'check-2-6', s2p6);
-        
-        if(s2p6) {
-             // 여기에 다음 단계(내용 입력 및 저장)가 연결됩니다.
-        }
-    }
 
     // [STEP 4]
     let s4p1 = false;
