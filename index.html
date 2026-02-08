@@ -33,7 +33,6 @@
       align-items: center;
       justify-content: center;
     }
-
     /* STEP 1 미션 박스 스타일 */
     #mission-box:hover {
         background: #fafafa;
@@ -101,50 +100,30 @@
         <div style="margin-bottom: 30px; border-left: 3px solid #eee; padding-left: 20px;">
             <div style="margin-bottom: 20px;">
                 <h4 style="margin: 0 0 5px 0; color: #333;">1️⃣ 파일 확인</h4>
-                <p style="margin: 0; font-size: 0.95rem; color: #666;">
-                    파일은 <b>[내 PC > 다운로드]</b> 폴더에 저장됩니다.<br>
-                    파일명(<code>roosycozy...zip</code>)을 확인해 주세요.
-                </p>
+                <p style="margin: 0; font-size: 0.95rem; color: #666;">파일은 <b>[내 PC > 다운로드]</b> 폴더에 저장됩니다.</p>
             </div>
             <div style="margin-bottom: 20px;">
                 <h4 style="margin: 0 0 5px 0; color: #333;">2️⃣ 압축 풀고 실행</h4>
-                <p style="margin: 0; font-size: 0.95rem; color: #666;">
-                    압축 파일 안에서 바로 실행하면 오류가 날 수 있습니다.<br>
-                    반드시 <b>압축을 푼 뒤 폴더 안에서</b> 실행해 주세요.
-                </p>
-            </div>
-            <div style="margin-bottom: 20px;">
-                <h4 style="margin: 0 0 5px 0; color: #333;">3️⃣ 경고창 무시 (중요!)</h4>
-                <p style="margin: 0; font-size: 0.95rem; color: #666;">'서명되지 않은 앱' 경고는 베타 버전에선 정상입니다.<br>아래 사진을 보고 <b>[추가 정보] → [실행]</b>을 눌러주세요.</p>
+                <p style="margin: 0; font-size: 0.95rem; color: #666;">반드시 <b>압축을 푼 뒤 폴더 안에서</b> 실행해 주세요.</p>
             </div>
             <div>
-                <h4 style="margin: 0 0 5px 0; color: #333;">4️⃣ 살짝 기다리기</h4>
-                <p style="margin: 0; font-size: 0.95rem; color: #666;">첫 실행은 10~30초 정도 걸립니다.<br>멈춘 것 같아도 조금만 기다려주세요.</p>
+                <h4 style="margin: 0 0 5px 0; color: #333;">3️⃣ 경고창 무시 (중요!)</h4>
+                <p style="margin: 0; font-size: 0.95rem; color: #666;">'서명되지 않은 앱' 경고는 정상이니 <b>[추가 정보] → [실행]</b>을 눌러주세요.</p>
             </div>
         </div>
 
         <div style="background: #f5f5f5; border-radius: 12px; padding: 20px; margin-bottom: 30px;">
             <h4 style="margin: 0 0 15px 0; font-size: 1rem; color: #555;">🛟 윈도우에서 'PC 보호' 창이 떴나요?</h4>
-            
             <div style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px;">
-                
                 <div style="flex: 0 0 auto; width: 45%; min-width: 200px; text-align: center;">
-                    <img src="warning_win_1.png" alt="PC 보호 경고창" style="width: 100%; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                    <div style="font-size: 0.85rem; color: #333; font-weight: 700;">1단계</div>
-                    <div style="font-size: 0.8rem; color: #666;"><u>추가 정보</u> 글씨 클릭</div>
+                    <img src="warning_win_1.png" alt="PC 보호 경고창" style="width: 100%; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 8px;">
+                    <div style="font-size: 0.85rem; color: #333; font-weight: 700;">1단계: 추가 정보 클릭</div>
                 </div>
-
                 <div style="flex: 0 0 auto; width: 45%; min-width: 200px; text-align: center;">
-                    <img src="warning_win_2.png" alt="실행 버튼 화면" style="width: 100%; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                    <div style="font-size: 0.85rem; color: #333; font-weight: 700;">2단계</div>
-                    <div style="font-size: 0.8rem; color: #666;">아래쪽 <u>실행</u> 버튼 클릭</div>
+                    <img src="warning_win_2.png" alt="실행 버튼 화면" style="width: 100%; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 8px;">
+                    <div style="font-size: 0.85rem; color: #333; font-weight: 700;">2단계: 실행 클릭</div>
                 </div>
-
             </div>
-
-            <p style="font-size: 0.85rem; color: #888; margin-top: 10px; border-top: 1px solid #ddd; padding-top: 10px; text-align: center;">
-                * 바이러스가 아니니 안심하고 실행하셔도 됩니다.
-            </p>
         </div>
 
         <div id="mission-box" class="guide-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-radius: 12px; background: #fff; border: 1px solid #eee; cursor: pointer; transition: all 0.3s; margin-bottom: 25px;" onclick="toggleMission()">
@@ -165,7 +144,7 @@
         </button>
       </div>
 
-      <div id="set1-part1" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto;">
+      <div id="set1-part1" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 800px; margin: 0 auto 30px auto;">
         <div style="color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 02</div>
         <h2 style="font-size: 1.8rem; margin-bottom: 10px; color: #222; font-weight: 700;">샘플로 한 바퀴 둘러보기</h2>
         <p style="color: #666; margin-bottom: 30px;">빈 화면은 막막하니까요. 샘플 데이터로 기능을 체험해 봅시다.</p>
@@ -174,14 +153,13 @@
         <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
             <img src="샘플불러오기1.png" alt="샘플 버튼 위치" style="width: 100%; display: block;">
         </div>
-        
         <div class="guide-item" id="box-1-1" onclick="toggleSet1Part1()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
             <span style="font-weight: 600; color: #333;">👆 '샘플 불러오기' 버튼을 눌렀나요?</span>
             <span id="check-1-1" style="color: #ddd; font-size: 1.2rem;">✔</span>
         </div>
       </div>
 
-      <div id="set1-part2" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+      <div id="set1-part2" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 800px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">2. 덮어쓰기 확인</h3>
         <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
             <img src="샘플불러오기2.png" alt="확인 팝업" style="width: 100%; display: block;">
@@ -192,7 +170,7 @@
         </div>
       </div>
 
-      <div id="set1-part3" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+      <div id="set1-part3" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 800px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">3. 데이터 생성 완료</h3>
         <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">데이터 개수가 <strong>55개</strong>로 바뀌었는지 확인하세요.</p>
         <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
@@ -204,10 +182,8 @@
         </div>
       </div>
 
-
-      <div id="set1-part4" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; background: #f9f9f9;">
+      <div id="set1-part4" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 800px; margin: 0 auto 30px auto; background: #f9f9f9;">
         <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: #222; font-weight: 700;">이제 기록을 확인해 볼까요?</h2>
-        
         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">4. 메모 목록 열기</h3>
         <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
             <img src="메모확인하기1.png" alt="목록 버튼" style="width: 100%; display: block;">
@@ -218,7 +194,7 @@
         </div>
       </div>
 
-      <div id="set1-part5" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee; background: #f9f9f9;">
+      <div id="set1-part5" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 800px; margin: 0 auto 30px auto; border-top: 1px solid #eee; background: #f9f9f9;">
         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">5. 첫 번째 기록 자세히 보기</h3>
         <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
             <img src="메모확인하기2.png" alt="자세히 버튼" style="width: 100%; display: block;">
@@ -229,45 +205,29 @@
         </div>
       </div>
 
-      <div id="set1-part6" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee; background: #f9f9f9;">
+      <div id="set1-part6" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 800px; margin: 0 auto 30px auto; border-top: 1px solid #eee; background: #f9f9f9;">
         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">6. 상세 내용 확인</h3>
         <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">누가, 언제, 어디서가 자동으로 정리된 화면입니다.</p>
-        
         <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
             <img src="메모확인하기3.png" alt="상세 화면" style="width: 100%; display: block;">
         </div>
-        
         <div class="guide-item" id="box-1-6" onclick="toggleSet1Part6()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
             <span style="font-weight: 600; color: #333;">👀 내용을 확인했나요?</span>
             <span id="check-1-6" style="color: #ddd; font-size: 1.2rem;">✔</span>
         </div>
-
         <div id="set1-part6-btn" style="display: none; gap: 10px; justify-content: center; margin-top: 30px;">
-            
             <button onclick="goToStep3()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
                 다음 미션으로 이동 →
             </button>
-
         </div>
       </div>
 
-      <div id="step3-card" class="mission-card" style="display: none; text-align: left; padding: 40px 30px; max-width: 600px; margin: 0 auto;">
+      <div id="step3-card" class="mission-card" style="display: none; text-align: left; padding: 40px 30px; max-width: 800px; margin: 0 auto;">
         <div style="text-align: center; color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 03</div>
         <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 10px; color: #222; font-weight: 700;">이제 직접 남겨봅시다</h2>
         <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 1rem;">
-            샘플은 충분히 둘러보셨나요?<br>
-            이제 3초 만에 기록이 끝나는 경험을 해보세요.
+            샘플은 충분히 둘러보셨나요?<br>이제 3초 만에 기록이 끝나는 경험을 해보세요.
         </p>
-
-        <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #eee;">
-            <h4 style="margin: 0 0 15px 0; color: #333; font-size: 1.1rem;">🎯 이번 단계 목표</h4>
-            <ul style="margin: 0; padding-left: 20px; line-height: 1.8; color: #555;">
-                <li>새로운 메모 입력창 열기</li>
-                <li>간단한 내용 입력하고 저장하기</li>
-                <li>저장된 내 기록 확인하기</li>
-            </ul>
-        </div>
-
         <button onclick="startStep3()" style="
             width: 100%; padding: 20px; background: #ff4f93; color: #fff;
             border: none; border-radius: 12px; font-size: 1.2rem; font-weight: 700;
@@ -278,81 +238,281 @@
         </button>
       </div>
 
-      <div style="text-align: center; margin-top: 50px;">
-        <button onclick="resetProgress()" style="color:#aaa; background:none; border:none; text-decoration:underline; cursor:pointer; font-size:0.8rem;">[테스트용] 진행 상황 초기화</button>
+      <div id="set2-part1" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 800px; margin: 0 auto 30px auto;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">1. 입력 후 저장하기</h3>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="직접메모하기3-1.png" alt="입력 화면 예시" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-2-1" onclick="toggleSet2Part1()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">⌨️ 입력을 마치고 저장했나요?</span>
+            <span id="check-2-1" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set2-part2" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 800px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">2. 내 기록 확인하기</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
+            <span style="color:#ff4f93; font-weight:700;">빨간색 테두리로 표시된 부분</span>을 확인하세요!
+        </p>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="직접메모하기3-2.png" alt="결과 확인" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-2-2" onclick="toggleSet2Part2()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👀 리스트에 추가된 걸 확인했나요?</span>
+            <span id="check-2-2" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+        <div id="set2-final-btn" style="display: none; gap: 10px; justify-content: center; margin-top: 30px;">
+            <button onclick="goToStep4()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                다음 단계(마지막)로 이동 →
+            </button>
+        </div>
+      </div>
+
+      <div id="step4-card" class="mission-card" style="display: none; text-align: left; padding: 40px 30px; max-width: 600px; margin: 0 auto;">
+        <div style="text-align: center; color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 04</div>
+        <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 10px; color: #222; font-weight: 700;">흩어진 기록을 한 곳으로</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 1rem;">
+            메모가 아무리 많아도 걱정 없습니다.<br>
+            <strong>'스마트 메모 모으기'</strong>가 AI처럼 관련 기록을 묶어줍니다.
+        </p>
+
+        <button onclick="startStep4()" style="
+            width: 100%; padding: 20px; background: #ff4f93; color: #fff;
+            border: none; border-radius: 12px; font-size: 1.2rem; font-weight: 700;
+            cursor: pointer; box-shadow: 0 8px 20px rgba(255, 79, 147, 0.3);
+            transition: transform 0.2s;
+        " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            🧩 메모 묶음 만들기
+        </button>
+      </div>
+
+      <div id="set4-part1" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">1. 메모 묶음 관리함</h3>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="메모 모으기 0.png" alt="메모 묶음 화면" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-4-1" onclick="toggleSet4Part1()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👀 화면을 확인하셨나요?</span>
+            <span id="check-4-1" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set4-part2" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">2. 기능 실행하기</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
+            상단에 있는 <strong>[스마트 메모 모으기]</strong> 버튼을 찾아주세요.<br>
+            <span style="color:#ff4f93; font-weight:700;">빨간 원</span>으로 표시된 곳입니다.
+        </p>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="메모 모으기 1.png" alt="버튼 클릭" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-4-2" onclick="toggleSet4Part2()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👆 버튼을 눌렀다고 가정해 볼까요?</span>
+            <span id="check-4-2" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set4-part3" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #444; font-weight: 700;">3. AI에게 조건 알려주기</h3>
+        
+        <div style="background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 12px; padding: 20px; text-align: left; margin-bottom: 20px;">
+            <h4 style="margin: 0 0 10px 0; font-size: 1rem; color: #ff4f93; line-height: 1.4;">
+                💡 이렇게 작성하면 기능을 더 잘 체험할 수 있어요!
+            </h4>
+
+            <div style="color: #666; font-size: 0.9rem; font-weight: 700; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 8px;">
+                📌 예시
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <strong style="color: #222; font-size: 0.95rem;">🏷️ 메모 묶음 이름</strong><br>
+                <span style="color: #555; font-size: 0.9rem;">학생4 ADHD 관찰/지도 기록</span>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <strong style="color: #222; font-size: 0.95rem;">📌 요약(키워드 나열)</strong><br>
+                <span style="color:#666; font-size: 0.85rem; line-height: 1.5; display: block; margin-top: 4px;">
+                    산만, 자리이탈, 복도 뛰어다님, 급식줄 밀침, 병원검사, ADHD 약물치료, 투약, 보건실, 점심약 개선
+                </span>
+            </div>
+
+            <div style="font-size: 0.9rem; color: #444;">
+                <strong style="color: #222; font-size: 0.95rem;">👥 관련자 (※중요)</strong><br>
+                <span style="color: #555;">학생4, 학부모 4번 모</span><br>
+                <span style="color:#ff4f93; font-weight:700; font-size: 0.85rem;">(목록에서 선택 후 [추가] 버튼 필수!)</span>
+            </div>
+        </div>
+
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
+            위 예시를 참고해서 입력해 보세요.<br>
+            AI가 더 정확하게 기록을 찾아냅니다.
+        </p>
+
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="메모 모으기 2.png" alt="조건 입력 화면" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-4-3" onclick="toggleSet4Part3()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">✍️ 예시처럼 입력해 보시겠어요?</span>
+            <span id="check-4-3" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set4-part4" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">4. 모으기 시작</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
+            입력이 끝났다면<br>
+            하단의 <strong>[메모 모으기 시작]</strong>(빨간 네모)을 눌러주세요.
+        </p>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="메모 모으기 3.png" alt="시작 버튼" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-4-4" onclick="toggleSet4Part4()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">🚀 시작 버튼을 눌렀나요?</span>
+            <span id="check-4-4" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set4-part5" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">5. 생성 완료!</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
+            짜잔! 새로운 메모 묶음이 생성되었습니다.<br>
+            이제 이 묶음을 <strong>출력(STEP 5)</strong>하러 가볼까요?
+        </p>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="메모 모으기 4.png" alt="결과 화면" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-4-5" onclick="toggleSet4Part5()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">🎉 묶음이 생긴걸 확인했나요?</span>
+            <span id="check-4-5" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+
+        <div id="set4-final-btn" style="display: none; gap: 10px; justify-content: center; margin-top: 30px;">
+            <button onclick="goToStep5()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                마지막 단계(출력)로 이동 →
+            </button>
+        </div>
+      </div>
+
+      <div id="step5-card" class="mission-card" style="display: none; text-align: left; padding: 40px 30px; max-width: 600px; margin: 0 auto;">
+        <div style="text-align: center; color: #ff4f93; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px;">STEP 05</div>
+        <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 10px; color: #222; font-weight: 700;">기록을 무기로 바꾸기</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 1rem;">
+            흩어진 메모들을 모아 <strong>한 장의 보고서</strong>로 만듭니다.<br>
+            증빙이 필요한 순간에 가장 빛나는 기능입니다.
+        </p>
+        <button onclick="startStep5()" style="
+            width: 100%; padding: 20px; background: #ff4f93; color: #fff;
+            border: none; border-radius: 12px; font-size: 1.2rem; font-weight: 700;
+            cursor: pointer; box-shadow: 0 8px 20px rgba(255, 79, 147, 0.3);
+            transition: transform 0.2s;
+        " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            🖨️ 출력 기능 체험하기
+        </button>
+      </div>
+
+      <div id="set3-part1" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">1. 증빙자료 출력 버튼 찾기</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
+            상단 메뉴에 있는 <strong>[증빙자료출력]</strong> 버튼을 찾아주세요.
+        </p>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="출력1.png" alt="출력 버튼 위치" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-3-1" onclick="toggleSet3Part1()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👆 버튼을 클릭하셨나요?</span>
+            <span id="check-3-1" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set3-part2" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">2. 출력할 주제 선택하기</h3>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="출력2.png" alt="목록 선택 화면" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-3-2" onclick="toggleSet3Part2()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👆 목록 중 하나를 선택했나요?</span>
+            <span id="check-3-2" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set3-part3" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">3. 보고서 확인 및 저장</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
+            우측 상단 <strong>[PDF로 저장]</strong>을 눌러 다운로드하세요.
+        </p>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="출력3.png" alt="PDF 미리보기" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-3-3" onclick="toggleSet3Part3()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">💾 PDF 저장 버튼을 눌렀나요?</span>
+            <span id="check-3-3" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+      </div>
+
+      <div id="set3-part4" class="mission-card" style="display: none; text-align: center; padding: 40px 30px; max-width: 600px; margin: 0 auto 30px auto; border-top: 1px solid #eee;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #444; font-weight: 700;">4. 파일 열어보기 (최종 점검)</h3>
+        <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
+            다운로드 폴더에 저장된 파일을 열어보세요.<br>
+            <strong>제목, 일시, 내용</strong>이 깨지지 않고 잘 보이나요?
+        </p>
+        <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+            <img src="출력4.png" alt="PDF 파일 열기 확인" style="width: 100%; display: block;">
+        </div>
+        <div class="guide-item" id="box-3-4" onclick="toggleSet3Part4()" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-radius: 12px; background: #fff; border: 1px solid #ddd; cursor: pointer;">
+            <span style="font-weight: 600; color: #333;">👀 네, 파일이 정상적으로 열립니다!</span>
+            <span id="check-3-4" style="color: #ddd; font-size: 1.2rem;">✔</span>
+        </div>
+
+        <div id="set3-final-btn" style="display: none; gap: 10px; justify-content: center; margin-top: 30px;">
+            <button onclick="finishAllMissions()" style="padding: 16px 50px; background: #222; color: #fff; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                🎉 모든 체험 완료하기!
+            </button>
+        </div>
       </div>
 
     </section>
 
-    <div id="survey-modal" class="modal-overlay" style="display: none;">
-      <div class="modal-card survey-card">
-        <div class="modal-header">
-          <h3>수고하셨습니다, 선생님! 🎉</h3>
-          <button onclick="closeSurveyModal()" class="btn-close">✕</button>
-        </div>
-        <div class="survey-body">
-          <div class="survey-section">
-            <p class="survey-intro">오늘 훈련이 선생님의 막연한 불안감을 조금이라도 덜어드렸기를 바랍니다.</p>
-            <label class="survey-label">Q1. RoosyCozy를 써보시니 마음이 좀 편안해지셨나요?</label>
-            <textarea id="q1-text"></textarea> 
-          </div>
-          <div class="survey-section">
-            <label class="survey-label">Q2. "이거 하나 때문이라도 쓴다!" 싶은 최고의 기능은?</label>
-            <div class="feature-select-group">
-              <label class="feature-card"><input type="radio" name="q2_feature" value="record" checked><span class="f-text">⚡ 3초 컷! 초간편 기록</span></label>
-              <label class="feature-card"><input type="radio" name="q2_feature" value="ai"><span class="f-text">🧠 맥락을 잇는 AI 타임라인</span></label>
-              <label class="feature-card"><input type="radio" name="q2_feature" value="pdf"><span class="f-text">📄 교육청 제출용 PDF 자동 생성</span></label>
-              <label class="feature-card"><input type="radio" name="q2_feature" value="guide"><span class="f-text">💬 감정 쏙 뺀 '톤앤매너 가이드'</span></label>
-            </div>
-          </div>
-          <div class="survey-section">
-            <label class="survey-label">Q3. 더 완벽한 방어막을 위해 바라는 점을 알려주세요.</label>
-            <textarea id="q3-text"></textarea>
-          </div>
-          <button onclick="submitSurvey()" id="btn-submit-survey" class="btn-primary full-width" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top:10px;">
-            피드백 제출하고 인증 완료하기
-          </button>
-        </div>
+    <div id="completion-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-card" style="text-align: center; max-width: 450px; padding: 40px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🏆</div>
+        
+        <h2 style="font-size: 1.8rem; margin-bottom: 15px; color: #222; font-weight: 800;">모든 훈련 수료 완료!</h2>
+        
+        <p style="color: #555; font-size: 1.05rem; line-height: 1.6; margin-bottom: 40px;">
+          고생하셨습니다, 선생님.<br>
+          이제 실전에서도 <strong>RoosyCozy</strong>가<br>
+          선생님의 가장 든든한 방패가 되어드리겠습니다.
+        </p>
+
+        <button onclick="closeCompletionModal()" style="
+            width: 100%; padding: 18px; background: #222; color: #fff;
+            border: none; border-radius: 12px; font-size: 1.1rem; font-weight: 700; 
+            cursor: pointer; transition: 0.2s;
+        " onmouseover="this.style.background='#444'" onmouseout="this.style.background='#222'">
+            멋지게 마무리하기 👋
+        </button>
       </div>
     </div>
 
-    <div id="congrats-modal" class="modal-overlay" style="display: none;">
-      <div class="modal-card">
-        <div class="modal-icon">🎉</div>
-        <h2>축하합니다!</h2>
-        <p><strong>Project Essential Record</strong>를 완주하셨습니다.<br>이제 선생님의 기록은 가장 안전하게 보호됩니다.</p>
-        <button onclick="closeModal()" class="btn-primary">닫기</button>
-      </div>
-    </div>
   </main>
 
-  <script>
-    // ================= [1. 기본 설정 (로그인 삭제됨)] =================
+<script>
+    // ================= [1. 기본 설정] =================
     const STORAGE_KEY = 'roosy_final_v1';
-    let currentUser = "BETA-TESTER"; // 기본 닉네임
+    let currentUser = "BETA-TESTER"; 
     let currentStep = 1;
 
     // 초기 로드
     window.onload = function() {
-      // 기존 저장된 데이터가 있는지 확인 (선택 사항)
-      const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (savedData) {
-        // 이전에 하던 게 있으면 불러올 수도 있음 (지금은 기능만 유지)
-      }
+      // 기존 저장 기능 유지
     };
 
-    // [변경] 로그인 과정 없이 바로 시작
+    // 로그인 없이 바로 시작
     function startApp() {
       document.getElementById('login-screen').style.display = 'none';
       document.getElementById('dashboard').style.display = 'block';
       document.getElementById('user-id-display').innerText = currentUser;
-      
-      // 시작하자마자 데이터 저장 (방문 기록)
       localStorage.setItem(STORAGE_KEY, JSON.stringify({ user: currentUser, step: 1 }));
-    }
-
-    function saveData() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ user: currentUser, step: currentStep }));
     }
 
     // 진행률 바 업데이트
@@ -361,48 +521,22 @@
         document.getElementById('progress-text').innerText = `${percent}%`;
     }
 
-    // ================= [2. 페이지 전환 (버튼용)] =================
+    // ================= [2. 페이지 전환 및 기능] =================
     
-    // ================= [2. 페이지 전환 (버튼용) - 수정됨] =================
-    
-    // STEP 1 -> 2 (수정: ID를 set1-part1으로 변경)
+    // STEP 1 -> 2
     function goToStep2() {
-        // 1. 이전 화면 숨기기
         document.getElementById('step1-card').style.display = 'none';
         document.getElementById('intro-text').style.display = 'none';
         
-        // 2. 다음 화면(Set 1의 첫 번째 파트) 보여주기
         const nextStep = document.getElementById('set1-part1');
         if (nextStep) {
             nextStep.style.display = 'block';
-            window.scrollTo(0, 0); // 스크롤 맨 위로
-        } else {
-            console.error("오류: set1-part1을 찾을 수 없습니다.");
+            window.scrollTo(0, 0);
         }
-        
         updateProgressBar(15);
     }
 
-    // STEP 2 -> 1 (수정: ID를 set1-part1으로 변경)
-    function goBackToStep1() {
-        // 1. 현재 화면(Set 1의 파트들) 숨기기
-        // (혹시 열려있을지 모르는 모든 파트를 안전하게 숨깁니다)
-        const parts = ['set1-part1', 'set1-part2', 'set1-part3', 'set1-part4', 'set1-part5', 'set1-part6'];
-        parts.forEach(id => {
-            const el = document.getElementById(id);
-            if(el) el.style.display = 'none';
-        });
-
-        // 2. 이전 화면(Step 1) 보여주기
-        document.getElementById('intro-text').style.display = 'block';
-        document.getElementById('step1-card').style.display = 'block';
-        
-        window.scrollTo(0, 0);
-        updateProgressBar(0);
-    }
-
-
-    // [STEP 1]
+    // [STEP 1] 체크박스 로직
     let isStep1Checked = false;
     function toggleMission() {
         isStep1Checked = !isStep1Checked;
@@ -422,9 +556,7 @@
         }
     }
 
-    // ================= [Set 1 통합 스크립트 (STEP 2)] =================
-
-    // 체크박스 UI 켜고 끄는 도우미 함수 (이건 그대로 두셔도 됩니다)
+    // 체크박스 UI 도우미
     function toggleCheckUI(boxId, checkId, isChecked) {
         const box = document.getElementById(boxId);
         const check = document.getElementById(checkId);
@@ -439,212 +571,248 @@
         }
     }
 
-    // [섹션 1] 샘플 불러오기
+    // [STEP 2] 로직
     let s1p1 = false;
     function toggleSet1Part1() {
         s1p1 = !s1p1;
         toggleCheckUI('box-1-1', 'check-1-1', s1p1);
         const next = document.getElementById('set1-part2');
-        if(s1p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
+        if(s1p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } else { next.style.display = 'none'; }
     }
-
     let s1p2 = false;
     function toggleSet1Part2() {
         s1p2 = !s1p2;
         toggleCheckUI('box-1-2', 'check-1-2', s1p2);
         const next = document.getElementById('set1-part3');
-        if(s1p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
+        if(s1p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } else { next.style.display = 'none'; }
     }
-
     let s1p3 = false;
     function toggleSet1Part3() {
         s1p3 = !s1p3;
         toggleCheckUI('box-1-3', 'check-1-3', s1p3);
-        // ★ 여기서 [섹션 2]인 Part 4가 열립니다! (원 페이지 흐름)
         const next = document.getElementById('set1-part4');
-        if(s1p3) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'start'}); } 
-        else { next.style.display = 'none'; }
+        if(s1p3) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'start'}); } else { next.style.display = 'none'; }
     }
-
-    // [섹션 2] 메모 확인하기
     let s1p4 = false;
     function toggleSet1Part4() {
         s1p4 = !s1p4;
         toggleCheckUI('box-1-4', 'check-1-4', s1p4);
         const next = document.getElementById('set1-part5');
-        if(s1p4) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
+        if(s1p4) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } else { next.style.display = 'none'; }
     }
-
     let s1p5 = false;
     function toggleSet1Part5() {
         s1p5 = !s1p5;
         toggleCheckUI('box-1-5', 'check-1-5', s1p5);
         const next = document.getElementById('set1-part6');
-        if(s1p5) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
+        if(s1p5) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } else { next.style.display = 'none'; }
     }
-
     let s1p6 = false;
     function toggleSet1Part6() {
         s1p6 = !s1p6;
         toggleCheckUI('box-1-6', 'check-1-6', s1p6);
-        
-        // ★ 버튼 그룹 보이기/숨기기 기능 추가됨
         const btn = document.getElementById('set1-part6-btn');
-        if(s1p6) { 
+        if(s1p6) { btn.style.display = 'flex'; btn.scrollIntoView({behavior:'smooth', block:'center'}); } else { btn.style.display = 'none'; }
+    }
+
+    // [STEP 2] -> [STEP 3]
+    function goToStep3() {
+        const set1Parts = ['set1-part1', 'set1-part2', 'set1-part3', 'set1-part4', 'set1-part5', 'set1-part6'];
+        set1Parts.forEach(id => { const el = document.getElementById(id); if(el) el.style.display = 'none'; });
+        
+        const step3 = document.getElementById('step3-card');
+        if(step3) { step3.style.display = 'block'; window.scrollTo(0, 0); updateProgressBar(45); }
+    }
+
+    // [STEP 3] 로직
+    function startStep3() {
+        document.getElementById('step3-card').style.display = 'none';
+        const part1 = document.getElementById('set2-part1');
+        if(part1) { part1.style.display = 'block'; window.scrollTo(0, 0); updateProgressBar(70); }
+    }
+    let s2p1 = false;
+    function toggleSet2Part1() {
+        s2p1 = !s2p1;
+        toggleCheckUI('box-2-1', 'check-2-1', s2p1);
+        const next = document.getElementById('set2-part2');
+        if(s2p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } else { next.style.display = 'none'; }
+    }
+    let s2p2 = false;
+    function toggleSet2Part2() {
+        s2p2 = !s2p2;
+        toggleCheckUI('box-2-2', 'check-2-2', s2p2);
+        const btn = document.getElementById('set2-final-btn');
+        if(s2p2) { btn.style.display = 'flex'; btn.scrollIntoView({behavior:'smooth', block:'center'}); } else { btn.style.display = 'none'; }
+    }
+
+    // [STEP 3] -> [STEP 4]
+    function goToStep4() {
+        document.getElementById('set2-part1').style.display = 'none';
+        document.getElementById('set2-part2').style.display = 'none';
+        
+        const step4 = document.getElementById('step4-card');
+        if(step4) { step4.style.display = 'block'; window.scrollTo(0, 0); updateProgressBar(80); }
+    }
+
+    // [STEP 4] 로직
+    function startStep4() {
+        document.getElementById('step4-card').style.display = 'none';
+        const part1 = document.getElementById('set4-part1');
+        if(part1) { part1.style.display = 'block'; window.scrollTo(0, 0); }
+    }
+    let s4p1 = false;
+    function toggleSet4Part1() {
+        s4p1 = !s4p1;
+        toggleCheckUI('box-4-1', 'check-4-1', s4p1);
+        const next = document.getElementById('set4-part2');
+        if(s4p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } else { next.style.display = 'none'; }
+    }
+    let s4p2 = false;
+    function toggleSet4Part2() {
+        s4p2 = !s4p2;
+        toggleCheckUI('box-4-2', 'check-4-2', s4p2);
+        const next = document.getElementById('set4-part3');
+        if(s4p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } else { next.style.display = 'none'; }
+    }
+    let s4p3 = false;
+    function toggleSet4Part3() {
+        s4p3 = !s4p3;
+        toggleCheckUI('box-4-3', 'check-4-3', s4p3);
+        const next = document.getElementById('set4-part4');
+        if(s4p3) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } else { next.style.display = 'none'; }
+    }
+    let s4p4 = false;
+    function toggleSet4Part4() {
+        s4p4 = !s4p4;
+        toggleCheckUI('box-4-4', 'check-4-4', s4p4);
+        const next = document.getElementById('set4-part5');
+        if(s4p4) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } else { next.style.display = 'none'; }
+    }
+    let s4p5 = false;
+    function toggleSet4Part5() {
+        s4p5 = !s4p5;
+        toggleCheckUI('box-4-5', 'check-4-5', s4p5);
+        const btn = document.getElementById('set4-final-btn');
+        if(s4p5) { btn.style.display = 'flex'; btn.scrollIntoView({behavior:'smooth', block:'center'}); } else { btn.style.display = 'none'; }
+    }
+
+    // [STEP 4] -> [STEP 5]
+    function goToStep5() {
+        const parts = ['step4-card', 'set4-part1', 'set4-part2', 'set4-part3', 'set4-part4', 'set4-part5'];
+        parts.forEach(id => { const el = document.getElementById(id); if(el) el.style.display = 'none'; });
+
+        const step5 = document.getElementById('step5-card');
+        if(step5) { step5.style.display = 'block'; window.scrollTo(0, 0); updateProgressBar(90); }
+    }
+
+    // ================= [STEP 05: 증빙자료 출력 스크립트] =================
+
+    // [STEP 5] 시작 함수
+    function startStep5() {
+        document.getElementById('step5-card').style.display = 'none';
+        
+        const part1 = document.getElementById('set3-part1');
+        if(part1) {
+            part1.style.display = 'block';
+            window.scrollTo(0, 0); 
+            updateProgressBar(92);
+        }
+    }
+
+    // 1. 버튼 클릭 체크 -> 목록 선택 열기
+    let s3p1 = false;
+    function toggleSet3Part1() {
+        s3p1 = !s3p1;
+        toggleCheckUI('box-3-1', 'check-3-1', s3p1);
+        
+        const next = document.getElementById('set3-part2');
+        if(s3p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
+        else { next.style.display = 'none'; }
+    }
+
+    // 2. 목록 선택 체크 -> PDF 미리보기 열기
+    let s3p2 = false;
+    function toggleSet3Part2() {
+        s3p2 = !s3p2;
+        toggleCheckUI('box-3-2', 'check-3-2', s3p2);
+        
+        const next = document.getElementById('set3-part3');
+        if(s3p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
+        else { next.style.display = 'none'; }
+    }
+
+    // 3. PDF 저장 체크 -> 파일 열기(Part 4) 열기 (수정됨)
+    let s3p3 = false;
+    function toggleSet3Part3() {
+        s3p3 = !s3p3;
+        toggleCheckUI('box-3-3', 'check-3-3', s3p3);
+        
+        const next = document.getElementById('set3-part4'); // Part 4로 연결
+        if(s3p3) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
+        else { next.style.display = 'none'; }
+    }
+
+    // 4. 파일 열기 체크 -> 최종 완료 버튼 보이기 (신규 추가!)
+    let s3p4 = false;
+    function toggleSet3Part4() {
+        s3p4 = !s3p4;
+        toggleCheckUI('box-3-4', 'check-3-4', s3p4);
+        
+        const btn = document.getElementById('set3-final-btn');
+        if(s3p4) { 
             btn.style.display = 'flex'; 
-            btn.scrollIntoView({behavior:'smooth', block:'center'});
+            btn.scrollIntoView({behavior:'smooth', block:'center'}); 
         } else { 
             btn.style.display = 'none'; 
         }
     }
 
-    // [STEP 2] -> [STEP 3] 이동 함수
-    // (STEP 02 마지막 화면의 버튼 onclick="goToStep3()" 로 연결해주세요!)
-    function goToStep3() {
-        // 1. STEP 02의 모든 화면 숨기기
-        const set1Parts = ['set1-part1', 'set1-part2', 'set1-part3', 'set1-part4', 'set1-part5', 'set1-part6'];
-        set1Parts.forEach(id => {
+    // [최종] 모든 미션 완료!
+    function finishAllMissions() {
+        // 모든 STEP 5 화면 숨기기
+        const parts = ['set3-part1', 'set3-part2', 'set3-part3', 'set3-part4'];
+        parts.forEach(id => {
             const el = document.getElementById(id);
             if(el) el.style.display = 'none';
         });
 
-        // 2. STEP 03 대문 열기
-        const step3 = document.getElementById('step3-card');
-        if(step3) {
-            step3.style.display = 'block';
-            window.scrollTo(0, 0); // 스크롤 맨 위로
-            updateProgressBar(45); // 진행률 업데이트 (예: 45%)
-        }
-    }
-
-// [STEP 3] 시작 함수 (대문에서 '기록 시작하기' 누르면 실행)
-    function startStep3() {
-        // 1. 대문(Step 3 Intro) 숨기기
-        document.getElementById('step3-card').style.display = 'none';
-        
-        // 2. 시간 설정 첫 번째 단계(Set 2 Part 1) 보여주기
-        const part1 = document.getElementById('set2-part1');
-        if(part1) {
-            part1.style.display = 'block';
-            window.scrollTo(0, 0); 
-        }
-    }
-
-    // ================= [Set 2: 직접 메모하기 스크립트] =================
-
-    // [STEP 4]
-    let s4p1 = false;
-    function toggleStep4Part1() {
-        s4p1 = !s4p1;
-        setCheckUI('mission-box-4-1', 'custom-check-4-1', 'check-icon-4-1', s4p1);
-        const next = document.getElementById('mission-4-part2');
-        if(s4p1) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
-        else { next.style.display = 'none'; }
-    }
-    let s4p2 = false;
-    function toggleStep4Part2() {
-        s4p2 = !s4p2;
-        setCheckUI('mission-box-4-2', 'custom-check-4-2', 'check-icon-4-2', s4p2);
-        const next = document.getElementById('mission-4-part3');
-        if(s4p2) { next.style.display = 'block'; next.scrollIntoView({behavior:'smooth', block:'nearest'}); } 
-        else { next.style.display = 'none'; }
-    }
-    let s4p3 = false;
-    function toggleStep4Part3() {
-        s4p3 = !s4p3;
-        setCheckUI('mission-box-4-3', 'custom-check-4-3', 'check-icon-4-3', s4p3);
-        const next = document.getElementById('step4-btn-group');
-        if(s4p3) { next.style.display = 'flex'; next.scrollIntoView({behavior:'smooth', block:'center'}); } 
-        else { next.style.display = 'none'; }
-    }
-
-    // [Helper] 체크박스 디자인 변경 함수
-    function setCheckUI(boxId, checkId, iconId, isChecked) {
-        const box = document.getElementById(boxId);
-        const check = document.getElementById(checkId);
-        const icon = document.getElementById(iconId);
-        
-        if (isChecked) {
-            box.style.border = "2px solid #ff4f93"; 
-            box.style.background = "#fff0f6";
-            check.style.background = "#ff4f93"; 
-            check.style.borderColor = "#ff4f93";
-            icon.style.display = "block";
-        } else {
-            box.style.border = "1px solid #e0e0e0"; 
-            box.style.background = "#fff";
-            check.style.background = "#eee"; 
-            check.style.borderColor = "#ddd";
-            icon.style.display = "none";
-        }
-    }
-    // ================= [FINAL] 최종 완료 및 설문조사 =================
-
-    // 1. STEP 7에서 버튼 누르면 실행되는 함수 (수정됨)
-    // ================= [최종 완료 기능] =================
-
-    // STEP 6에서 [완료] 버튼을 누르면 실행됨 (STEP 7은 삭제했으므로 STEP 6을 숨김)
-    // ================= [최종 완료 기능 업데이트] =================
-
-// ================= [최종 완료 기능 업데이트] =================
-
-    // (맨 아래에 있는 함수 확인)
-    function goToFinal() {
-        // STEP 4를 숨기는 코드가 있어야 합니다.
-        const p1 = document.getElementById('mission-4-part1');
-        const p2 = document.getElementById('mission-4-part2');
-        const p3 = document.getElementById('mission-4-part3');
-        
-        if(p1) p1.style.display = 'none';
-        if(p2) p2.style.display = 'none';
-        if(p3) p3.style.display = 'none';
-        
         updateProgressBar(100);
-        
-        // 모달 띄우기
-        const modal = document.getElementById('survey-modal');
-        if(modal) modal.style.display = 'flex';
-    }
-    // 2. 모달창 닫기 함수
-    function closeSurveyModal() {
-        document.getElementById('survey-modal').style.display = 'none';
+
+        // 수료 완료 모달 띄우기
+        const modal = document.getElementById('completion-modal');
+        if(modal) {
+            modal.style.display = 'flex';
+        }
     }
 
-    // 3. 설문조사 제출 함수 (Google Sheet 전송 기능 포함)
+    // [최종] 모달 닫고 처음으로 (새로고침)
+    function closeCompletionModal() {
+        alert("참여해 주셔서 감사합니다! 선생님의 하루를 응원합니다.");
+        location.reload(); // 페이지 새로고침
+    }
+
+    // 설문 제출
     function submitSurvey() {
         const btn = document.getElementById('btn-submit-survey');
         const q1 = document.getElementById('q1-text').value;
         const q2 = document.querySelector('input[name="q2_difficulty"]:checked')?.value || "선택안함";
         const q3 = document.getElementById('q3-text').value;
 
-        // 버튼 비활성화 (중복 클릭 방지)
         btn.disabled = true;
         btn.innerText = "전송 중...";
 
-        // 구글 시트로 데이터 전송 (이전에 쓰던 URL 사용)
-        // 만약 URL이 없다면 아래 fetch 부분은 지우고 alert만 남기셔도 됩니다.
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgDDADz5V_PEeVBSpw0gsGbNNIJp_h21rQuR_M6kKYRhn8wSYICadneZOFLhz001WV3A/exec"; 
 
         fetch(SCRIPT_URL, {
             method: "POST",
             mode: "no-cors",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                user: currentUser || "Unknown", // 로그인한 사용자 ID
-                q1: q1,
-                q2: q2,
-                q3: q3
-            })
+            body: JSON.stringify({ user: currentUser || "Unknown", q1: q1, q2: q2, q3: q3 })
         })
         .then(() => {
             alert("소중한 의견 감사합니다! 모든 과정이 완료되었습니다. 🙇‍♂️");
             closeSurveyModal();
-            // 여기서 초기 화면으로 돌리거나, '수고하셨습니다' 화면을 보여줄 수 있습니다.
-            location.reload(); // (임시) 새로고침하여 처음으로
+            location.reload();
         })
         .catch(err => {
             console.error('Error:', err);
@@ -653,80 +821,6 @@
             location.reload();
         });
     }
-    // ================= [10. 초기화 기능 (누락된 부분 추가)] =================
-    
-    function resetProgress() {
-      if(confirm("정말 모든 진행 상황을 초기화하시겠습니까? (처음으로 돌아갑니다)")) {
-          localStorage.removeItem(STORAGE_KEY); // 저장된 데이터 삭제
-          alert("초기화되었습니다.");
-          location.reload(); // 새로고침
-      }
-    }
-
 </script>
-<div id="survey-modal" style="
-      display: none; /* 평소엔 숨김 */
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5); /* 반투명 검은 배경 */
-      z-index: 9999;
-      align-items: center; justify-content: center;
-      backdrop-filter: blur(5px);
-  ">
-    <div style="
-        background: #fff; width: 90%; max-width: 500px;
-        padding: 30px; border-radius: 20px;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-        text-align: left; position: relative;
-        animation: slideUp 0.4s ease-out;
-    ">
-        <button onclick="closeSurveyModal()" style="
-            position: absolute; top: 15px; right: 15px;
-            background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999;
-        ">×</button>
-
-        <h3 style="margin-bottom: 10px; font-size: 1.5rem; color: #222;">🎉 미션 완료!</h3>
-        <p style="color: #666; margin-bottom: 25px; font-size: 0.95rem;">
-            축하합니다. 모든 베타 테스트 과정을 마치셨습니다.<br>
-            서비스 발전을 위해 짧은 의견을 남겨주세요.
-        </p>
-
-        <div style="margin-bottom: 20px;">
-            <label style="display: block; font-weight: 700; margin-bottom: 8px; color: #444;">1. 가장 유용했던 기능은?</label>
-            <input type="text" id="q1-text" placeholder="예: 타임라인 정리, PDF 저장 등" style="
-                width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;
-            ">
-        </div>
-
-        <div style="margin-bottom: 20px;">
-            <label style="display: block; font-weight: 700; margin-bottom: 8px; color: #444;">2. 사용 난이도는 어떠셨나요?</label>
-            <div style="display: flex; gap: 10px;">
-                <label style="cursor: pointer;"><input type="radio" name="q2_difficulty" value="쉬움"> 쉬움</label>
-                <label style="cursor: pointer;"><input type="radio" name="q2_difficulty" value="보통"> 보통</label>
-                <label style="cursor: pointer;"><input type="radio" name="q2_difficulty" value="어려움"> 어려움</label>
-            </div>
-        </div>
-
-        <div style="margin-bottom: 30px;">
-            <label style="display: block; font-weight: 700; margin-bottom: 8px; color: #444;">3. 하고 싶은 말씀 (자유)</label>
-            <textarea id="q3-text" placeholder="버그 제보나 바라는 점을 적어주세요." style="
-                width: 100%; height: 80px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; resize: none;
-            "></textarea>
-        </div>
-
-        <button id="btn-submit-survey" onclick="submitSurvey()" style="
-            width: 100%; padding: 16px; background: #222; color: #fff;
-            border: none; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.3s;
-        ">
-            의견 보내고 최종 완료하기 🚀
-        </button>
-    </div>
-  </div>
-
-  <style>
-      @keyframes slideUp {
-          from { transform: translateY(50px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
-      }
-  </style>
 </body>
 </html>
