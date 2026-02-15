@@ -852,10 +852,10 @@
             mode: "no-cors",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                ID: visitorId,        // 고유 ID
-                ACTION: "DOWNLOAD_ACTION",  // 구분용 태그
-                TIME: timestamp,          // 시간
-                VERSION: "beta_v1"           // 버전 정보
+                user: visitorId,        // 고유 ID
+                action: "DOWNLOAD_ACTION",  // 구분용 태그
+                time: timestamp,          // 시간
+                version: "beta_v1"           // 버전 정보
             })
         }).then(() => {
             console.log("다운로드 기록 전송 완료: " + visitorId);
